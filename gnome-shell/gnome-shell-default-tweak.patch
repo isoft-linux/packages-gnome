@@ -1,0 +1,12 @@
+diff -Nur gnome-shell-3.14.1/data/org.gnome.shell.gschema.xml.in.in gnome-shell-3.14.1n/data/org.gnome.shell.gschema.xml.in.in
+--- gnome-shell-3.14.1/data/org.gnome.shell.gschema.xml.in.in	2014-10-14 04:57:04.000000000 +0800
++++ gnome-shell-3.14.1n/data/org.gnome.shell.gschema.xml.in.in	2014-10-18 00:35:22.412411098 +0800
+@@ -54,7 +54,7 @@
+       <_summary>History for the looking glass dialog</_summary>
+     </key>
+     <key name="always-show-log-out" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Always show the 'Log out' menu item in the user menu.</_summary>
+       <_description>
+         This key overrides the automatic hiding of the 'Log out'

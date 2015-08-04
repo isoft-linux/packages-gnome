@@ -1,0 +1,12 @@
+diff -Nur gnome-shell-3.14.1/js/ui/layout.js gnome-shell-3.14.1n/js/ui/layout.js
+--- gnome-shell-3.14.1/js/ui/layout.js	2014-10-15 02:27:57.000000000 +0800
++++ gnome-shell-3.14.1n/js/ui/layout.js	2014-10-18 11:44:15.589672261 +0800
+@@ -1140,7 +1140,7 @@
+                                                width: 1,
+                                                height: 1,
+                                                opacity: 0,
+-                                               reactive: true });
++                                               reactive: false });
+             this._corner._delegate = this;
+ 
+             this.actor.add_child(this._corner);

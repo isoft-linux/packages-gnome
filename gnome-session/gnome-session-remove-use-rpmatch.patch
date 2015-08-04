@@ -1,0 +1,12 @@
+diff -Nur gnome-session-3.16.0/gnome-session/main.c gnome-session-3.16.0n/gnome-session/main.c
+--- gnome-session-3.16.0/gnome-session/main.c	2015-06-17 20:48:36.136084856 -0800
++++ gnome-session-3.16.0n/gnome-session/main.c	2015-06-17 20:49:09.157085351 -0800
+@@ -265,7 +265,7 @@
+ 
+         debug_string = g_getenv ("GNOME_SESSION_DEBUG");
+         if (debug_string != NULL) {
+-                debug = rpmatch (debug_string) == TRUE || atoi (debug_string) == 1;
++                debug = 1;
+         }
+ 
+         error = NULL;

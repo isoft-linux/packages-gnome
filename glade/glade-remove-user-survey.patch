@@ -1,0 +1,12 @@
+diff -Nur glade-3.18.3/src/main.c glade-3.18.3n/src/main.c
+--- glade-3.18.3/src/main.c	2014-04-29 07:48:03.000000000 +0800
++++ glade-3.18.3n/src/main.c	2014-07-04 22:07:09.273546046 +0800
+@@ -198,8 +198,6 @@
+   if (!opened_project)
+     glade_window_new_project (window);
+ 
+-  glade_window_registration_notify_user (window);
+-  
+   gtk_main ();
+ 
+   return 0;

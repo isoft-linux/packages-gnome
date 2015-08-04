@@ -1,0 +1,74 @@
+Name:		caribou
+Version:	0.4.18.1
+Release:	1
+Summary:    A simplified in-place on-screen keyboard
+
+Group:	    Desktop/Gnome/Application	
+License:	GPL
+URL:		http://www.gnome.org
+Source0:	%{name}-%{version}.tar.xz
+
+BuildRequires:	pygobject3-devel libgee-devel, libxklavier-devel 
+Requires:	pygobject3
+
+%description
+On-screen Keyboard for GNOME 
+
+%package devel
+Summary: Development files for %{name}
+Requires: %{name} = %{version}-%{release}
+Group:   Desktop/Gnome/Development/Libraries
+%description devel
+%{summary}.
+
+%prep
+%setup -q
+
+%build
+%configure --disable-static
+make %{?_smp_mflags}
+
+%install
+make install DESTDIR=%{buildroot}
+
+%find_lang caribou
+rpmclean
+
+%post
+glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
+
+%postun
+glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
+
+
+%files -f caribou.lang
+%{_sysconfdir}/xdg/autostart/caribou-autostart.desktop
+#%{_bindir}/caribou
+%{_bindir}/caribou-preferences
+%{_libdir}/girepository-1.0/Caribou-1.0.typelib
+%{_libdir}/gnome-settings-daemon-3.0/gtk-modules/caribou-gtk-module.desktop
+%{_libdir}/gtk-2.0/modules/libcaribou-gtk-module.so
+%{_libdir}/gtk-3.0/modules/libcaribou-gtk-module.so
+%{_libdir}/libcaribou.so.*
+%{_libdir}/python2.7/site-packages/caribou
+%{_libexecdir}/antler-keyboard
+%dir %{_datadir}/antler
+%{_datadir}/antler/dark-key-border.svg
+%{_datadir}/antler/style.css
+%dir %{_datadir}/caribou
+%{_datadir}/caribou/*
+%{_datadir}/dbus-1/services/org.gnome.Caribou.Antler.service
+%{_datadir}/glib-2.0/schemas/org.gnome.antler.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.caribou.gschema.xml
+%{_libexecdir}/caribou
+%{_datadir}/dbus-1/services/org.gnome.Caribou.Daemon.service
+
+%files devel
+%{_includedir}/libcaribou
+%{_libdir}/libcaribou.so
+%{_libdir}/pkgconfig/caribou-1.0.pc
+%{_datadir}/gir-1.0/Caribou-1.0.gir
+%{_datadir}/vala/vapi/caribou-1.0.deps
+%{_datadir}/vala/vapi/caribou-1.0.vapi
+
+%changelog

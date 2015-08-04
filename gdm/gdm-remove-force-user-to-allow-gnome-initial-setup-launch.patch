@@ -1,0 +1,19 @@
+diff -Nur gdm-3.12.2/data/pam-lfs/gdm-launch-environment.pam gdm-3.12.2n/data/pam-lfs/gdm-launch-environment.pam
+--- gdm-3.12.2/data/pam-lfs/gdm-launch-environment.pam	2014-03-18 12:23:44.000000000 +0800
++++ gdm-3.12.2n/data/pam-lfs/gdm-launch-environment.pam	2014-07-22 23:33:52.772413232 +0800
+@@ -1,15 +1,12 @@
+ # Begin /etc/pam.d/gdm-launch-environment
+ 
+-auth     required       pam_succeed_if.so audit quiet_success user = gdm
+ auth     required       pam_env.so
+ auth     optional       pam_permit.so
+ 
+-account  required       pam_succeed_if.so audit quiet_success user = gdm
+ account  include        system-account
+ 
+ password required       pam_deny.so
+ 
+-session  required       pam_succeed_if.so audit quiet_success user = gdm
+ -session optional       pam_systemd.so
+ session  optional       pam_keyinit.so force revoke
+ session  optional       pam_permit.so

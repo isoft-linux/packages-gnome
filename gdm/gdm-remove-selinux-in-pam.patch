@@ -1,0 +1,85 @@
+diff -Nur gdm-3.12.2/data/pam-redhat/gdm-autologin.pam gdm-3.12.2n/data/pam-redhat/gdm-autologin.pam
+--- gdm-3.12.2/data/pam-redhat/gdm-autologin.pam	2014-04-23 00:11:07.000000000 +0800
++++ gdm-3.12.2n/data/pam-redhat/gdm-autologin.pam	2014-07-10 22:53:02.425245836 +0800
+@@ -4,11 +4,9 @@
+ account    required    pam_nologin.so
+ account    include     system-auth
+ password   include     system-auth
+-session    required    pam_selinux.so close
+ session    required    pam_loginuid.so
+ session    optional    pam_console.so
+ -session    optional    pam_ck_connector.so
+-session    required    pam_selinux.so open
+ session    optional    pam_keyinit.so force revoke
+ session    required    pam_namespace.so
+ session    include     system-auth
+diff -Nur gdm-3.12.2/data/pam-redhat/gdm-fingerprint.pam gdm-3.12.2n/data/pam-redhat/gdm-fingerprint.pam
+--- gdm-3.12.2/data/pam-redhat/gdm-fingerprint.pam	2014-04-23 00:11:07.000000000 +0800
++++ gdm-3.12.2n/data/pam-redhat/gdm-fingerprint.pam	2014-07-10 22:53:08.611245615 +0800
+@@ -5,11 +5,9 @@
+ 
+ password    include       fingerprint-auth
+ 
+-session     required      pam_selinux.so close
+ session     required      pam_loginuid.so
+ session     optional      pam_console.so
+ -session    optional    pam_ck_connector.so
+-session     required      pam_selinux.so open
+ session     optional      pam_keyinit.so force revoke
+ session     required      pam_namespace.so
+ session     include       fingerprint-auth
+diff -Nur gdm-3.12.2/data/pam-redhat/gdm-password.pam gdm-3.12.2n/data/pam-redhat/gdm-password.pam
+--- gdm-3.12.2/data/pam-redhat/gdm-password.pam	2014-04-23 00:11:07.000000000 +0800
++++ gdm-3.12.2n/data/pam-redhat/gdm-password.pam	2014-07-10 22:53:25.382245016 +0800
+@@ -1,4 +1,3 @@
+-auth     [success=done ignore=ignore default=bad] pam_selinux_permit.so
+ auth        substack      password-auth
+ auth        optional      pam_gnome_keyring.so
+ 
+@@ -8,11 +7,9 @@
+ password    substack       password-auth
+ -password   optional       pam_gnome_keyring.so use_authtok
+ 
+-session     required      pam_selinux.so close
+ session     required      pam_loginuid.so
+ session     optional      pam_console.so
+ -session    optional    pam_ck_connector.so
+-session     required      pam_selinux.so open
+ session     optional      pam_keyinit.so force revoke
+ session     required      pam_namespace.so
+ session     include       password-auth
+diff -Nur gdm-3.12.2/data/pam-redhat/gdm-pin.pam gdm-3.12.2n/data/pam-redhat/gdm-pin.pam
+--- gdm-3.12.2/data/pam-redhat/gdm-pin.pam	2014-04-23 00:11:07.000000000 +0800
++++ gdm-3.12.2n/data/pam-redhat/gdm-pin.pam	2014-07-10 22:53:32.759244752 +0800
+@@ -1,4 +1,3 @@
+-auth     [success=done ignore=ignore default=bad] pam_selinux_permit.so
+ auth        requisite     pam_pin.so
+ auth        substack      password-auth
+ auth        optional      pam_gnome_keyring.so
+@@ -9,11 +8,9 @@
+ password    include       password-auth
+ password    optional      pam_pin.so
+ 
+-session     required      pam_selinux.so close
+ session     required      pam_loginuid.so
+ session     optional      pam_console.so
+ -session    optional    pam_ck_connector.so
+-session     required      pam_selinux.so open
+ session     optional      pam_keyinit.so force revoke
+ session     required      pam_namespace.so
+ session     include       password-auth
+diff -Nur gdm-3.12.2/data/pam-redhat/gdm-smartcard.pam gdm-3.12.2n/data/pam-redhat/gdm-smartcard.pam
+--- gdm-3.12.2/data/pam-redhat/gdm-smartcard.pam	2014-04-23 00:11:07.000000000 +0800
++++ gdm-3.12.2n/data/pam-redhat/gdm-smartcard.pam	2014-07-10 22:53:38.610244543 +0800
+@@ -5,11 +5,9 @@
+ 
+ password    include       smartcard-auth
+ 
+-session     required      pam_selinux.so close
+ session     required      pam_loginuid.so
+ session     optional      pam_console.so
+ -session    optional    pam_ck_connector.so
+-session     required      pam_selinux.so open
+ session     optional      pam_keyinit.so force revoke
+ session     required      pam_namespace.so
+ session     include       smartcard-auth
