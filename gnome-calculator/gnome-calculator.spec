@@ -1,5 +1,5 @@
 Name:	    gnome-calculator	
-Version:    3.16.0
+Version:    3.18.0
 Release:	1
 Summary:    A desktop calculator	
 
@@ -44,7 +44,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/appdata/gnome-calculator.appdata.xml
 %{_datadir}/applications/gnome-calculator.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.calculator.gschema.xml
+
 %{_libexecdir}/gnome-calculator-search-provider
+%{_libdir}/gnome-calculator/libcalculator.so
 %{_datadir}/dbus-1/services/org.gnome.Calculator.SearchProvider.service
 %{_datadir}/gnome-shell/search-providers/gnome-calculator-search-provider.ini
 
@@ -53,3 +55,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/gnome-calculator.1.gz
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

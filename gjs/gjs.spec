@@ -1,12 +1,12 @@
-Name:	    gjs	
-Version:	1.43.3
-Release:	1
-Summary:    JavaScript bindings based on gobject-introspection	
+Name: gjs	
+Version: 1.43.3
+Release: 1
+Summary: JavaScript bindings based on gobject-introspection	
 
-Group:		Application/Desktop
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+Group: Application/Desktop
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 
 BuildRequires:	mozjs24-devel
 Requires:	mozjs24

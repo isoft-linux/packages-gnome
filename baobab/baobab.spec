@@ -1,12 +1,12 @@
-Name:	    baobab	
-Version:    3.16.1
-Release:	1
-Summary:    A graphical directory tree analyzer	
+Name: baobab	
+Version: 3.17.90
+Release: 1
+Summary: A graphical directory tree analyzer	
 
-Group:		Desktop/Gnome/Runtime/Application
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+Group: Desktop/Gnome/Runtime/Application
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 
 %description
 Baobab is able to scan either specific directories or the whole filesystem, in
@@ -65,4 +65,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/baobab.1.gz
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 

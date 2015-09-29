@@ -1,5 +1,5 @@
 Name:		gnome-backgrounds
-Version:	3.16.0
+Version:	3.18.0
 Release:	1
 Summary:	Backgrounds picture for gnome
 
@@ -33,4 +33,6 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 

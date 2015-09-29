@@ -1,5 +1,5 @@
 Name:	    gnome-user-share	
-Version:    3.14.2
+Version:    3.18.0
 Release:	1
 Summary:    Gnome user file sharing	
 
@@ -57,4 +57,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %files -f gnome-user-share.lang
-/
+%{_libdir}/nautilus/extensions-3.0/libnautilus-share-extension.so
+%{_libexecdir}/gnome-user-share-webdav
+%{_datadir}/GConf/gsettings/gnome-user-share.convert
+%{_datadir}/applications/gnome-user-share-webdav.desktop
+%{_datadir}/glib-2.0/schemas/org.gnome.desktop.file-sharing.gschema.xml
+%{_datadir}/gnome-user-share

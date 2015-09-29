@@ -1,5 +1,5 @@
 Name:	    gnome-disk-utility	
-Version:    3.16.1
+Version:    3.18.0
 Release:	1
 Summary:    Disks application for dealing with storage devices	
 
@@ -65,6 +65,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/glib-2.0/schemas/org.gnome.Disks.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.settings-daemon.plugins.gdu-sd.gschema.xml
 %{_datadir}/icons/hicolor/*/apps/*
+%{_datadir}/appdata/org.gnome.DiskUtility.appdata.xml
+%{_datadir}/applications/org.gnome.DiskUtility.desktop
+%{_datadir}/dbus-1/services/org.gnome.DiskUtility.service
 %{_mandir}/man1/gnome-disk-image-mounter.1.gz
 %{_mandir}/man1/gnome-disks.1.gz
 

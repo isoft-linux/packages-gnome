@@ -1,5 +1,5 @@
 Name:	    epiphany	
-Version:    3.16.1
+Version:    3.18.0
 Release:	1
 Summary:    Web browser for GNOME	
 
@@ -7,7 +7,6 @@ Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
-Patch0:     epiphany-fix-web-extension-symbol.patch
 
 BuildRequires: webkitgtk4-devel
 
@@ -19,10 +18,8 @@ application.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-./autogen.sh
 %configure --enable-compile-warnings=no
 make %{?_smp_mflags}
 
@@ -57,3 +54,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

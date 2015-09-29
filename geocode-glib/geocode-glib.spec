@@ -1,7 +1,7 @@
 %global json_glib_version 0.16.2
 
 Name:           geocode-glib
-Version:        3.16.2
+Version:        3.18.0
 Release:        1
 Summary:        Geocoding helper library
 
@@ -68,3 +68,6 @@ find $RPM_BUILD_ROOT -name '*.la' -delete
 
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

@@ -1,5 +1,5 @@
 Name:		grilo
-Version:	0.2.12
+Version:	0.2.14
 Release:	1
 Summary:    Grilo is a framework for browsing and searching media content from various sources using a single API.	
 
@@ -69,4 +69,6 @@ rpmclean
 %{_datadir}/vala/vapi/grilo-net-0.2.vapi
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 

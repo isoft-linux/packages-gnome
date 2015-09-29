@@ -1,5 +1,5 @@
 Name:	    gnome-user-docs	
-Version:    3.16.1
+Version:    3.18.0
 Release:	1
 Summary:    GNOME User Documentation	
 
@@ -22,7 +22,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-rpmclean
 %files
 %{_datadir}/help/*/system-admin-guide
 %{_datadir}/help/*/gnome-help

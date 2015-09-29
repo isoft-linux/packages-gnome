@@ -1,12 +1,12 @@
-Name:		libpeas
-Version:    1.14.0
-Release:	1
-Summary:    Plug-ins implementation convenience library	
+Name: libpeas
+Version: 1.16.0
+Release: 1
+Summary: Plug-ins implementation convenience library	
 
-Group:		Desktop/Gnome/Runtime libraries
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+Group: Desktop/Gnome/Runtime libraries
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 BuildRequires: python-devel
 BuildRequires: python3-devel
 
@@ -80,3 +80,6 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libpeas/*
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

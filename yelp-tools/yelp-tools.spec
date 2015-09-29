@@ -1,5 +1,5 @@
 Name:          yelp-tools
-Version:       3.16.1
+Version:       3.18.0
 Release:       1
 Summary:       Create, manage, and publish documentation for Yelp
 
@@ -41,3 +41,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/aclocal/yelp.m4
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

@@ -1,6 +1,6 @@
-Name:	    gedit 
-Version:    3.16.2
-Release:	1
+Name: gedit 
+Version: 3.18.0
+Release: 1
 Summary:    Text editor for the GNOME desktop
 
 Group:		Desktop/Gnome/Application

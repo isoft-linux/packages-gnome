@@ -1,5 +1,5 @@
 Name:           libgxps
-Version:        0.2.2
+Version:        0.2.3.2
 Release:        1 
 Summary:        GObject based library for handling and rendering XPS documents
 Group:          System Environment/Libraries
@@ -83,3 +83,6 @@ rpmclean
 
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

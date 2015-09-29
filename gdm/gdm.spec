@@ -10,7 +10,7 @@
 
 Summary: The GNOME Display Manager
 Name: gdm
-Version: 3.16.1.1
+Version: 3.18.0
 Release: 1
 Epoch: 1
 License: GPLv2+
@@ -153,7 +153,7 @@ mkdir -p $RPM_BUILD_ROOT/var/log/gdm
 
 # remove the gdm Xsession as we're using the xdm one
 #rm -f $RPM_BUILD_ROOT%{_sysconfdir}/gdm/Xsession
-#(cd $RPM_BUILD_ROOT%{_sysconfdir}/gdm; ln -sf ../X11/xinit/Xsession .)
+(cd $RPM_BUILD_ROOT%{_sysconfdir}/gdm; ln -sf ../X11/xinit/Xsession .)
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/*.a
 rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/*.la
@@ -261,3 +261,6 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_libdir}/pkgconfig/gdm.pc
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

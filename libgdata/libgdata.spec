@@ -1,5 +1,5 @@
 Name:	    libgdata	
-Version:	0.17.1
+Version:	0.17.3
 Release:	1
 Summary:	libgdata is a GLib-based library for accessing online service APIs
 
@@ -61,3 +61,6 @@ rpmclean
 %{_datadir}/vala/vapi/libgdata.vapi
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

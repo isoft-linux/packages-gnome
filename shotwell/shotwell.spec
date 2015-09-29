@@ -1,6 +1,6 @@
 Name:           shotwell
 Version:        0.22.0
-Release:        1
+Release:        2 
 Summary:        A photo organizer for the GNOME desktop
 
 Group:          Applications/Multimedia

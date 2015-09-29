@@ -6,7 +6,7 @@
 
 Summary: Shared code among gnome-panel, gnome-session, nautilus, etc
 Name: gnome-desktop3
-Version: 3.16.2
+Version: 3.18.0
 Release: 1
 URL: http://www.gnome.org
 Source0: http://download.gnome.org/sources/gnome-desktop/3.13/gnome-desktop-%{version}.tar.xz
@@ -90,3 +90,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %doc %{_datadir}/gtk-doc/html/gnome-desktop3/
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

@@ -1,5 +1,5 @@
 Name:	    sushi	
-Version:    3.16.0 
+Version:    3.18.0 
 Release:	1
 Summary:    A quick previewer for Nautilus	
 
@@ -32,10 +32,10 @@ make install DESTDIR=%{buildroot}
 rpmclean
 
 %post
-glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
+#glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 %postun
-glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
+#glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %files -f sushi.lang
@@ -44,7 +44,12 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/sushi/libsushi-1.0.so
 %{_libexecdir}/sushi-start
 %{_datadir}/dbus-1/services/org.gnome.Sushi.service
-%{_datadir}/glib-2.0/schemas/org.gnome.sushi.gschema.xml
+#%{_datadir}/glib-2.0/schemas/org.gnome.sushi.gschema.xml
 %{_datadir}/sushi/gir-1.0/Sushi-1.0.gir
 %dir %{_datadir}/sushi
 %{_datadir}/sushi/*
+
+%changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

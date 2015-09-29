@@ -1,5 +1,5 @@
 Name:           libgit2-glib
-Version:        0.22.8
+Version:        0.23.6
 Release:        1 
 Summary:        Git library for GLib
 
@@ -35,8 +35,6 @@ developing applications that use %{name}.
 
 
 %build
-export CC=clang
-export CXX=clang++
 %configure --disable-static --enable-more-warnings=yes
 make %{?_smp_mflags}
 

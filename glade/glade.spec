@@ -1,7 +1,7 @@
 Summary:        A GTK+ GUI builder.
 Name:           glade
-Version:        3.18.3
-Release: 	 	3	
+Version:        3.19.0
+Release:  3	
 License:        GPL
 URL:            http://glade.gnome.org/
 Source:         glade-%{version}.tar.xz
@@ -70,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/glade.desktop
 %{_datadir}/help/*/glade
 %{_datadir}/icons/hicolor/*/apps/glade.*
+%{_datadir}/icons/hicolor/scalable/apps/glade-symbolic.svg
 %{_mandir}/man1/*.gz
 
 %files -n libglade

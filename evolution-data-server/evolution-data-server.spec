@@ -1,5 +1,5 @@
 Name:	    evolution-data-server	
-Version:	3.16.3
+Version:	3.18.0
 Release:	1
 Summary:	Evolution Data Server
 
@@ -40,8 +40,7 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot} DATADIRNAME=share
 
-%find_lang evolution-data-server-3.16
-rpmclean
+%find_lang evolution-data-server-3.18
 
 %post
 /sbin/ldconfig
@@ -51,7 +50,7 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 /sbin/ldconfig
 glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
-%files -f evolution-data-server-3.16.lang
+%files -f evolution-data-server-3.18.lang
 %dir %{_libdir}/evolution-data-server
 %{_libdir}/evolution-data-server/*
 %{_libdir}/girepository-1.0/EBook-1.2.typelib
@@ -78,4 +77,8 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_datadir}/gir-1.0/EDataServer-1.2.gir
 #%{_datadir}/gtk-doc/html/*
 %{_datadir}/vala/vapi/*
+
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

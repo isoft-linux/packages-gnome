@@ -1,5 +1,5 @@
 Name:           gnome-common
-Version:        3.14.0
+Version:        3.18.0
 Release:        1
 Summary:        Useful things common to building gnome packages from scratch
 
@@ -40,6 +40,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files
 %{_bindir}/*
 %{_datadir}/aclocal/*
-%{_datadir}/%{name}
+#%{_datadir}/%{name}
 
 %changelog

@@ -1,6 +1,6 @@
 Name:	    gnome-font-viewer	
 Version:    3.16.2
-Release:	1
+Release: 2
 Summary:    Utility for previewing fonts for GNOME	
 
 Group:	    Desktop/Gnome/Application	

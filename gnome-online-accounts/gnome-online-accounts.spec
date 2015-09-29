@@ -1,5 +1,5 @@
 Name:		gnome-online-accounts
-Version:	3.16.2
+Version:	3.18.0
 Release:	1
 Summary:	Gnome online accounts library
 
@@ -71,7 +71,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/girepository-1.0/Goa-1.0.typelib
 %{_libdir}/*.so.*
 %{_libexecdir}/goa-daemon
+%{_libexecdir}/goa-identity-service
 %{_datadir}/dbus-1/services/org.gnome.OnlineAccounts.service
+%{_datadir}/dbus-1/services/org.gnome.Identity.service
 %dir %{_datadir}/gnome-online-accounts
 %{_datadir}/gnome-online-accounts/*
 %{_datadir}/icons/hicolor/*/apps/*
@@ -87,4 +89,8 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/pkgconfig/goa-1.0.pc
 %{_libdir}/pkgconfig/goa-backend-1.0.pc
 %{_datadir}/gir-1.0/Goa-1.0.gir
+
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

@@ -1,6 +1,6 @@
 Name:		rhythmbox
 Version:	3.2
-Release:	1
+Release: 	2	
 Summary:    Gnome music player	
 
 Group:		Desktop/Gnome/Application

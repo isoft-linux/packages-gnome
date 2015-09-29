@@ -1,5 +1,5 @@
 Name:          mutter
-Version:       3.16.2
+Version:       3.18.0
 Release:       1 
 Summary:       Window and compositing manager based on Clutter
 
@@ -108,7 +108,6 @@ fi
 glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 %files -f %{name}.lang
-%doc README AUTHORS COPYING NEWS HACKING doc/theme-format.txt
 %doc %{_mandir}/man1/mutter.1.gz
 %{_bindir}/mutter
 %{_datadir}/applications/*.desktop
@@ -130,3 +129,6 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %exclude %{_datadir}/gtk-doc
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

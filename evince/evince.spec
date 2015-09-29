@@ -4,15 +4,15 @@
 %define dbus_version 0.60
 %define theme_version 2.17.1
 
-Name:		evince
-Version:    3.16.0
-Release:  5	
-Summary:	Document viewer
+Name: evince
+Version: 3.18.0
+Release: 5	
+Summary: Document viewer
 
-License:	GPLv2+ and GFDL
-Group:		Applications/Publishing
-URL:		http://projects.gnome.org/evince/
-Source0:	http://download.gnome.org/sources/%{name}/2.26/%{name}-%{version}.tar.xz
+License: GPLv2+ and GFDL
+Group: Applications/Publishing
+URL: http://projects.gnome.org/evince/
+Source0: http://download.gnome.org/sources/%{name}/2.26/%{name}-%{version}.tar.xz
 
 BuildRequires:	gtk3-devel >= %{gtk3_version}
 BuildRequires:	glib2-devel >= %{glib2_version}
@@ -31,6 +31,7 @@ BuildRequires:  libspectre-devel
 BuildRequires:  djvulibre-devel
 BuildRequires:  libgxps-devel
 BuildRequires:  gobject-introspection-devel
+BuildRequires:  nautilus-devel
 
 Requires:   libevince = %{version}-%{release}
 Requires(pre): desktop-file-utils
@@ -154,3 +155,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/girepository-1.0/*.typelib
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

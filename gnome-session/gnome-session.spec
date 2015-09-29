@@ -5,7 +5,7 @@
 
 Summary: GNOME session manager
 Name: gnome-session
-Version: 3.16.0
+Version: 3.18.0
 Release: 2 
 URL: http://www.gnome.org
 Source0: http://download.gnome.org/sources/gnome-session/3.12/%{name}-%{version}.tar.xz
@@ -112,9 +112,14 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_datadir}/gnome-session/
 %{_datadir}/icons/hicolor/*/apps/session-properties.png
 %{_datadir}/icons/hicolor/scalable/apps/session-properties.svg
+%{_datadir}/icons/hicolor/symbolic/apps/session-properties-symbolic.svg
 %{_datadir}/GConf/gsettings/gnome-session.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml
 %{_datadir}/xsessions/*
 %{_datadir}/wayland-sessions/*
+%{_docdir}/gnome-session/dbus/gnome-session.html
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

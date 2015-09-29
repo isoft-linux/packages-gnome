@@ -1,5 +1,5 @@
 Name:           yelp-xsl
-Version:        3.16.1
+Version:        3.18.0
 Release:        1
 Summary:        XSL stylesheets for the yelp help browser
 
@@ -53,3 +53,6 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

@@ -1,6 +1,6 @@
-Name:	    gnome-dictionary	
-Version:    3.16.2
-Release:	1
+Name: gnome-dictionary	
+Version: 3.18.0
+Release: 1
 Summary:    Dictionary application for GNOME	
 
 Group:		Desktop/Gnome/Application
@@ -66,3 +66,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/gdict
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

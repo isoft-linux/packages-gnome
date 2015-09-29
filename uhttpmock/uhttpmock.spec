@@ -1,21 +1,14 @@
-%global git_snapshot 1
-%global gitid f70ec6b79d5fa6eabea9b5bf53716ebf8aa17c90
-
 %global glib2_version 2.31.0
 %global libsoup_version 2.37.91
 %global uhm_api_version 0.0
 
 Name:           uhttpmock
-Version:        0.3.0
+Version:        0.5.0
 Release:        1
 Summary:        HTTP web service mocking library
 License:        LGPLv2
 URL:            http://gitorious.org/uhttpmock/
-%if %git_snapshot
-Source0:        uhttpmock-uhttpmock-%{gitid}.tar.gz
-%else
 Source0:        http://tecnocode.co.uk/downloads/%{name}-%{version}.tar.xz
-%endif
 
 BuildRequires:  glib2-devel >= %{glib2_version}
 BuildRequires:  libsoup-devel >= %{libsoup_version}
@@ -43,12 +36,7 @@ This package contains libraries, header files and documentation for
 developing applications that use %{name}.
 
 %prep
-%if %git_snapshot
-%setup -q -n uhttpmock-uhttpmock
-./autogen.sh
-%else
 %setup -q
-%endif
 
 %build
 %configure \
@@ -83,4 +71,8 @@ rpmclean
 %{_datadir}/vala/vapi/libuhttpmock-%{uhm_api_version}.deps
 %{_datadir}/vala/vapi/libuhttpmock-%{uhm_api_version}.vapi
 %{_datadir}/gtk-doc/html/libuhttpmock*
+
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to 0.5.0 
+

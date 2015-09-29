@@ -1,6 +1,6 @@
-Name:	    gnome-contacts	
-Version:    3.16.2
-Release:	1
+Name: gnome-contacts	
+Version: 3.18.0
+Release: 1
 Summary:    Contacts manager for GNOME	
 
 Group:		Desktop/Gnome/Application
@@ -8,6 +8,7 @@ License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires: folks-devel
+BuildRequires: cheese-libs-devel
 
 %description
 gnome-contacts is a standalone contacts manager for GNOME desktop.

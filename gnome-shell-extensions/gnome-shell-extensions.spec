@@ -1,7 +1,7 @@
-Name:	    gnome-shell-extensions	
-Version:    3.16.1
-Release:	1
-Summary:    Extensions to Modify and extend GNOME Shell functionality and behavior	
+Name: gnome-shell-extensions	
+Version: 3.18.0
+Release: 1
+Summary: Extensions to Modify and extend GNOME Shell functionality and behavior	
 
 Group:	    Desktop/Gnome/Runtime	
 License:	GPL
@@ -52,3 +52,8 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %files -f gnome-shell-extensions.lang
 %{_datadir}/glib-2.0/schemas/*.xml
 %{_datadir}/gnome-shell/extensions/*
+
+%changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

@@ -1,5 +1,5 @@
 Name:	    gnome-system-monitor	
-Version:    3.16.0
+Version:    3.18.0.1
 Release:	1
 Summary:     Process and resource monitor	
 
@@ -7,6 +7,7 @@ Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+BuildRequires: libwnck3-devel
 
 %description
 gnome-system-monitor allows to graphically view and manipulate the running
@@ -27,8 +28,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot} DATADIRNAME=share
 
 %find_lang gnome-system-monitor
-rpmclean
-
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -48,5 +47,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/glib-2.0/schemas/*.xml
 %{_datadir}/help/*/gnome-system-monitor
 %{_datadir}/polkit-1/actions/*
+
+%changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 
 

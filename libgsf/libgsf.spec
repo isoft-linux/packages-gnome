@@ -1,6 +1,6 @@
 Summary: GNOME Structured File library
 Name: libgsf
-Version: 1.14.33
+Version: 1.14.34
 Release: 1
 Group: System Environment/Libraries
 License: LGPLv2
@@ -76,3 +76,6 @@ rpmclean
 %{_mandir}/man1/gsf-vba-dump.1.gz
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

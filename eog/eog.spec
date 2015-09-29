@@ -1,12 +1,12 @@
-Name:	    eog	
-Version:    3.16.2
-Release:	1
-Summary:    Eye of GNOME image viewer	
+Name: eog	
+Version: 3.17.92
+Release: 1
+Summary: Eye of GNOME image viewer	
 
-Group:		Desktop/Gnome/Application/Multimedia
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+Group: Desktop/Gnome/Application/Multimedia
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 BuildRequires: gnome-desktop3-devel
 
 %description
@@ -78,3 +78,8 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_includedir}/eog-3.0/*
 %{_libdir}/pkgconfig/eog.pc
 %{_datadir}/gtk-doc/html/eog
+
+%changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

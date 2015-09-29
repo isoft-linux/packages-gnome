@@ -1,5 +1,5 @@
 Name:		gnome-control-center
-Version:	3.16.2
+Version:	3.18.0
 Release:	1
 Summary:    The GNOME Control Center	
 
@@ -75,4 +75,8 @@ update-desktop-database -q> /dev/null ||:
 %{_datadir}/sounds/gnome/default/alerts/drip.ogg
 %{_datadir}/sounds/gnome/default/alerts/glass.ogg
 %{_datadir}/sounds/gnome/default/alerts/sonar.ogg
+
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

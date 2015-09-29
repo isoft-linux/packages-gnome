@@ -1,7 +1,7 @@
-Name:	    gedit-plugins
-Version:    3.16.0
-Release:	1
-Summary:    Plugins for Gedit Text editor
+Name: gedit-plugins
+Version: 3.18.0
+Release: 1
+Summary: Plugins for Gedit Text editor
 Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org

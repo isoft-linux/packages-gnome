@@ -1,5 +1,5 @@
 Name:		yelp
-Version:	3.16.1
+Version:	3.18.0
 Release:	1
 Summary:    Help browser for the GNOME desktop	
    
@@ -81,6 +81,10 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 
 %files -n libyelp
 %{_libdir}/libyelp.so.*
+%dir %{_libdir}/yelp
+%{_libdir}/yelp/libyelpcommon.so
+%{_libdir}/yelp/web-extensions/libyelpwebextension.so
+
 %{_datadir}/yelp-xsl/*
 %{_datadir}/yelp/*
 
@@ -90,4 +94,8 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_libdir}/libyelp.so
 %dir %{_datadir}/gtk-doc/html/libyelp
 %{_datadir}/gtk-doc/html/libyelp/*
+
+%changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 

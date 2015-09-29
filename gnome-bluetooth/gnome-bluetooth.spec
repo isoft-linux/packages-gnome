@@ -1,5 +1,5 @@
 Name:		gnome-bluetooth
-Version:	3.16.1
+Version:	3.18.0
 Release:	1
 Summary:	Gnome bluetooth Utilities and Libraries
 
@@ -51,7 +51,6 @@ update-desktop-database -q ||:
 %{_datadir}/applications/bluetooth-sendto.desktop
 %dir %{_datadir}/gnome-bluetooth
 %{_datadir}/gnome-bluetooth/pin-code-database.xml
-%{_datadir}/help/*/gnome-bluetooth
 %{_datadir}/icons/hicolor/*/*/*
 %{_mandir}/man1/bluetooth-sendto.1.gz
 
@@ -63,4 +62,8 @@ update-desktop-database -q ||:
 %{_datadir}/gir-1.0/GnomeBluetooth-1.0.gir
 %dir %{_datadir}/gtk-doc/html/gnome-bluetooth
 %{_datadir}/gtk-doc/html/gnome-bluetooth/*
+
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+

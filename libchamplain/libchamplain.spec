@@ -1,12 +1,12 @@
-Name:	    libchamplain	
-Version:	0.12.10
-Release:	1
-Summary:    Map view for Clutter
+Name: libchamplain	
+Version: 0.12.11
+Release: 1
+Summary: Map view for Clutter
 
-Group:		Desktop/Gnome/Runtime/Libraries
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+Group: Desktop/Gnome/Runtime/Libraries
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 BuildRequires: clutter-gtk-devel
 
 %description
@@ -30,8 +30,6 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot}
-
-rpmclean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -58,4 +56,6 @@ rpmclean
 
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 

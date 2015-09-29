@@ -1,5 +1,5 @@
 Name:	    gnome-terminal	
-Version:	3.16.2
+Version:	3.18.0
 Release:	1
 Summary:    Terminal emulator for GNOME	
 
@@ -53,4 +53,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
 

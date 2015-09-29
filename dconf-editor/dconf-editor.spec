@@ -1,7 +1,7 @@
 %define glib2_version 2.42.0
 
 Name:           dconf-editor
-Version:        3.16.1
+Version:        3.18.0
 Release:        2 
 Summary:        Configuration editor for dconf 
 
@@ -75,6 +75,9 @@ fi
 #%{_datadir}/gir-1.0/dconf-0.3.gir
 
 %changelog
+* Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
+- update to gnome 3.18
+
 * Tue Dec 10 2013 Cjacker <cjacker@gmail.com>
 - first build, prepare for the new release.
 
