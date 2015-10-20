@@ -1,16 +1,15 @@
 Name:		yelp
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 Summary:    Help browser for the GNOME desktop	
    
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires: yelp-xsl-devel
 #for autogen.sh
 BuildRequires: gnome-common
-BuildRequires: webkitgtk-devel
+BuildRequires: webkitgtk4-devel
 
 Requires: libyelp = %{version}-%{release}
 
@@ -20,25 +19,22 @@ Help browser for the GNOME desktop
 
 %package -n libyelp 
 Summary: Runtime libraries for %{name}
-Group:   Desktop/Gnome/Runtime libraries
 %description -n libyelp 
 Runtime libraries of %{summary}.
 
 %package -n libyelp-devel
 Summary: Development files for %{name}
 Requires: lib%{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description -n libyelp-devel 
 Development files of %{summary}.
 
 %prep
 %setup -q
 
-
 %build
 export CC=cc
 export CXX=c++
-%configure --disable-static DATADIRNAME=share
+%configure --disable-static
 make %{?_smp_mflags}
 
 
@@ -46,7 +42,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 
 %find_lang yelp
-rpmclean
 
 %post -n libyelp -p /sbin/ldconfig
 %postun -n libyelp -p /sbin/ldconfig
@@ -96,6 +91,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libyelp/*
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

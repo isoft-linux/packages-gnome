@@ -1,13 +1,12 @@
-Name:          rest
-Version:       0.7.93
-Release:       5
-Summary:       A library for access to RESTful web services
+Name: rest
+Version: 0.7.93
+Release: 5
+Summary: A library for access to RESTful web services
 
-Group:         System Environment/Libraries
-License:       LGPLv2
-URL:           http://www.gnome.org
-Source0:       ftp://ftp.gnome.org/pub/gnome/sources/%{name}/0.7/%{name}-%{version}.tar.xz
-Patch0:        rest-fixdso.patch
+License: LGPLv2
+URL: http://www.gnome.org
+Source0: ftp://ftp.gnome.org/pub/gnome/sources/%{name}/0.7/%{name}-%{version}.tar.xz
+Patch0: rest-fixdso.patch
 
 BuildRequires: glib2-devel
 BuildRequires: gobject-introspection-devel
@@ -29,7 +28,6 @@ this library is attempting to support.
 
 %package devel
 Summary: Development package for %{name}
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 Requires: pkgconfig
 
@@ -77,99 +75,5 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_datadir}/gir-1.0/RestExtras-0.7.gir
 
 %changelog
-* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.90-5
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
-
-* Tue Jul 15 2013 Matthias Clasen <mclasen@redhat.com> 0.7.90-4
-- Rebuild with newer gtk-doc to fix multilib issue
-
-* Sat Apr 13 2013 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.90-3
-- Run autoreconf for aarch64 (RHBZ 926440)
-
-* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.90-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
-
-* Tue Aug 14 2012 Peter Robinson <pbrobinson@fedoraproject.org> - 0.7.90-1
-- Release 0.7.90
-
-* Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.12-3
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
-
-* Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.12-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
-
-* Thu Nov 10 2011 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.12-1
-- Release 0.7.12. Fixes CVE-2011-4129 RHBZ 752022
-
-* Fri Oct 28 2011 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.11-1
-- Release 0.7.11
-
-* Sun Apr 24 2011 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.10-1
-- Update to 0.7.10
-
-* Sun Apr  3 2011 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.9-1
-- Update to 0.7.9
-
-* Wed Mar 23 2011 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.8-1
-- Update to 0.7.8
-
-* Tue Feb 22 2011 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.6-1
-- Update to 0.7.6
-
-* Wed Feb 09 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.5-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
-
-* Thu Nov 25 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.5-1
-- Update to 0.7.5
-- Now its on gnome we have official tar file releases
-
-* Wed Sep 29 2010 jkeating - 0.7.3-2
-- Rebuilt for gcc bug 634757
-
-* Wed Sep 15 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.3-1
-- Update to 0.7.3
-
-* Mon Aug 30 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.2-1
-- Update to 0.7.2
-
-* Thu Aug  5 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.7.0-1
-- Update to 0.7.0
-
-* Sun Jul 11 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.4-1
-- Update to 0.6.4
-
-* Wed May 12 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.3-2
-- some cleanups and fixes
-
-* Wed May 12 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.3-1
-- Update to 0.6.3, update url and source details, enable introspection
-
-* Mon Feb 15 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.1-4
-- Add patch to fix DSO linking. Fixes bug 564764
-
-* Mon Jan 25 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.1-3
-- Bump build
-
-* Mon Jan 25 2010 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.1-2
-- Move to official tarball release of 0.6.1
-
-* Sat Oct 10 2009 Peter Robinson <pbrobinson@fedoraproject.org> 0.6.1-1
-- New upstream 0.6.1 release
-
-* Wed Aug 19 2009 Peter Robinson <pbrobinson@fedoraproject.org> 0.6-1
-- New upstream 0.6 release
-
-* Fri Aug  7 2009 Peter Robinson <pbrobinson@fedoraproject.org> 0.5-3
-- A few minor spec file cleanups
-
-* Sun Jul 26 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.5-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
-
-* Tue Jul 14 2009 Peter Robinson <pbrobinson@fedoraproject.org> 0.5-1
-- Update to 0.5
-
-* Mon Jun 22 2009 Peter Robinson <pbrobinson@fedoraproject.org> 0.4-1
-- Update to 0.4
-
-* Wed Jun 17 2009 Peter Robinson <pbrobinson@fedoraproject.org> 0.3-1
-- Initial packaging
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- rebuild. 

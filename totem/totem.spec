@@ -1,12 +1,11 @@
-Name:	    totem	
-Version:    3.18.0
-Release:	1
-Summary:    Movie player for GNOME	
+Name: totem 
+Version: 3.18.1
+Release: 1
+Summary: Movie player for GNOME 
 
-Group:	    Desktop/Gnome/Application	
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 Requires: grilo-plugins
 Requires: iso-codes
 Requires: gstreamer-plugins-base
@@ -19,6 +18,7 @@ BuildRequires: gstreamer-devel
 BuildRequires: clutter-devel 
 BuildRequires: clutter-gst3
 BuildRequires: nautilus-devel
+BuildRequires: grilo-devel libpeas-devel
 
 %description
 Totem package contains the official movie player of the GNOME Desktop based on GStreamer. It features a playlist, a full-screen mode, seek and volume controls, as well as keyboard navigation. This is useful for playing any GStreamer supported file, DVD, VCD or digital CD.
@@ -26,7 +26,6 @@ Totem package contains the official movie player of the GNOME Desktop based on G
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -40,10 +39,9 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot}
 
 %find_lang totem
-rpmclean
 
 
 %post
@@ -51,7 +49,7 @@ rpmclean
 update-desktop-database -q> /dev/null ||:
 touch --no-create %{_datadir}/icons/hicolor
 if [ -x /usr/bin/gtk3-update-icon-cache ]; then
-  /usr/bin/gtk3-update-icon-cache -q %{_datadir}/icons/hicolor;
+ /usr/bin/gtk3-update-icon-cache -q %{_datadir}/icons/hicolor;
 fi
 glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
@@ -61,7 +59,7 @@ update-desktop-database -q> /dev/null ||:
 
 touch --no-create %{_datadir}/icons/hicolor
 if [ -x /usr/bin/gtk3-update-icon-cache ]; then
-  /usr/bin/gtk3-update-icon-cache -q %{_datadir}/icons/hicolor;
+ /usr/bin/gtk3-update-icon-cache -q %{_datadir}/icons/hicolor;
 fi
 glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
@@ -102,4 +100,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/totem
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1 
 

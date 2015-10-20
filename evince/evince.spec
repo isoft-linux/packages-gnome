@@ -6,11 +6,10 @@
 
 Name: evince
 Version: 3.18.0
-Release: 5	
+Release: 6 
 Summary: Document viewer
 
 License: GPLv2+ and GFDL
-Group: Applications/Publishing
 URL: http://projects.gnome.org/evince/
 Source0: http://download.gnome.org/sources/%{name}/2.26/%{name}-%{version}.tar.xz
 
@@ -31,8 +30,11 @@ BuildRequires:  libspectre-devel
 BuildRequires:  djvulibre-devel
 BuildRequires:  libgxps-devel
 BuildRequires:  gobject-introspection-devel
+#for nautilus extension 
 BuildRequires:  nautilus-devel
 
+#for thumbnail
+BuildRequires: gnome-desktop3-devel
 Requires:   libevince = %{version}-%{release}
 Requires(pre): desktop-file-utils
 Requires(pre): gtk3
@@ -47,16 +49,20 @@ table-of-contents bookmarks and editing of forms.
 Support for other document formats such as DVI and DJVU can be added by
 installing additional backends.
 
+%package nautilus-extension 
+Summary: Evince nautilus extension
+
+%description nautilus-extension 
+Evince nautilus extension
+
 %package -n libevince
 Summary: Evince runtime libraries
-Group: System Environment/Libraries 
 
 %description -n libevince 
 Evince runtime libraries
 
 %package -n libevince-devel
 Summary: Evince development libraries
-Group: Development/Libraries
 Requires: libevince = %{version}-%{release}
 
 %description -n libevince-devel
@@ -72,13 +78,14 @@ export CXX=c++
     --enable-compile-warnings=no \
     --disable-static \
     --disable-scrollkeeper \
-	--with-print=gtk \
-	--enable-comics=yes \
-	--enable-djvu=yes \
-	--enable-xps=yes \
-	--enable-ps=yes \
-	--enable-pdf=yes \
+    --with-print=gtk \
+    --enable-comics=yes \
+    --enable-djvu=yes \
+    --enable-xps=yes \
+    --enable-ps=yes \
+    --enable-pdf=yes \
     --enable-nautilus \
+    --enable-libgnome-desktop \
     --enable-introspection 
 
 make %{?_smp_mflags}
@@ -132,10 +139,11 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/applications/evince-previewer.desktop
 %{_datadir}/applications/evince.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.Evince.gschema.xml
-%{_libdir}/nautilus/extensions-3.0/libevince-properties-page.so
 %{_libdir}/mozilla/plugins/libevbrowserplugin.so
 %{_datadir}/appdata/*.xml
 
+%files nautilus-extension
+%{_libdir}/nautilus/extensions-3.0/libevince-properties-page.so
 
 %files -n libevince
 %defattr(-,root,root,-)

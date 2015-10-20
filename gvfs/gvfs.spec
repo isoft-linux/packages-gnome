@@ -3,12 +3,12 @@
 %define libcdio_paranoia_ver 10.2+0.90+1 
 Summary: Backends for the gio framework in GLib
 Name: gvfs
-Version: 1.26.0
+Version: 1.26.1
 Release: 2 
 License: LGPLv2+
 Group: System Environment/Libraries
 URL: http://www.gtk.org
-Source0: http://download.gnome.org/sources/gvfs/1.3/gvfs-%{version}.tar.xz
+Source0: http://download.gnome.org/sources/gvfs/1.26/gvfs-%{version}.tar.xz
 
 BuildRequires: libbluray-devel
 BuildRequires: libcdio-devel
@@ -70,6 +70,7 @@ required to develop applications using gvfs.
     --enable-gtk \
     --enable-archive \
     --enable-afp \
+    --disable-google \
     --with-bash-completion-dir=%{_sysconfdir}/bash_completion.d/
 make %{?_smp_mflags}
 
@@ -117,6 +118,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ &> /dev/null ||:
 %{_datadir}/dbus-1/services/*
 %{_mandir}/man?/*
 %{_sysconfdir}/bash_completion.d/gvfs*
+%{_libdir}/systemd/user/*.service
 
 %files devel
 %defattr(-, root, root, -)

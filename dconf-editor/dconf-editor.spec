@@ -1,11 +1,9 @@
 %define glib2_version 2.42.0
 
 Name:           dconf-editor
-Version:        3.18.0
+Version:        3.18.1
 Release:        2 
 Summary:        Configuration editor for dconf 
-
-Group:   Applications/System
 
 License:        LGPLv2+
 URL:            http://live.gnome.org/dconf
@@ -44,7 +42,6 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang dconf
-rpmclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -75,6 +72,9 @@ fi
 #%{_datadir}/gir-1.0/dconf-0.3.gir
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

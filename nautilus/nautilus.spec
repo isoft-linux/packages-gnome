@@ -1,14 +1,16 @@
 Name: nautilus
-Version: 3.18.0
+Version: 3.18.1
 Release: 1
 Summary: Gnome File Manager
 
-Group: Desktop/Applications	
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
-BuildRequires:  libexif-devel  >= 0.6.20
+BuildRequires: libexif-devel  >= 0.6.20
 BuildRequires: libnotify-devel
+BuildRequires: tracker-devel
+BuildRequires: gtk3-devel atk-devel gnome-desktop3-devel
+
 Requires: gvfs
 
 %description
@@ -39,7 +41,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 
 %find_lang nautilus
-rpmclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -84,6 +85,9 @@ update-desktop-database ||:
 %{_datadir}/gtk-doc/html/libnautilus-extension/*
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1 
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

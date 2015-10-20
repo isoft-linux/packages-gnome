@@ -1,9 +1,8 @@
 Name:	    gnome-user-docs	
-Version:    3.18.0
+Version:    3.18.1
 Release:	1
 Summary:    GNOME User Documentation	
 
-Group:		gnome
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -25,4 +24,8 @@ make install DESTDIR=%{buildroot}
 %files
 %{_datadir}/help/*/system-admin-guide
 %{_datadir}/help/*/gnome-help
+
+%changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
 

@@ -1,9 +1,8 @@
 Name:		gnome-control-center
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 Summary:    The GNOME Control Center	
 
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -39,11 +38,10 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot}  DATADIRNAME=share
+make install DESTDIR=%{buildroot}
 %find_lang gnome-control-center-2.0
 %find_lang gnome-control-center-2.0-timezones
 cat gnome-control-center-2.0-timezones.lang >>gnome-control-center-2.0.lang 
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:

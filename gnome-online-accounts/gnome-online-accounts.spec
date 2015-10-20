@@ -1,9 +1,8 @@
 Name:		gnome-online-accounts
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 Summary:	Gnome online accounts library
 
-Group:		Desktop/Gnome/Runtime libraries
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -23,7 +22,6 @@ Gnome online accounts library
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Desktop/Gnome/Development libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -55,7 +53,6 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 %find_lang gnome-online-accounts
 %find_lang gnome-online-accounts-tpaw
 cat  gnome-online-accounts-tpaw.lang >>gnome-online-accounts.lang
-rpmclean
 
 %post
 /sbin/ldconfig
@@ -91,6 +88,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/Goa-1.0.gir
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

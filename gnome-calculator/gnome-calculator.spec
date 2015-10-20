@@ -1,9 +1,8 @@
 Name:	    gnome-calculator	
-Version:    3.18.0
+Version:    3.18.1
 Release:	1
 Summary:    A desktop calculator	
 
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -24,10 +23,9 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot}
 
 %find_lang gnome-calculator
-rpmclean
 
 %post
 update-desktop-database &> /dev/null ||:
@@ -55,6 +53,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/gnome-calculator.1.gz
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

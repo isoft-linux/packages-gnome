@@ -1,9 +1,8 @@
 Name:	    evolution-data-server	
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 Summary:	Evolution Data Server
 
-Group:		Desktop/Gnome/Runtime/Libraries
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -17,7 +16,6 @@ Evolution Data Server
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Desktop/Gnome/Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -38,7 +36,7 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot}
 
 %find_lang evolution-data-server-3.18
 
@@ -79,6 +77,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_datadir}/vala/vapi/*
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

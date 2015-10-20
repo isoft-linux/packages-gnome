@@ -1,9 +1,8 @@
 Name:		gnome-shell
-Version:	3.18.0
+Version:	3.18.1
 Release:	1
 Summary:	Window management and application launching for GNOME
 
-Group:	    Desktop/Gnome/Runtime	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -35,8 +34,10 @@ BuildRequires:  startup-notification-devel
 BuildRequires:  systemd-devel
 BuildRequires:  telepathy-glib-devel
 BuildRequires:  gnome-control-center
-Requires:	caribou
-Requires:   gjs
+BuildRequires:  gjs-devel
+
+Requires: caribou
+Requires: gjs
 %description
 GNOME Shell provides core user interface functions for the GNOME 3 desktop,
 like switching to windows and launching applications. GNOME Shell takes
@@ -47,7 +48,6 @@ easy to use experience.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 %{summary}.
 
@@ -68,13 +68,12 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot}
 
 sed -i 's@#!/bin/python@#!/usr/bin/python@g' $RPM_BUILD_ROOT%{_bindir}/gnome-shell-extension-tool
 sed -i 's@#!/bin/python@#!/usr/bin/python@g' $RPM_BUILD_ROOT%{_bindir}/gnome-shell-perf-tool
 
 %find_lang gnome-shell
-rpmclean
 
 
 %post
@@ -123,6 +122,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/st
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

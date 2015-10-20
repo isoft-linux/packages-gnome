@@ -1,9 +1,8 @@
 Name: gucharmap	
-Version: 3.18.0
+Version: 3.18.1
 Release: 1
 Summary: Unicode character picker and font browser	
 
-Group: Desktop/Gnome/Application
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
@@ -17,7 +16,6 @@ only know by its Unicode name or code point.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -34,7 +32,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 
 %find_lang gucharmap
-rpmclean
 
 %post
 update-desktop-database &> /dev/null ||:
@@ -65,6 +62,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/Gucharmap-2.90.gir
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1 
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

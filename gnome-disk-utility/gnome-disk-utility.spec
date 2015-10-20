@@ -1,6 +1,6 @@
 Name:	    gnome-disk-utility	
-Version:    3.18.0
-Release:	1
+Version:    3.18.1
+Release: 1
 Summary:    Disks application for dealing with storage devices	
 
 Group:		Desktop/Gnome/Application
@@ -34,7 +34,6 @@ EOF
 
 mv $RPM_BUILD_ROOT%{_datadir}/applications/gnome-disks.desktop $RPM_BUILD_ROOT%{_datadir}/applications/gnome-disks-panel.desktop
 %find_lang gnome-disk-utility
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -73,4 +72,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1 
 

@@ -1,12 +1,13 @@
 Name:           frei0r-plugins
 Version:        1.4
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Frei0r - a minimalist plugin API for video effects
 
 Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.piksel.org/frei0r
 Source0:        http://www.piksel.no/frei0r/releases/frei0r-plugins-%{version}.tar.gz
+Patch0:		frei0r-plugins-opencv-3.0.patch
 
 Buildrequires:  libtool
 
@@ -39,7 +40,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-
+%patch0 -p2
 
 %build
 %configure --disable-static
@@ -78,3 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/frei0r.pc
 
 %changelog
+* Fri Oct 09 2015 Cjacker <cjacker@foxmail.com>
+- fix build with opencv 3.0

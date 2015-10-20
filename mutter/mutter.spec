@@ -1,9 +1,8 @@
 Name:          mutter
-Version:       3.18.0
+Version:       3.18.1
 Release:       1 
 Summary:       Window and compositing manager based on Clutter
 
-Group:         User Interface/Desktops
 License:       GPLv2+
 #VCS:          git:git://git.gnome.org/mutter
 URL:           http://www.gnome.org
@@ -58,7 +57,6 @@ behaviors to meet the needs of the environment.
 
 %package devel
 Summary: Development package for %{name}
-Group: Development/Libraries
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
@@ -86,7 +84,7 @@ done
 make %{?_smp_mflags} V=1
 
 %install
-%make_install DATADIRNAME=share
+%make_install
 
 #Remove libtool archives.
 rm -rf %{buildroot}/%{_libdir}/*.la
@@ -129,6 +127,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %exclude %{_datadir}/gtk-doc
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1 
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

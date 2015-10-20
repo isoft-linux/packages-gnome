@@ -1,9 +1,8 @@
 Name: eog	
-Version: 3.17.92
+Version: 3.18.0
 Release: 1
 Summary: Eye of GNOME image viewer	
 
-Group: Desktop/Gnome/Application/Multimedia
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
@@ -19,7 +18,6 @@ eog is extensible through a plugin system.
 %package devel
 Summary: Plugin development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 Plugin development files of %{summary}.
 
@@ -36,7 +34,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 %find_lang eog
 
-rpmclean
 
 %post
 touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
@@ -80,6 +77,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/eog
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.0
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
-- update to gnome 3.18
+- update to gnome 3.17.92
 

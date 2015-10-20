@@ -5,7 +5,7 @@
 
 Summary: GNOME session manager
 Name: gnome-session
-Version: 3.18.0
+Version: 3.18.1.2
 Release: 2 
 URL: http://www.gnome.org
 Source0: http://download.gnome.org/sources/gnome-session/3.12/%{name}-%{version}.tar.xz
@@ -17,7 +17,6 @@ Patch3: gnome-session-3.6.2-swrast.patch
 Patch4: gnome-session-remove-use-rpmatch.patch
 
 License: GPLv2+
-Group:  Desktop/Gnome/Runtime/Base 
 
 Requires: gsettings-desktop-schemas >= 0.1.7
 
@@ -81,7 +80,6 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 %find_lang %{po_package}
 
 
-rpmclean
 %post
 /sbin/ldconfig
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -109,6 +107,7 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_libexecdir}/gnome-session-check-accelerated
 %{_libexecdir}/gnome-session-check-accelerated-helper
 %{_libexecdir}/gnome-session-failed
+%{_libexecdir}/gnome-session-binary
 %{_datadir}/gnome-session/
 %{_datadir}/icons/hicolor/*/apps/session-properties.png
 %{_datadir}/icons/hicolor/scalable/apps/session-properties.svg
@@ -120,6 +119,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_docdir}/gnome-session/dbus/gnome-session.html
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1.2
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

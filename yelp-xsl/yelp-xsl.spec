@@ -1,10 +1,9 @@
 Name:           yelp-xsl
-Version:        3.18.0
+Version:        3.18.1
 Release:        1
 Summary:        XSL stylesheets for the yelp help browser
 
 License:        LGPLv2+
-Group:          Applications/System
 URL:            http://download.gnome.org/sources/yelp-xsl
 Source0:        http://download.gnome.org/sources/yelp-xsl/3.10/yelp-xsl-%{version}.tar.xz
 BuildArch:      noarch
@@ -53,6 +52,9 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

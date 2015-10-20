@@ -1,9 +1,8 @@
 Name: gnome-shell-extensions	
-Version: 3.18.0
+Version: 3.18.1
 Release: 1
 Summary: Extensions to Modify and extend GNOME Shell functionality and behavior	
 
-Group:	    Desktop/Gnome/Runtime	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -37,10 +36,9 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot}
 
 %find_lang gnome-shell-extensions
-rpmclean
 
 %post
 glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
@@ -54,6 +52,8 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gnome-shell/extensions/*
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

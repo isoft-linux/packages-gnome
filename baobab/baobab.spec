@@ -1,9 +1,8 @@
 Name: baobab	
-Version: 3.17.90
+Version: 3.18.1
 Release: 1
 Summary: A graphical directory tree analyzer	
 
-Group: Desktop/Gnome/Runtime/Application
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
@@ -25,7 +24,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 
 %find_lang baobab
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -65,6 +63,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/baobab.1.gz
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

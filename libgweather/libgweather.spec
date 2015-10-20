@@ -1,9 +1,8 @@
 Name:           libgweather
-Version:        3.18.0
+Version:        3.18.1
 Release:        1
 Summary:        A library for weather information
 
-Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            http://www.gnome.org
 Source0:        http://download.gnome.org/sources/libgweather/3.18/%{name}-%{version}.tar.xz
@@ -31,7 +30,6 @@ services for numerous locations.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name}%{_isa} = %{version}-%{release}
 
 %description    devel
@@ -88,6 +86,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.18.1
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

@@ -1,13 +1,14 @@
 Name:	    empathy	
-Version:    3.12.10
+Version:    3.12.11
 Release:	1
 Summary:    Instant Messaging Client for GNOME	
 
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
-BuildRequires: telepathy-glib-devel, telepathy-farstream-devel
+BuildRequires: telepathy-glib-devel, telepathy-farstream-devel, telepathy-logger-devel
+BuildRequires: telepathy-mission-control-devel
+BuildRequires: folks-devel webkitgtk-devel 
 
 %description
 Empathy is powerful multi-protocol instant messaging client which
@@ -28,7 +29,6 @@ make install DESTDIR=%{buildroot}
 %find_lang empathy
 cat empathy-tpaw.lang >>empathy.lang
 
-rpmclean
 
 
 %post
@@ -70,4 +70,5 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
-
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 3.12.11

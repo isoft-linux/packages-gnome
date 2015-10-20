@@ -1,9 +1,8 @@
 Name:		caribou
-Version:	0.4.18.1
+Version:	0.4.19
 Release:	1
 Summary:    A simplified in-place on-screen keyboard
 
-Group:	    Desktop/Gnome/Application	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -17,7 +16,6 @@ On-screen Keyboard for GNOME
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -32,7 +30,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot}
 
 %find_lang caribou
-rpmclean
 
 %post
 glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
@@ -72,3 +69,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/caribou-1.0.vapi
 
 %changelog
+* Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
+- update to 0.4.19 
+
