@@ -1,16 +1,14 @@
 Summary:     	Implementation of the "Desktop Menu Specification" from freedesktop.org
 Name:           gnome-menus 
 Version:        3.13.3
-Release:       	1
+Release:       	2
 License:        GPLv2+
-Group:          System Environment/Libraries
 Source0:       	%{name}-%{version}.tar.xz
 %description
 Implementation of the "Desktop Menu Specification" from freedesktop.org
 
 %package devel
 Summary: Files needed for development using %{name}
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 
 %description devel
@@ -30,7 +28,6 @@ make install DESTDIR=%{buildroot}
 rm $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang gnome-menus-3.0
-rpmclean
 %clean
 rm -rf %{buildroot}
 
@@ -67,6 +64,9 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/*
 %{_datadir}/gir-1.0/GMenu-3.0.gir
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.13.3-2
+- Rebuild for 4.0 release
+
 * Tue Dec 10 2013 Cjacker <cjacker@gmail.com>
 - first build, prepare for the new release.
 

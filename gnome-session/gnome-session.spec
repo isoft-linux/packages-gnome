@@ -6,7 +6,7 @@
 Summary: GNOME session manager
 Name: gnome-session
 Version: 3.18.1.2
-Release: 2 
+Release: 3 
 URL: http://www.gnome.org
 Source0: http://download.gnome.org/sources/gnome-session/3.12/%{name}-%{version}.tar.xz
  
@@ -119,6 +119,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_docdir}/gnome-session/dbus/gnome-session.html
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1.2-3
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 3.18.1.2
 

@@ -1,9 +1,8 @@
 Name:	    epiphany	
 Version:    3.18.0
-Release:	1
+Release:	2
 Summary:    Web browser for GNOME	
 
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -26,7 +25,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 %find_lang epiphany
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -54,6 +52,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

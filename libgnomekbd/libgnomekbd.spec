@@ -1,9 +1,8 @@
 Name:           libgnomekbd
 Version:        3.6.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A keyboard configuration library
 
-Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            http://gswitchit.sourceforge.net
 # VCS: git:git://git.gnome.org/libgnomekbd
@@ -28,7 +27,6 @@ keyboard configuration.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 
@@ -97,3 +95,6 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.6.0-4
+- Rebuild for 4.0 release
+

@@ -1,9 +1,8 @@
 Name:           telepathy-logger
 Version:        0.8.2
-Release:        4
+Release:        5
 Summary:        Telepathy framework logging daemon
 
-Group:          Applications/Communications
 License:        LGPLv2+
 URL:            http://telepathy.freedesktop.org/wiki/Logger
 Source0:        http://telepathy.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.bz2
@@ -30,7 +29,6 @@ backends to log different sorts of messages, in different formats.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
@@ -60,7 +58,6 @@ make %{?_smp_mflags} V=1
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
-rpmclean
 
 %check
 make check ||:
@@ -101,3 +98,6 @@ glib-compile-schemas --allow-any-name %{_datadir}/glib-2.0/schemas &>/dev/null |
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.8.2-5
+- Rebuild for 4.0 release
+

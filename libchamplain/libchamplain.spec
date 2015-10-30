@@ -1,9 +1,8 @@
 Name: libchamplain	
 Version: 0.12.11
-Release: 1
+Release: 2
 Summary: Map view for Clutter
 
-Group: Desktop/Gnome/Runtime/Libraries
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
@@ -16,7 +15,6 @@ rasterized maps.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -56,6 +54,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.12.11-2
+- Rebuild for 4.0 release
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

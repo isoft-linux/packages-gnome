@@ -1,9 +1,8 @@
 Name:          libmx
 Version:       1.4.7
-Release:       1
+Release:       2
 Summary:       A clutter widget toolkit
 
-Group:         System Environment/Libraries
 License:       LGPLv2
 URL:           http://www.clutter-project.org
 Source0:       https://github.com/downloads/clutter-project/mx/mx-%{version}.tar.xz
@@ -29,7 +28,6 @@ currently used by Moblin to provide the user experience.
 
 %package devel
 Summary: Development package for %{name}
-Group: Development/Libraries
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: clutter-devel, gdk-pixbuf2-devel
 Requires: pkgconfig
@@ -40,7 +38,6 @@ toolkit, currently used primarily by Moblin.
 
 %package docs
 Summary: Documentation files for %{name}
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 BuildArch: noarch
 
@@ -63,7 +60,6 @@ make install DESTDIR=%{buildroot} INSTALL='install -p'
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
 %find_lang mx-1.0
-rpmclean
 
 %post -p /sbin/ldconfig
 
@@ -90,3 +86,6 @@ rpmclean
 %{_datadir}/gtk-doc/html/mx-gtk
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.4.7-2
+- Rebuild for 4.0 release
+

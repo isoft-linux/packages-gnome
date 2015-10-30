@@ -1,9 +1,8 @@
 Name:	    gssdp	
 Version:	0.14.11
-Release:	1
+Release:	2
 Summary:    Resource discovery and announcement over SSDP	
 
-Group:	    Desktop/Gnome/Runtime/Libraries	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -14,7 +13,6 @@ The Gssdp package provides a GObject based API for handling resource discovery a
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -30,7 +28,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-rpmclean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -52,4 +49,7 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.14.11-2
+- Rebuild for 4.0 release
+
 

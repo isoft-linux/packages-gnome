@@ -1,6 +1,6 @@
 Name:          mutter
 Version:       3.18.1
-Release:       1 
+Release:       2 
 Summary:       Window and compositing manager based on Clutter
 
 License:       GPLv2+
@@ -127,6 +127,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %exclude %{_datadir}/gtk-doc
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 3.18.1 
 

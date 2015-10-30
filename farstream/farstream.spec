@@ -3,7 +3,7 @@
 
 Name:           farstream 
 Version:        0.2.7
-Release:        1
+Release:        2
 Summary:        Libraries for videoconferencing
 License:        LGPLv2+ and GPLv2+
 URL:            http://www.freedesktop.org/wiki/Software/Farstream
@@ -28,7 +28,6 @@ videoconferencing.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       gstreamer-devel  >= %{gst_ver}
 Requires:       gstreamer-plugins-base-devel >= %{gst_plugins_base_ver}
@@ -57,7 +56,6 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
-rpmclean
 %check
 #some faield, need check
 make check ||:
@@ -100,3 +98,6 @@ make check ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.7-2
+- Rebuild for 4.0 release
+

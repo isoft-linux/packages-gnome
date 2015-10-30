@@ -2,10 +2,9 @@
 
 Name:           telepathy-idle
 Version:        0.2.0
-Release:        1
+Release:        2
 Summary:        IRC connection manager for Telepathy
 
-Group:          Applications/Communications
 License:        LGPLv2+
 URL:            http://telepathy.freedesktop.org/wiki/FrontPage
 Source0:        http://telepathy.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
@@ -46,7 +45,6 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
-rpmclean
 
 
 %if %{run_tests}
@@ -63,3 +61,6 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.0-2
+- Rebuild for 4.0 release
+

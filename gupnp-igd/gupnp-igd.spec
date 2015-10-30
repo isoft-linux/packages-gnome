@@ -1,9 +1,8 @@
 Name:	    gupnp-igd	
 Version:    0.2.4
-Release:	1
+Release:	2
 Summary:    Library to handle UPnP IGD port mapping	
 
-Group:		Desktop/Gnome/Runtime/Libraries
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -15,7 +14,6 @@ gupnp-igd is a library to handle UPnP IGD port mapping.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -32,7 +30,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-rpmclean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -50,4 +47,7 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.4-2
+- Rebuild for 4.0 release
+
 

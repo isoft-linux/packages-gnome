@@ -6,10 +6,9 @@
 
 Name:		grilo-plugins
 Version:	0.2.16
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Plugins for the Grilo framework
 
-Group:		Applications/Multimedia
 License:	LGPLv2+
 Url:		https://live.gnome.org/Grilo
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/grilo-plugins/%{release_version}/grilo-plugins-%{version}.tar.xz
@@ -112,3 +111,6 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/*
 %{_libdir}/grilo-%{release_version}/*.xml
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.16-2
+- Rebuild for 4.0 release
+

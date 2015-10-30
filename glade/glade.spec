@@ -1,14 +1,13 @@
 Summary:        A GTK+ GUI builder.
 Name:           glade
 Version:        3.19.0
-Release:  3	
+Release:  4	
 License:        GPL
 URL:            http://glade.gnome.org/
 Source:         glade-%{version}.tar.xz
 Patch0:         glade-remove-user-survey.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-root
-Group:          Development/Tools
 
 Requires:      libglade
 BuildRequires: glib2-devel >= %{glib2_version}
@@ -25,14 +24,12 @@ the XML interface description files output by GLADE.
 
 %package -n libglade
 Summary: Runtime library for glade.
-Group: System Environment/Libraries
 
 %description -n libglade 
 This package contains runtime libraries for glade.
 
 %package -n libglade-devel
 Summary: Development headers and libraries for glade.
-Group: Development/Libraries
 Requires: libglade = %{version}-%{release}
 
 %description -n libglade-devel 
@@ -48,7 +45,7 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%makeinstall DATADIRNAME=share
+%makeinstall 
 rm -rf %{buildroot}%{_datadir}/icons/hicolor/*.cache
 for i in ca el en_GB gl hi hu ja sl zh_CN
 do
@@ -59,7 +56,6 @@ do
 done
 
 %find_lang %{name}
-rpmclean
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -114,3 +110,6 @@ update-desktop-database ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.19.0-4
+- Rebuild for 4.0 release
+

@@ -1,8 +1,9 @@
+%define _python_bytecompile_errors_terminate_build 0
+
 Name: gedit-plugins
 Version: 3.18.0
-Release: 1
+Release: 2
 Summary: Plugins for Gedit Text editor
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -24,10 +25,9 @@ Various plugins for Gedit text editor.
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 
 %find_lang gedit-plugins
-rpmclean
 
 %post
 glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
@@ -44,3 +44,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/help/*/gedit
 %{_datadir}/appdata/*.xml
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+

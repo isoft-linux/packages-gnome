@@ -1,9 +1,8 @@
 Name:	    gmime	
 Version:    2.6.20 
-Release:	1
+Release:	2
 Summary:    Library for creating and parsing MIME messages	
 
-Group:		Desktop/Gnome/Runtime libraries
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -16,7 +15,6 @@ Internet Mail Extension (MIME).
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 %{summary}.
 
@@ -31,7 +29,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-rpmclean
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -49,4 +46,7 @@ rpmclean
 %{_datadir}/vala/vapi/gmime-2.6.deps
 %{_datadir}/vala/vapi/gmime-2.6.vapi
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 2.6.20-2
+- Rebuild for 4.0 release
+
 

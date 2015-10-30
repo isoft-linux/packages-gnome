@@ -1,9 +1,8 @@
 Summary: Library for accessing MusicBrainz servers
 Name: libmusicbrainz5
 Version: 5.0.1
-Release: 10 
+Release: 11 
 License: LGPLv2
-Group: System Environment/Libraries
 URL: http://www.musicbrainz.org/
 Source0: libmusicbrainz-%{version}.tar.gz
 BuildRequires: cmake
@@ -18,7 +17,6 @@ create CD Index Disk ids from audio CD roms.
 
 %package devel
 Summary: Headers for developing programs that will use %{name}
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 Obsoletes: libmusicbrainz4-devel < 4.0.3-5
 
@@ -48,7 +46,6 @@ make install/fast DESTDIR=%{buildroot}
 
 rm -f docs/installdox
 
-rpmclean
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
@@ -66,3 +63,6 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 5.0.1-11
+- Rebuild for 4.0 release
+

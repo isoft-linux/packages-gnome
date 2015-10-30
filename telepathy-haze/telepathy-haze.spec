@@ -1,9 +1,8 @@
 Name:		telepathy-haze
 Version:	0.8.0
-Release:	1
+Release:	2
 Summary:	A multi-protocol Libpurple connection manager for Telepathy
 
-Group:		Applications/Communications
 License:	GPLv2+
 URL:		http://developer.pidgin.im/wiki/Telepathy
 
@@ -39,7 +38,6 @@ rm -rf %{buildroot}
 make install DESTDIR=%{buildroot}
 rm -f %{buildroot}%{_datadir}/telepathy/managers/haze.manager
 
-rpmclean
 
 %check
 make check ||:
@@ -53,3 +51,6 @@ make check ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.8.0-2
+- Rebuild for 4.0 release
+

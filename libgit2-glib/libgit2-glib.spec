@@ -1,6 +1,6 @@
 Name:           libgit2-glib
 Version:        0.23.6
-Release:        1 
+Release:        2 
 Summary:        Git library for GLib
 
 License:        LGPLv2+
@@ -68,3 +68,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.23.6-2
+- Rebuild for 4.0 release
+

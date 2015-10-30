@@ -1,9 +1,8 @@
 Name:           telepathy-farstream
 Version:        0.6.2
-Release:        1
+Release:        2
 Summary:        Telepathy client library to handle Call channels
 
-Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            http://telepathy.freedesktop.org/wiki/Telepathy-Farsight
 Source0:        http://telepathy.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
@@ -33,7 +32,6 @@ Call channels.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       telepathy-glib-devel >= 0.19.0
 Requires:       farstream-devel >= 0.2.0
@@ -63,7 +61,6 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
-rpmclean
 
 %check
 make check ||:
@@ -89,3 +86,6 @@ make check ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.6.2-2
+- Rebuild for 4.0 release
+

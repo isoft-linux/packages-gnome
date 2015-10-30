@@ -1,9 +1,8 @@
 Name:	    gnome-font-viewer	
 Version:    3.16.2
-Release: 2
+Release: 3
 Summary:    Utility for previewing fonts for GNOME	
 
-Group:	    Desktop/Gnome/Application	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -23,12 +22,11 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 
 
 %find_lang gnome-font-viewer
 
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -47,3 +45,6 @@ update-desktop-database -q> /dev/null ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.16.2-3
+- Rebuild for 4.0 release
+

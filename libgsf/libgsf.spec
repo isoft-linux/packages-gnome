@@ -1,8 +1,7 @@
 Summary: GNOME Structured File library
 Name: libgsf
 Version: 1.14.34
-Release: 1
-Group: System Environment/Libraries
+Release: 2
 License: LGPLv2
 Source: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/1.14/%{name}-%{version}.tar.xz
 URL: http://www.gnome.org/projects/libgsf/
@@ -23,7 +22,6 @@ A library for reading and writing structured files (e.g. MS OLE and Zip)
 
 %package devel
 Summary: Support files necessary to compile applications with libgsf
-Group: Development/Libraries
 Requires: libgsf = %{version}-%{release}, glib2-devel, libxml2-devel
 Requires: pkgconfig
 Obsoletes: libgsf-gnome-devel < 1.14.22
@@ -48,7 +46,6 @@ make DESTDIR=%{buildroot} install
 # Remove lib rpaths
 chrpath --delete %{buildroot}%{_bindir}/gsf*
 
-rpmclean
 
 %post -p /sbin/ldconfig
 
@@ -76,6 +73,9 @@ rpmclean
 %{_mandir}/man1/gsf-vba-dump.1.gz
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.14.34-2
+- Rebuild for 4.0 release
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

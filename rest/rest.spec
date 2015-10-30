@@ -1,6 +1,6 @@
 Name: rest
 Version: 0.7.93
-Release: 5
+Release: 6
 Summary: A library for access to RESTful web services
 
 License: LGPLv2
@@ -75,5 +75,8 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_datadir}/gir-1.0/RestExtras-0.7.gir
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.7.93-6
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - rebuild. 

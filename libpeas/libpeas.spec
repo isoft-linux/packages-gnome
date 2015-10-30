@@ -1,9 +1,8 @@
 Name: libpeas
 Version: 1.16.0
-Release: 1
+Release: 2
 Summary: Plug-ins implementation convenience library	
 
-Group: Desktop/Gnome/Runtime libraries
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
@@ -17,7 +16,6 @@ to GTK+ and glib-based applications.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 %{summary}.
 
@@ -31,9 +29,8 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 %find_lang libpeas
-rpmclean
 
 %post
 /sbin/ldconfig
@@ -80,6 +77,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libpeas/*
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.16.0-2
+- Rebuild for 4.0 release
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

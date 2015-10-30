@@ -1,10 +1,9 @@
 Name:           gnome-system-log
 Version:        3.9.90
-Release:        5%{?dist}
+Release:        6%{?dist}
 Epoch:          1
 Summary:        A log file viewer for GNOME
 
-Group:          Applications/System
 License:        GPLv2+ and GFDL
 URL:            http://www.gnome.org
 Source0:        http://download.gnome.org/sources/gnome-system-log/3.9/gnome-system-log-%{version}.tar.xz
@@ -80,3 +79,6 @@ done
 %doc %{_mandir}/man1/gnome-system-log.1.gz
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1:3.9.90-6
+- Rebuild for 4.0 release
+

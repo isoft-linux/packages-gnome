@@ -1,9 +1,8 @@
 Name:		gnome-bluetooth
 Version:	3.18.0
-Release:	1
+Release:	2
 Summary:	Gnome bluetooth Utilities and Libraries
 
-Group:	    Desktop/Gnome/Runtime/Libraries	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -14,7 +13,6 @@ monitor and use Bluetooth devices.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -30,7 +28,7 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 
 rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 
@@ -64,6 +62,9 @@ update-desktop-database -q ||:
 %{_datadir}/gtk-doc/html/gnome-bluetooth/*
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

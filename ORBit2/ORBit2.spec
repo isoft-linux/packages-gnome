@@ -1,21 +1,18 @@
-%define libidl_version 0.8.2-1
-%define glib2_version 2.2.0
-
 Summary: A high-performance CORBA Object Request Broker.
 Name: ORBit2
 Version: 2.14.19
-Release: 1
+Release: 2
 Source: %{name}-%{version}.tar.bz2
 Patch0: ORBit2-2.14.3-ref-leaks.patch  
 Patch1: ORBit2-allow-deprecated.patch  
 Patch2: ORBit2-make-j-safety.patch
-Group: System Environment/Daemons
 License: LGPL/GPL
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 URL: http://www.gnome.org/projects/ORBit2/
-BuildRequires: libIDL-devel >= %{libidl_version}
-BuildRequires: glib2-devel >= %{glib2_version}
-BuildRequires: pkgconfig >= 0.14
+BuildRequires: libIDL-devel
+BuildRequires: glib2-devel
+
+BuildRequires: pkgconfig
 BuildRequires: libtool
 BuildRequires: autoconf
 BuildRequires: automake
@@ -35,7 +32,6 @@ write programs that use CORBA technology.
 
 %package devel
 Summary: Development libraries, header files and utilities for ORBit.
-Group: Development/Libraries
 #Requires: indent
 Requires: glib2-devel
 Requires: libIDL-devel >= %{libidl_version}
@@ -73,7 +69,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/ORBit-2.0/*.*a
 rm -f $RPM_BUILD_ROOT%{_libdir}/orbit-2.0/*.*a
 
-rpmclean
 
 %post -p /sbin/ldconfig
 
@@ -102,6 +97,9 @@ rm -rf %{buildroot}
 %{_datadir}/gtk-doc
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 2.14.19-2
+- Rebuild for 4.0 release
+
 * Sun Aug 02 2015 Cjacker <cjacker@foxmail.com>
 - build for new release
 

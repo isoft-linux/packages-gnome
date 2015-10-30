@@ -2,7 +2,7 @@
 
 Name:           geocode-glib
 Version:        3.18.0
-Release:        1
+Release:        2
 Summary:        Geocoding helper library
 
 License:        LGPLv2+
@@ -68,6 +68,9 @@ find $RPM_BUILD_ROOT -name '*.la' -delete
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

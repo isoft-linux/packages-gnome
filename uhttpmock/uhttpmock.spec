@@ -4,7 +4,7 @@
 
 Name:           uhttpmock
 Version:        0.5.0
-Release:        1
+Release:        2
 Summary:        HTTP web service mocking library
 License:        LGPLv2
 URL:            http://gitorious.org/uhttpmock/
@@ -54,7 +54,6 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 
-rpmclean
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
@@ -73,6 +72,9 @@ rpmclean
 %{_datadir}/gtk-doc/html/libuhttpmock*
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.5.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to 0.5.0 
 

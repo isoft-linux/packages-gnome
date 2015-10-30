@@ -1,9 +1,8 @@
 Name:           shotwell
 Version:        0.22.0
-Release:        2 
+Release:        4 
 Summary:        A photo organizer for the GNOME desktop
 
-Group:          Applications/Multimedia
 # LGPLv2+ for the code
 # CC-BY-SA for some of the icons
 License:        LGPLv2+ and CC-BY-SA
@@ -57,9 +56,6 @@ making it easy to experiment and correct errors.
 
 
 %build
-export CC=clang
-export CXX=clang++
-
 ./configure \
   --prefix=%{_prefix} \
   --lib=%{_lib} \
@@ -80,7 +76,6 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/shotwell-viewer.de
 
 %find_lang %{name} --with-gnome
 
-rpmclean
 %post
 update-desktop-database &>/dev/null || :
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -115,3 +110,9 @@ gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.22.0-4
+- Rebuild for 4.0 release
+
+* Thu Oct 22 2015 Cjacker <cjacker@foxmail.com> - 0.22.0-3
+- Rebuild with new LibRaw
+

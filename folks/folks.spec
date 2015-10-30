@@ -1,9 +1,8 @@
 Name:	    folks	
 Version:    0.11.1
-Release:	1
+Release:	2
 Summary:	Folks is a library that aggregates people from multiple sources
 
-Group:	    Desktop/Gnome/Runtime/Libraries 
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -16,7 +15,6 @@ Folks is a library that aggregates people from multiple sources
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -28,11 +26,10 @@ Group:   Desktop/Gnome/Development/Libraries
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 
 %find_lang folks
 
-rpmclean
 
 %post
 /sbin/ldconfig ||:
@@ -83,3 +80,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/folks-dummy.vapi
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.11.1-2
+- Rebuild for 4.0 release
+

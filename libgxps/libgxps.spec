@@ -1,8 +1,7 @@
 Name:           libgxps
 Version:        0.2.3.2
-Release:        1 
+Release:        2 
 Summary:        GObject based library for handling and rendering XPS documents
-Group:          System Environment/Libraries
 
 License:        LGPLv2+
 URL:            http://live.gnome.org/libgxps
@@ -26,7 +25,6 @@ documents.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description    devel
@@ -35,7 +33,6 @@ developing applications that use %{name}.
 
 %package        tools
 Summary:        Command-line utility programs for manipulating XPS files
-Group:          Applications/Text
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description    tools
@@ -58,7 +55,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 chrpath --delete $RPM_BUILD_ROOT%{_bindir}/xpsto*
 
-rpmclean
 
 %post -p /sbin/ldconfig
 
@@ -83,6 +79,9 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.3.2-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

@@ -1,9 +1,8 @@
 Summary:	High-level API for X Keyboard Extension
 Name:		libxklavier
 Version:	5.3
-Release: 	2
+Release: 	3
 License:	LGPLv2+
-Group:		Development/Libraries
 URL: http://www.freedesktop.org/wiki/Software/LibXklavier
 BuildRequires: libxml2-devel
 BuildRequires: libxkbfile-devel
@@ -24,7 +23,6 @@ commercial X servers. It is useful for creating XKB-related software
 
 %package devel
 Summary: Development files for libxklavier
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 Requires: libxml2-devel
 
@@ -68,6 +66,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.{a,la}
 %{_datadir}/gir-1.0/Xkl-1.0.gir
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 5.3-3
+- Rebuild for 4.0 release
+
 * Tue Dec 10 2013 Cjacker <cjacker@gmail.com>
 - first build, prepare for the new release.
 

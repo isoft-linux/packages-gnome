@@ -1,9 +1,10 @@
+%define _python_bytecompile_errors_terminate_build 0
+
 Name: gedit 
 Version: 3.18.0
-Release: 1
+Release: 2
 Summary:    Text editor for the GNOME desktop
 
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -32,7 +33,6 @@ gedit-plugins package.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 %{summary}.
 
@@ -47,10 +47,9 @@ export CXX=c++
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 
 %find_lang gedit 
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -90,3 +89,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/gedit
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+

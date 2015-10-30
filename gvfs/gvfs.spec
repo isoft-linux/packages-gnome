@@ -4,9 +4,8 @@
 Summary: Backends for the gio framework in GLib
 Name: gvfs
 Version: 1.26.1
-Release: 2 
+Release: 3 
 License: LGPLv2+
-Group: System Environment/Libraries
 URL: http://www.gtk.org
 Source0: http://download.gnome.org/sources/gvfs/1.26/gvfs-%{version}.tar.xz
 
@@ -41,7 +40,6 @@ framework in GLib. It includes ftp, sftp, cifs.
 
 %package devel
 Summary: Development files for gvfs
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 
 %description devel
@@ -79,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang gvfs
-rpmclean
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -126,6 +123,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ &> /dev/null ||:
 %{_includedir}/gvfs-client/*
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.26.1-3
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

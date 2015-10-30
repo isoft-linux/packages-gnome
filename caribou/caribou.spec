@@ -1,6 +1,6 @@
 Name:		caribou
 Version:	0.4.19
-Release:	1
+Release:	2
 Summary:    A simplified in-place on-screen keyboard
 
 License:	GPL
@@ -69,6 +69,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/caribou-1.0.vapi
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.4.19-2
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 0.4.19 
 

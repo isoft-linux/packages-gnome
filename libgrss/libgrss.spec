@@ -1,6 +1,6 @@
 Name:          libgrss
 Version:       0.7.0
-Release:       1%{?dist}
+Release:       2%{?dist}
 Summary:       Library for easy management of RSS/Atom/Pie feeds
 
 License:       LGPLv3+
@@ -53,5 +53,8 @@ rm -f %{buildroot}%{_libdir}/%{name}.la
 %{_datadir}/gtk-doc/html/%{name}/
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.7.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18

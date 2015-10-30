@@ -1,6 +1,6 @@
 Name:		gnome-online-accounts
 Version:	3.18.1
-Release:	1
+Release:	2
 Summary:	Gnome online accounts library
 
 License:	GPL
@@ -46,7 +46,7 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share
+make install DESTDIR=%{buildroot} 
 
 rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 
@@ -88,6 +88,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/Goa-1.0.gir
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 3.18.1
 

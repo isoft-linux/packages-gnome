@@ -1,9 +1,8 @@
 Name: gjs	
 Version: 1.43.3
-Release: 1
+Release: 2
 Summary: JavaScript bindings based on gobject-introspection	
 
-Group: Application/Desktop
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
@@ -16,7 +15,6 @@ JavaScript bindings based on gobject-introspection
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -36,7 +34,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-rpmclean
 
 %files
 %{_bindir}/gjs
@@ -52,4 +49,7 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.43.3-2
+- Rebuild for 4.0 release
+
 

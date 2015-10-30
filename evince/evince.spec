@@ -6,7 +6,7 @@
 
 Name: evince
 Version: 3.18.0
-Release: 6 
+Release: 7 
 Summary: Document viewer
 
 License: GPLv2+ and GFDL
@@ -163,6 +163,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/girepository-1.0/*.typelib
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-7
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

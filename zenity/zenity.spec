@@ -1,6 +1,6 @@
 Name:          zenity
 Version:       3.18.0
-Release:       1
+Release:       2
 Summary:       Display dialog boxes from shell scripts
 License:       LGPLv2+
 URL:           https://wiki.gnome.org/Projects/Zenity
@@ -43,6 +43,9 @@ rm $RPM_BUILD_ROOT%{_bindir}/gdialog
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 3.18.1 
 

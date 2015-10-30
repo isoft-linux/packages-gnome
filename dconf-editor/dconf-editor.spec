@@ -2,7 +2,7 @@
 
 Name:           dconf-editor
 Version:        3.18.1
-Release:        2 
+Release:        3 
 Summary:        Configuration editor for dconf 
 
 License:        LGPLv2+
@@ -72,6 +72,9 @@ fi
 #%{_datadir}/gir-1.0/dconf-0.3.gir
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-3
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 3.18.1
 

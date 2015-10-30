@@ -1,6 +1,6 @@
 Name:		gnome-control-center
 Version:	3.18.1
-Release:	1
+Release:	2
 Summary:    The GNOME Control Center	
 
 License:	GPL
@@ -75,6 +75,9 @@ update-desktop-database -q> /dev/null ||:
 %{_datadir}/sounds/gnome/default/alerts/sonar.ogg
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

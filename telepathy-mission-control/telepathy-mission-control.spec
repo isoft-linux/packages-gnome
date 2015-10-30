@@ -2,11 +2,10 @@
 
 Name:           telepathy-mission-control
 Version:        5.16.3
-Release:        1
+Release:        2
 Epoch:          1
 Summary:        Central control for Telepathy connection manager
 
-Group:          System Environment/Libraries
 License:        LGPLv2
 URL:            http://telepathy.freedesktop.org/wiki/Mission_Control
 Source0:        http://telepathy.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
@@ -35,7 +34,6 @@ account definitions and credentials.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{epoch}:%{version}-%{release}
 Requires:       dbus-devel
 Requires:       dbus-glib-devel
@@ -75,7 +73,6 @@ chrpath --delete %{buildroot}%{_libexecdir}/mission-control-5
 # Remove .la files
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 
-rpmclean
 
 %check
 make check ||:
@@ -112,3 +109,6 @@ fi
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1:5.16.3-2
+- Rebuild for 4.0 release
+

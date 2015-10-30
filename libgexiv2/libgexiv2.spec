@@ -1,9 +1,8 @@
 Name:           libgexiv2
 Version:        0.10.3
-Release:        1
+Release:        2
 Summary:        Gexiv2 is a GObject-based wrapper around the Exiv2 library
 
-Group:          System Environment/Libraries
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Projects/gexiv2
 Source0:        https://download.gnome.org/sources/gexiv2/0.10/gexiv2-0.10.3.tar.xz
@@ -21,7 +20,6 @@ It makes the basic features of Exiv2 available to GNOME applications.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -57,7 +55,6 @@ make install DESTDIR=$RPM_BUILD_ROOT LIB=%{_lib}
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 find $RPM_BUILD_ROOT -name '*.a' -exec rm -f {} ';'
 
-rpmclean
 
 %post -p /sbin/ldconfig
 
@@ -65,7 +62,6 @@ rpmclean
 
 
 %files
-%doc AUTHORS COPYING MAINTAINERS 
 %{_libdir}/libgexiv2.so.*
 %{_libdir}/girepository-1.0/GExiv2-*.typelib
 
@@ -82,5 +78,9 @@ rpmclean
 
 %files python3
 %{python3_sitearch}/gi/overrides/GExiv2.py
+%{python3_sitearch}/gi/overrides/__pycache__/*
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.10.3-2
+- Rebuild for 4.0 release
+

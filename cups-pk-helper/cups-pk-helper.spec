@@ -1,9 +1,8 @@
 Name:           cups-pk-helper
 Version:        0.2.5
-Release:        1 
+Release:        2 
 Summary:        A helper that makes system-config-printer use PolicyKit
 
-Group:          System Environment/Base
 License:        GPLv2+
 URL:            http://www.freedesktop.org/wiki/Software/cups-pk-helper/
 Source0:        http://www.freedesktop.org/software/cups-pk-helper/releases/cups-pk-helper-%{version}.tar.xz
@@ -55,3 +54,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/polkit-1/actions/org.opensuse.cupspkhelper.mechanism.policy
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.5-2
+- Rebuild for 4.0 release
+

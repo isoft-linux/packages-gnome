@@ -1,9 +1,8 @@
 Summary: Microsoft CHM viewer 
 Name:    chmsee
 Version: 2.0 
-Release: 1 
+Release: 2 
 License: LGPL
-Group:  Applications/Multimedia 
 Source: %{name}-%{version}.tar.gz
 Source10: chmlib-0.40.tar.bz2 
 Patch0:  chmsee-link-to-internal-chmlib.patch
@@ -41,7 +40,6 @@ pushd build
 popd
 
 %find_lang chmsee
-rpmclean
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -56,3 +54,8 @@ rpmclean
 %{_datadir}/chmsee/*
 %{_datadir}/icons/hicolor/*/mimetypes/chm.*
 %{_datadir}/pixmaps/chmsee-icon.png
+
+%changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 2.0-2
+- Rebuild for 4.0 release
+

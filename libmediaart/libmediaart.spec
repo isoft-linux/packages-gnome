@@ -1,9 +1,8 @@
 Name:	    libmediaart	
 Version:    1.9.0 
-Release:	1
+Release:	2
 Summary:    Library for managing media art caches	
 
-Group:	    Desktop/Gnome/Runtime Libraries	
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -14,7 +13,6 @@ Library tasked with managing, extracting and handling media art caches.
 %package devel
 Summary: Development files for %{name} 
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 %{summary}.
 
@@ -30,7 +28,6 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-rpmclean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -58,4 +55,7 @@ make check ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.9.0-2
+- Rebuild for 4.0 release
+
 

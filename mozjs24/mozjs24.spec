@@ -1,9 +1,8 @@
 Summary:	JavaScript interpreter and libraries
 Name:		mozjs24
 Version:	24.2.0
-Release:	3
+Release:	4
 License:	MPLv2.0
-Group:		Development/Languages
 URL:		http://www.mozilla.org/js/
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-%{version}.tar.bz2
 BuildRequires:	pkgconfig(nspr)
@@ -22,7 +21,6 @@ with only mild differences from the published standard.
 
 %package devel
 Summary: Header files, libraries and development documentation for %{name}
-Group: Development/Libraries
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
@@ -76,3 +74,6 @@ rm -f %{buildroot}%{_bindir}/js24-config
 %{_includedir}/mozjs-24
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 24.2.0-4
+- Rebuild for 4.0 release
+

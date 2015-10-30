@@ -1,9 +1,8 @@
 Name:	    gupnp	
 Version:    0.20.14
-Release:	1
+Release:	2
 Summary:    A framework for creating UPnP devices & control points	
 
-Group:		Desktop/Gnome/Runtime/Libraries
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -17,7 +16,6 @@ The GUPnP API is intended to be easy to use, efficient and flexible.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development/Libraries
 %description devel
 %{summary}.
 
@@ -36,7 +34,6 @@ make install DESTDIR=%{buildroot}
 
 
 rm -rf $RPM_BUILD_ROOT%{_libdir}/libgupnp*.a
-rpmclean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -57,4 +54,7 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.20.14-2
+- Rebuild for 4.0 release
+
 

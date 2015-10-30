@@ -1,9 +1,8 @@
 Name:           gnome-video-effects
 Version:        0.4.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Collection of GStreamer video effects
 
-Group:          System Environment/Libraries
 License:        GPLv2
 URL:            http://live.gnome.org/GnomeVideoEffects
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/0.4/%{name}-%{version}.tar.xz
@@ -36,6 +35,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.4.1-4
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

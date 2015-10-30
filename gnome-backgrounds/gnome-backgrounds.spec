@@ -1,12 +1,12 @@
 Name:		gnome-backgrounds
 Version:	3.18.0
-Release:	1
+Release:	2
 Summary:	Backgrounds picture for gnome
 
-Group:		Desktop/Applications
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+BuildArch: noarch
 
 %description
 Backgrounds picture for gnome
@@ -33,6 +33,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

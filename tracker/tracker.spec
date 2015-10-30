@@ -9,10 +9,9 @@
 
 Name:           tracker
 Version:        1.6.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Desktop-neutral search tool and indexer
 
-Group:          Applications/System
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Projects/Tracker
 Source0:        https://download.gnome.org/sources/%{name}/1.6/%{name}-%{version}.tar.xz
@@ -88,7 +87,6 @@ all types of files and other first class objects
 
 %package devel
 Summary:        Headers for developing programs that will use %{name}
-Group:          Development/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
@@ -115,7 +113,6 @@ Graphical frontend to tracker configuration.
 
 %package firefox-plugin
 Summary:        A simple bookmark exporter for Tracker
-Group:          User Interface/Desktops
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description firefox-plugin
@@ -125,7 +122,6 @@ for them for example using tracker-needle.
 %if 0%{?with_nautilus}
 %package nautilus-plugin
 Summary:        Tracker's nautilus plugin
-Group:          User Interface/Desktops
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description nautilus-plugin
@@ -136,7 +132,6 @@ search in nautilus using tracker is built-in directly in the nautilus package.
 %if 0%{?with_thunderbird}
 %package thunderbird-plugin
 Summary:        Thunderbird extension to export mails to Tracker
-Group:          User Interface/Desktops
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description thunderbird-plugin
@@ -145,7 +140,6 @@ A simple Thunderbird extension to export mails to Tracker.
 
 %package docs
 Summary:        Documentations for tracker
-Group:          Documentation
 BuildArch:      noarch
 
 %description docs
@@ -296,3 +290,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.6.0-2
+- Rebuild for 4.0 release
+

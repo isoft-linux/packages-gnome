@@ -11,10 +11,9 @@
 Summary: The GNOME Display Manager
 Name: gdm
 Version: 3.18.0
-Release: 1
+Release: 2
 Epoch: 1
 License: GPLv2+
-Group: User Interface/X
 URL: http://download.gnome.org/sources/gdm
 #VCS: git:git://git.gnome.org/gdm
 Source: http://download.gnome.org/sources/gdm/3.12/gdm-%{version}.tar.xz
@@ -86,7 +85,6 @@ Provides: gdm-plugin-fingerprint = %{epoch}:%{version}-%{release}
 
 %package devel
 Summary: Development files for gdm
-Group: Development/Libraries
 Requires: %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description devel
@@ -143,7 +141,7 @@ mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/gdm/Init
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/gdm/PreSession
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/gdm/PostSession
 
-make install DESTDIR=$RPM_BUILD_ROOT DATADIRNAME=share
+make install DESTDIR=$RPM_BUILD_ROOT 
 
 # docs go elsewhere
 rm -rf $RPM_BUILD_ROOT/%{_prefix}/doc
@@ -171,7 +169,6 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/gdm/greeter/applications/polkit-gnome-authenti
 
 %find_lang gdm --with-gnome
 
-rpmclean
 %pre
 /usr/sbin/useradd -M -u 42 -d /var/lib/gdm -s /sbin/nologin -r gdm > /dev/null 2>&1
 /usr/sbin/usermod -d /var/lib/gdm -s /sbin/nologin gdm >/dev/null 2>&1
@@ -261,6 +258,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_libdir}/pkgconfig/gdm.pc
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1:3.18.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

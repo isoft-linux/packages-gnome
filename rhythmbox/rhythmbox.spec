@@ -1,9 +1,8 @@
 Name:		rhythmbox
 Version:	3.2
-Release: 	2	
+Release: 	3	
 Summary:    Gnome music player	
 
-Group:		Desktop/Gnome/Application
 License:	GPL
 URL:	    https://wiki.gnome.org/Apps/Rhythmbox/	
 Source0:	%{name}-%{version}.tar.xz
@@ -23,7 +22,6 @@ supporting a music library, multiple playlists, internet radio, and more.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
-Group:   Desktop/Gnome/Development libraries
 %description devel
 This package contains the development files to build rhythmbox plugin. 
 
@@ -61,7 +59,6 @@ make %{?_smp_mflags}
 make install DESTDIR=%{buildroot} 
 %find_lang rhythmbox
 
-rpmclean
 
 %post
 update-desktop-database -q> /dev/null ||:
@@ -107,4 +104,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/MPID-3.0.gir
 %{_datadir}/gir-1.0/RB-3.0.gir
 %{_datadir}/gtk-doc/html/rhythmbox
+
+
+%changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.2-3
+- Rebuild for 4.0 release
 

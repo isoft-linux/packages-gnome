@@ -1,9 +1,8 @@
 Name:	    sushi	
 Version:    3.18.0 
-Release:	1
+Release:	2
 Summary:    A quick previewer for Nautilus	
 
-Group:		Desktop/Gnome/Runtime
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -29,7 +28,6 @@ make install DESTDIR=%{buildroot}
 
 %find_lang sushi
 
-rpmclean
 
 %post
 #glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
@@ -50,6 +48,9 @@ rpmclean
 %{_datadir}/sushi/*
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Fri Sep 25 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

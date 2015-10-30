@@ -6,10 +6,9 @@
 
 Name:           telepathy-glib
 Version:        0.24.1
-Release:        1
+Release:        2
 Summary:        GLib bindings for Telepathy
 
-Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            http://telepathy.freedesktop.org/wiki/FrontPage
 Source0:        http://telepathy.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
@@ -32,7 +31,6 @@ voice calls and video calls.
 
 %package vala
 Summary:	Vala bindings for %{name}
-Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	vala
 
@@ -43,7 +41,6 @@ Vala bindings for %{name}.
 
 %package 	devel
 Summary:	Development files for %{name}
-Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-vala = %{version}-%{release}
 Requires:	dbus-devel >= %{dbus_ver}
@@ -70,7 +67,6 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
-rpmclean
 
 %check
 make check ||:
@@ -102,3 +98,6 @@ make check ||:
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.24.1-2
+- Rebuild for 4.0 release
+

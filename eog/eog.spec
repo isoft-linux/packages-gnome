@@ -1,6 +1,6 @@
 Name: eog	
 Version: 3.18.0
-Release: 1
+Release: 2
 Summary: Eye of GNOME image viewer	
 
 License: GPL
@@ -77,6 +77,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/eog
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
+- Rebuild for 4.0 release
+
 * Sat Oct 17 2015 Cjacker <cjacker@foxmail.com>
 - update to 3.18.0
 

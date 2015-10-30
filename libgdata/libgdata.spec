@@ -1,9 +1,8 @@
 Name:	    libgdata	
 Version:	0.17.3
-Release:	1
+Release:	2
 Summary:	libgdata is a GLib-based library for accessing online service APIs
 
-Group:		System environment/Libraries
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
@@ -19,7 +18,6 @@ libgdata is a GLib-based library for accessing online service APIs.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -34,12 +32,11 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=%{buildroot} DATADIRNAME=share 
+make install DESTDIR=%{buildroot}  
 
 rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 
 %find_lang gdata
-rpmclean
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -61,6 +58,9 @@ rpmclean
 %{_datadir}/vala/vapi/libgdata.vapi
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.17.3-2
+- Rebuild for 4.0 release
+
 * Thu Sep 24 2015 Cjacker <cjacker@foxmail.com>
 - update to gnome 3.18
 

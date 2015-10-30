@@ -1,9 +1,8 @@
 Name:           libnice
 Version:        0.1.13
-Release:        2
+Release:        3
 Summary:        GLib ICE implementation
 
-Group:          System Environment/Libraries
 License:        LGPLv2 and MPLv1.1
 URL:            http://nice.freedesktop.org/wiki/
 Source0:        http://nice.freedesktop.org/releases/%{name}-%{version}.tar.gz
@@ -27,7 +26,6 @@ for audio/video calls.
 
 %package        gstreamer0
 Summary:        GStreamer plugin for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    gstreamer0
@@ -36,7 +34,6 @@ The %{name}-gstreamer package contains a gstreamer 0.10 plugin for %{name}.
 
 %package        gstreamer
 Summary:        GStreamer plugin for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    gstreamer
@@ -45,7 +42,6 @@ The %{name}-gstreamer package contains a gstreamer 1.0 plugin for %{name}.
 
 %package        examples
 Summary:        Simple %{name} usage examples
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    examples
@@ -54,7 +50,6 @@ The %{name}-examples package contains usage (simple, threaded and sdp) examples.
 
 %package        devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 Requires:	glib2-devel
 Requires:	pkgconfig
@@ -77,7 +72,6 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
-rpmclean
 
 %check
 #three test failed.
@@ -115,3 +109,6 @@ rpmclean
 
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.1.13-3
+- Rebuild for 4.0 release
+

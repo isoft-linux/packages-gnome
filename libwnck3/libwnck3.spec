@@ -1,11 +1,10 @@
 Summary: Window Navigator Construction Kit
 Name: libwnck3
 Version: 3.14.0
-Release: 1
+Release: 2
 URL: http://download.gnome.org/sources/libwnck/
 Source0: http://download.gnome.org/sources/libwnck/3.4/libwnck-%{version}.tar.xz
 License: LGPLv2+
-Group: System Environment/Libraries
 
 Requires: startup-notification
 
@@ -28,7 +27,6 @@ about open windows, workspaces, their names/icons, and so forth.
 
 %package devel
 Summary: Libraries and headers for libwnck
-Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 
 %description devel
@@ -50,7 +48,6 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 %find_lang libwnck-3.0
 
-rpmclean
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
@@ -70,3 +67,6 @@ rpmclean
 %doc %{_datadir}/gtk-doc
 
 %changelog
+* Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.14.0-2
+- Rebuild for 4.0 release
+
