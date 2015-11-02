@@ -9,7 +9,7 @@
 
 Name:           tracker
 Version:        1.6.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Desktop-neutral search tool and indexer
 
 License:        GPLv2+
@@ -290,6 +290,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Mon Nov 02 2015 Cjacker <cjacker@foxmail.com> - 1.6.0-3
+- Rebuild with icu 56.1
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.6.0-2
 - Rebuild for 4.0 release
 

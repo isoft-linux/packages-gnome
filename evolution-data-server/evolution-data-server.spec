@@ -1,6 +1,6 @@
 Name:	    evolution-data-server	
 Version:	3.18.1
-Release:	2
+Release:	3
 Summary:	Evolution Data Server
 
 License:	GPL
@@ -77,6 +77,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_datadir}/vala/vapi/*
 
 %changelog
+* Mon Nov 02 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-3
+- Rebuild with icu 56.1
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
