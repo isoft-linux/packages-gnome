@@ -11,33 +11,81 @@ Patch1:     gnome-shell-hide-calendar-events.patch
 Patch2:     gnome-shell-default-favorite.patch
 Patch3:     gnome-shell-disable-hot-corner.patch
 
-BuildRequires:	caribou
-BuildRequires:  evolution-data-server-devel
-BuildRequires:  libcanberra-gtk3-devel
+## Needed when we re-autogen
+BuildRequires:  autoconf >= 2.53
+BuildRequires:  automake >= 1.10
+BuildRequires:  gnome-common >= 2.2.0
+BuildRequires:  libtool >= 1.4.3
+BuildRequires:  caribou-devel
+BuildRequires:  chrpath
 BuildRequires:  clutter-devel
-BuildRequires:  cogl-devel
-BuildRequires:  libcroco-devel
-BuildRequires:  gcr-devel 
-BuildRequires:  gstreamer-devel
-BuildRequires:  libical-devel
-BuildRequires:  json-glib-devel
-BuildRequires:  mutter-devel >= 3.14
-BuildRequires:  mozjs24-devel
-BuildRequires:  libnm-gtk-devel
-BuildRequires:  nspr-devel
-BuildRequires:  nss-devel
-BuildRequires:  polkit-devel
-BuildRequires:  pulseaudio-libs-devel 
-BuildRequires:  libsecret-devel
-BuildRequires:  sqlite-devel
-BuildRequires:  startup-notification-devel
-BuildRequires:  systemd-devel
-BuildRequires:  telepathy-glib-devel
-BuildRequires:  gnome-control-center
+BuildRequires:  dbus-glib-devel
+BuildRequires:  desktop-file-utils
+BuildRequires:  evolution-data-server-devel
+BuildRequires:  gcr-devel
 BuildRequires:  gjs-devel
+BuildRequires:  glib2-devel
+BuildRequires:  gobject-introspection
+BuildRequires:  json-glib-devel
+BuildRequires:  upower-devel
+BuildRequires:  libgnome-keyring-devel
+BuildRequires:  libnm-gtk-devel
+BuildRequires:  NetworkManager-glib-devel
+BuildRequires:  polkit-devel
+BuildRequires:  startup-notification-devel
+BuildRequires:  telepathy-glib-devel
+BuildRequires:  telepathy-logger-devel
+# for screencast recorder functionality
+BuildRequires:  gstreamer-devel
+BuildRequires:  gtk3-devel
+BuildRequires:  intltool
+BuildRequires:  libcanberra-devel
+BuildRequires:  libcroco-devel
+BuildRequires:  python3
 
-Requires: caribou
-Requires: gjs
+# for barriers
+BuildRequires:  libXfixes-devel
+# used in unused BigThemeImage
+BuildRequires:  librsvg2-devel
+BuildRequires:  mutter-devel
+BuildRequires:  pulseaudio-libs-devel
+BuildRequires:  gnome-bluetooth-devel >= %{gnome_bluetooth_version}
+
+#We should seperate gnome-control-centor to bin/devel package.
+BuildRequires:  gnome-control-center
+
+# Bootstrap requirements
+BuildRequires: gtk-doc gnome-common
+Requires:       gnome-bluetooth
+Requires:       gnome-desktop3
+Requires:       gnome-session
+Requires:       gobject-introspection
+Requires:       gjs
+Requires:       gtk3
+# needed for loading SVG's via gdk-pixbuf
+Requires:       librsvg2
+# needed as it is now split from Clutter
+Requires:       json-glib
+Requires:       libgsystem
+# For $libdir/mozilla/plugins
+Requires:       mutter
+Requires:       upower
+Requires:       polkit
+Requires:       gsettings-desktop-schemas
+Requires:       libcroco
+Requires:       telepathy-logger
+# needed for schemas
+Requires:       at-spi2-atk
+# needed for on-screen keyboard
+Requires:       caribou
+# needed for the user menu
+Requires:       accountsservice-libs
+Requires:       gdm
+Requires:       clutter
+Requires:  gnome-control-center
+# needed by some utilities
+Requires:       python3
+
 %description
 GNOME Shell provides core user interface functions for the GNOME 3 desktop,
 like switching to windows and launching applications. GNOME Shell takes
