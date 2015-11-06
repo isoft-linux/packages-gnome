@@ -40,6 +40,7 @@ BuildRequires:  gstreamer-devel
 BuildRequires:  gtk3-devel
 BuildRequires:  intltool
 BuildRequires:  libcanberra-devel
+BuildRequires:  libcanberra-gtk3-devel
 BuildRequires:  libcroco-devel
 BuildRequires:  python3
 
