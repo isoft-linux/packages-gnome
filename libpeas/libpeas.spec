@@ -1,11 +1,14 @@
 Name: libpeas
 Version: 1.16.0
-Release: 2
+Release: 3
 Summary: Plug-ins implementation convenience library	
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
+BuildRequires: pkgconfig
+BuildRequires: gtk3-devel
+BuildRequires: gobject-introspection-devel
 BuildRequires: python-devel
 BuildRequires: python3-devel
 
@@ -77,6 +80,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libpeas/*
 
 %changelog
+* Fri Nov 06 2015 Cjacker <cjacker@foxmail.com> - 1.16.0-3
+- Rebuild with python3.5
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.16.0-2
 - Rebuild for 4.0 release
 

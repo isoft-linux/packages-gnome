@@ -1,6 +1,6 @@
 Name:           libgexiv2
 Version:        0.10.3
-Release:        2
+Release:        3
 Summary:        Gexiv2 is a GObject-based wrapper around the Exiv2 library
 
 License:        GPLv2+
@@ -81,6 +81,9 @@ find $RPM_BUILD_ROOT -name '*.a' -exec rm -f {} ';'
 %{python3_sitearch}/gi/overrides/__pycache__/*
 
 %changelog
+* Fri Nov 06 2015 Cjacker <cjacker@foxmail.com> - 0.10.3-3
+- Rebuild with python3.5
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.10.3-2
 - Rebuild for 4.0 release
 

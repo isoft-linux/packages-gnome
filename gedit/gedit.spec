@@ -1,20 +1,35 @@
 %define _python_bytecompile_errors_terminate_build 0
 
 Name: gedit 
-Version: 3.18.0
-Release: 2
-Summary:    Text editor for the GNOME desktop
+Version: 3.18.1
+Release: 3
+Summary: Text editor for the GNOME desktop
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
-BuildRequires:  gtk3-devel
-BuildRequires:  iso-codes-devel
-BuildRequires:  gtksourceview-devel
-BuildRequires:  libpeas-devel
-BuildRequires:  yelp-tools
-BuildRequires:  vala
-BuildRequires:  python3-devel
+License: GPL
+URL: http://www.gnome.org
+Source0: http://ftp.gnome.org/pub/GNOME/sources/gedit/3.18/%{name}-%{version}.tar.xz
+
+BuildRequires: gnome-common
+BuildRequires: pkgconfig(enchant)
+BuildRequires: pkgconfig(glib-2.0)
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: pkgconfig(gsettings-desktop-schemas)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(gtksourceview-3.0)
+BuildRequires: pkgconfig(iso-codes)
+BuildRequires: pkgconfig(libpeas-gtk-1.0)
+BuildRequires: pkgconfig(pygobject-3.0)
+BuildRequires: desktop-file-utils
+BuildRequires: gettext
+BuildRequires: which
+BuildRequires: autoconf, automake, libtool
+BuildRequires: intltool
+BuildRequires: yelp-tools
+BuildRequires: itstool
+BuildRequires: vala-tools
+BuildRequires: python3-devel
+BuildRequires: python3-gobject
+BuildRequires: /usr/bin/appstream-util
 
 %description
 gedit is a small, but powerful text editor designed specifically for
@@ -89,6 +104,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/gedit
 
 %changelog
+* Fri Nov 06 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-3
+- Update to 3.18.1
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
