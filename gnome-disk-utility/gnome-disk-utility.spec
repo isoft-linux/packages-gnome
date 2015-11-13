@@ -1,14 +1,37 @@
-Name:	    gnome-disk-utility	
-Version:    3.18.1
-Release: 2
-Summary:    Disks application for dealing with storage devices	
+Name: gnome-disk-utility	
+Version: 3.18.2
+Release: 2 
+Summary: Disks application for dealing with storage devices	
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
-BuildRequires: libdvdread-devel
-BuildRequires: gnome-settings-daemon-devel
-BuildRequires: libpwquality-devel
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
+
+BuildRequires: appstream-glib 
+BuildRequires: desktop-file-utils
+BuildRequires: docbook-style-xsl
+BuildRequires: gettext
+BuildRequires: gnome-common
+BuildRequires: intltool
+# for xsltproc
+BuildRequires: libxslt
+BuildRequires: pkgconfig(dvdread)
+BuildRequires: pkgconfig(glib-2.0)
+BuildRequires: pkgconfig(gnome-settings-daemon)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(libcanberra-gtk3)
+BuildRequires: pkgconfig(liblzma)
+BuildRequires: pkgconfig(libnotify)
+BuildRequires: pkgconfig(libsecret-1)
+BuildRequires: pkgconfig(libsystemd-login)
+BuildRequires: pkgconfig(pwquality)
+BuildRequires: pkgconfig(udisks2)
+
+Requires:      udisks2
+
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
 
 %description
 The GNOME Disk Utility package provides applications used for dealing with storage devices.
@@ -71,6 +94,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
