@@ -1,21 +1,33 @@
 Name: vino	
-Version: 3.18.0
+Version: 3.18.1
 Release: 2
 Summary: A remote desktop system for GNOME	
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
-BuildRequires: telepathy-glib-devel
-BuildRequires: avahi-glib-devel
-BuildRequires: libsecret-devel 
+
+BuildRequires: pkgconfig(avahi-client)
+BuildRequires: pkgconfig(avahi-glib)
+BuildRequires: pkgconfig(gnutls)
+BuildRequires: pkgconfig(gtk+-x11-3.0)
+BuildRequires: pkgconfig(libnotify)
+BuildRequires: pkgconfig(libsecret-1)
+BuildRequires: pkgconfig(telepathy-glib)
+BuildRequires: libgcrypt-devel
+BuildRequires: libSM-devel
+BuildRequires: libXt-devel, libXtst-devel, libXdamage-devel
+BuildRequires: intltool
+BuildRequires: gettext
+BuildRequires: gnome-common
+BuildRequires: desktop-file-utils
+
 %description
 Vino is a VNC server for GNOME. It allows remote users to
 connect to a running GNOME session using VNC.
 
 %prep
 %setup -q
-
 
 %build
 %configure
@@ -42,8 +54,10 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/glib-2.0/schemas/org.gnome.Vino.gschema.xml
 %{_datadir}/telepathy/clients/Vino.client
 
-
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
