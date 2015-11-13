@@ -43,6 +43,8 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot} 
 
+install -m0644 -D %{SOURCE1} $RPM_BUILD_ROOT/usr/lib/udev/rules.d/61-gnome-bluetooth-rfkill.rules
+
 rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 
 %find_lang gnome-bluetooth2
@@ -63,7 +65,9 @@ update-desktop-database -q ||:
 %dir %{_datadir}/gnome-bluetooth
 %{_datadir}/gnome-bluetooth/pin-code-database.xml
 %{_datadir}/icons/hicolor/*/*/*
+%{_libdir}/udev/rules.d/61-gnome-bluetooth-rfkill.rules
 %{_mandir}/man1/bluetooth-sendto.1.gz
+
 
 %files devel
 %dir %{_includedir}/gnome-bluetooth
