@@ -1,13 +1,23 @@
 Name: gjs	
-Version: 1.43.3
-Release: 2
+Version: 1.44.0
+Release: 2 
 Summary: JavaScript bindings based on gobject-introspection	
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
 
-BuildRequires:	mozjs24-devel
+BuildRequires: mozjs24-devel
+BuildRequires: cairo-gobject-devel
+BuildRequires: gobject-introspection-devel
+BuildRequires: readline-devel
+BuildRequires: dbus-glib-devel
+BuildRequires: gtk3-devel
+BuildRequires: intltool
+BuildRequires: pkgconfig
+# Bootstrap requirements
+BuildRequires: gtk-doc gnome-common
+
 Requires:	mozjs24
 
 %description
@@ -49,6 +59,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 1.44.0-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.43.3-2
 - Rebuild for 4.0 release
 
