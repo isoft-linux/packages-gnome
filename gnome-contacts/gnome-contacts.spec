@@ -28,6 +28,7 @@ BuildRequires:  pkgconfig(geocode-glib-1.0)
 BuildRequires:  pkgconfig(gnome-desktop-3.0)
 BuildRequires:  pkgconfig(goa-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0) >= %{gtk3_version}
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
 
 Requires:       geocode-glib
 Requires:       gtk3

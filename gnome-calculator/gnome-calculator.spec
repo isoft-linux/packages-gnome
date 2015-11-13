@@ -18,6 +18,8 @@ BuildRequires: itstool
 BuildRequires: mpfr-devel
 BuildRequires: appstream-glib 
 
+BuildRequires: vala
+
 %description
 gnome-calculator is a powerful graphical calculator with financial,
 logical and scientific modes. It uses a multiple precision package
