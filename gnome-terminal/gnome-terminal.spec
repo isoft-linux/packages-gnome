@@ -1,15 +1,29 @@
-Name:	    gnome-terminal	
-Version:	3.18.1
-Release:	2
-Summary:    Terminal emulator for GNOME	
+Name: gnome-terminal	
+Version: 3.18.2
+Release: 2
+Summary: Terminal emulator for GNOME	
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 
+BuildRequires: dbus-x11
+BuildRequires: glib2-devel
+BuildRequires: gtk3-devel
+BuildRequires: gsettings-desktop-schemas-devel
 BuildRequires: vte3-devel
+BuildRequires: desktop-file-utils
+BuildRequires: gettext
+BuildRequires: intltool
+BuildRequires: gnome-common
+BuildRequires: autoconf automake libtool
+BuildRequires: itstool
+BuildRequires: dconf-devel
+BuildRequires: libuuid-devel
 BuildRequires: nautilus-devel
-BuildRequires: gnome-shell-devel
+BuildRequires: gnome-shell
+BuildRequires: appdata-tools
+BuildRequires: vala-devel
 
 %description
 gnome-terminal is a terminal emulator for GNOME. It features the ability to use
@@ -19,7 +33,14 @@ multiple terminals in a single window (tabs) and profiles support.
 %setup -q
 
 %build
-%configure --disable-static --disable-migration --disable-schemas-compile
+%configure \
+  --disable-static \
+  --disable-migration \
+  --disable-schemas-compile \
+  --disable-gterminal \
+  --with-gtk=3.0 \
+  --with-nautilus-extension
+
 make %{?_smp_mflags}
 
 %install
@@ -51,6 +72,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
