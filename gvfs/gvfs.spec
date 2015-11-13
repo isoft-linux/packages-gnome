@@ -117,7 +117,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ &> /dev/null ||:
 %defattr(-, root, root, -)
 %{_bindir}/*
 %{_libdir}/gio/modules/*
-%{_libdir}/tmpfiles.d/*
+#%{_libdir}/tmpfiles.d/*
 %dir %{_libdir}/gvfs
 %{_libdir}/gvfs/*
 %{_libexecdir}/*
