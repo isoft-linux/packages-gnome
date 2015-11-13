@@ -29,6 +29,7 @@ BuildRequires: systemd-devel >= 44
 BuildRequires: libxslt-devel
 BuildRequires: gtk3-devel
 BuildRequires: docbook-style-xsl
+BuildRequires: libgphoto2-devel
 
 BuildRequires: automake autoconf libtool
 
