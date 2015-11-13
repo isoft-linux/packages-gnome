@@ -49,6 +49,7 @@ BuildRequires:  libwacom-devel >= 0.7
 BuildRequires:  xorg-x11-drv-wacom-devel
 BuildRequires:  libcanberra-gtk3-devel
 BuildRequires:  geoclue2-devel
+BuildRequires:  pkgconfig(libnm-glib) pkgconfig(libnm-util)
 
 Requires: colord
 Requires: geoclue2 >= %{geoclue_version}
