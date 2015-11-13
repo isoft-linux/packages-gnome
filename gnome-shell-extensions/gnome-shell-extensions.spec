@@ -1,12 +1,18 @@
 Name: gnome-shell-extensions	
-Version: 3.18.1
+Version: 3.18.2
 Release: 2
 Summary: Extensions to Modify and extend GNOME Shell functionality and behavior	
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
-Requires:   gnome-shell
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
+
+BuildRequires:  intltool
+BuildRequires:  pkgconfig(gnome-desktop-3.0)
+BuildRequires:  pkgconfig(libgtop-2.0)
+
+Requires: gnome-shell
+
 BuildArch: noarch
 
 %description
@@ -53,6 +59,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gnome-shell/extensions/*
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
