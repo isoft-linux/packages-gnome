@@ -5,36 +5,43 @@
 %define theme_version 2.17.1
 
 Name: evince
-Version: 3.18.0
-Release: 7 
+Version: 3.18.2
+Release: 2
 Summary: Document viewer
 
 License: GPLv2+ and GFDL
 URL: http://projects.gnome.org/evince/
 Source0: http://download.gnome.org/sources/%{name}/2.26/%{name}-%{version}.tar.xz
 
-BuildRequires:	gtk3-devel >= %{gtk3_version}
-BuildRequires:	glib2-devel >= %{glib2_version}
-BuildRequires:	poppler-glib-devel >= %{poppler_version}
-BuildRequires:	libXt-devel
-BuildRequires:	libtiff-devel
-BuildRequires:	libjpeg-devel
-BuildRequires:  libsecret-devel
-BuildRequires:	dbus-glib-devel >= %{dbus_version}
-BuildRequires:	gettext
-BuildRequires:	desktop-file-utils
-BuildRequires:	libtool
-BuildRequires:	gtk-doc
-BuildRequires:	intltool itstool
-BuildRequires:  libspectre-devel
-BuildRequires:  djvulibre-devel
-BuildRequires:  libgxps-devel
-BuildRequires:  gobject-introspection-devel
-#for nautilus extension 
-BuildRequires:  nautilus-devel
 
-#for thumbnail
-BuildRequires: gnome-desktop3-devel
+BuildRequires:  pkgconfig(adwaita-icon-theme)
+BuildRequires:  pkgconfig(gio-unix-2.0)
+BuildRequires:  pkgconfig(gnome-desktop-3.0)
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(gtk+-x11-3.0) 
+BuildRequires:  pkgconfig(libsecret-1)
+BuildRequires:  pkgconfig(libspectre)
+BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  pkgconfig(poppler-glib)
+BuildRequires:  libtiff-devel
+BuildRequires:  gettext
+BuildRequires:  libtool
+BuildRequires:  gtk-doc
+BuildRequires:  yelp-tools
+BuildRequires:  intltool
+BuildRequires:  desktop-file-utils 
+
+# For autoconf.sh
+BuildRequires:  gnome-common >= 2.26
+BuildRequires:  appstream-glib
+
+# for the nautilus properties page
+BuildRequires: pkgconfig(libnautilus-extension)
+# for the djvu backend
+BuildRequires: djvulibre-devel
+# for the xps backend
+BuildRequires:  pkgconfig(libgxps)
+
 Requires:   libevince = %{version}-%{release}
 Requires(pre): desktop-file-utils
 Requires(pre): gtk3
@@ -163,6 +170,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/girepository-1.0/*.typelib
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-7
 - Rebuild for 4.0 release
 
