@@ -23,6 +23,9 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXrender-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libXcomposite-devel
+BuildRequires: libxkbfile-devel
+BuildRequires: libxkbcommon-devel
+BuildRequires: libxkbcommon-x11-devel
 #otherwise mutter will hang
 BuildRequires: libXi >= 1.7.4
 BuildRequires: upower-devel
@@ -32,6 +35,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: gtk-doc intltool
 BuildRequires: libcanberra-devel
 BuildRequires: gsettings-desktop-schemas-devel
+
 
 # Make sure this can't be installed with an old gnome-shell build because of
 # an ABI change.
