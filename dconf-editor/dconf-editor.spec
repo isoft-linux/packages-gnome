@@ -1,8 +1,8 @@
 %define glib2_version 2.42.0
 
 Name:           dconf-editor
-Version:        3.18.1
-Release:        3 
+Version:        3.18.2
+Release:        2 
 Summary:        Configuration editor for dconf 
 
 License:        LGPLv2+
@@ -10,14 +10,18 @@ URL:            http://live.gnome.org/dconf
 Source0:        http://download.gnome.org/sources/dconf/0.4/%{name}-%{version}.tar.xz
 
 BuildRequires:  glib2-devel >= %{glib2_version}
-Requires:       dbus
-Requires:		glib2
-BuildRequires:  gtk3-devel
-BuildRequires:  libxml2-devel
-BuildRequires:  gobject-introspection-devel
-BuildRequires:  autoconf automake libtool
-BuildRequires:  gobject-introspection-devel >= 0.9.3
+Requires: dbus
+Requires: glib2
 
+BuildRequires:  appstream-glib
+BuildRequires:  desktop-file-utils
+BuildRequires:  intltool
+BuildRequires:  pkgconfig(dconf)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gmodule-2.0)
+BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(libxml-2.0)
+BuildRequires:  vala
 
 %description
 docnf-editor allows you to browse and modify dconf databases.
@@ -72,6 +76,9 @@ fi
 #%{_datadir}/gir-1.0/dconf-0.3.gir
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-3
 - Rebuild for 4.0 release
 
