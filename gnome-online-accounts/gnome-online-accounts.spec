@@ -35,6 +35,7 @@ developing applications that use %{name}.
 
 
 %prep
+%setup
 
 %build
 %configure \
