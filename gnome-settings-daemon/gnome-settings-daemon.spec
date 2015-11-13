@@ -47,6 +47,7 @@ BuildRequires:  docbook-style-xsl
 BuildRequires:  xorg-x11-xkbdata
 BuildRequires:  libwacom-devel >= 0.7
 BuildRequires:  xorg-x11-drv-wacom-devel
+BuildRequires:  libcanberra-gtk3-devel
 
 Requires: colord
 Requires: geoclue2 >= %{geoclue_version}
