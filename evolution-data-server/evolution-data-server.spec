@@ -56,6 +56,7 @@ BuildRequires: pkgconfig(nss) >= %{nss_version}
 BuildRequires: pkgconfig(sqlite3) >= %{sqlite_version}
 BuildRequires: pkgconfig(webkitgtk-3.0) >= %{webkitgtk_version}
 BuildRequires: pkgconfig(json-glib-1.0) >= %{json_glib_version}
+BuildRequires: pkgconfig(gobject-introspection-1.0)
 
 BuildRequires: openldap-devel
 BuildRequires: pkgconfig(openssl)
