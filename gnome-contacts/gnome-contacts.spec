@@ -1,13 +1,36 @@
 Name: gnome-contacts	
-Version: 3.18.0
+Version: 3.18.1
 Release: 2
-Summary:    Contacts manager for GNOME	
+Summary: Contacts manager for GNOME	
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 BuildRequires: folks-devel
 BuildRequires: cheese-libs-devel
+
+BuildRequires:  desktop-file-utils
+BuildRequires:  docbook-dtds
+BuildRequires:  docbook-style-xsl
+BuildRequires:  intltool
+BuildRequires:  vala-tools
+BuildRequires:  vala-devel
+BuildRequires:  appstream-glib
+BuildRequires:  libxslt 
+BuildRequires:  pkgconfig(champlain-0.12)
+BuildRequires:  pkgconfig(cheese-gtk)
+BuildRequires:  pkgconfig(clutter-gtk-1.0)
+BuildRequires:  pkgconfig(folks)
+BuildRequires:  pkgconfig(folks-eds)
+BuildRequires:  pkgconfig(folks-telepathy)
+BuildRequires:  pkgconfig(gee-0.8)
+BuildRequires:  pkgconfig(geocode-glib-1.0) 
+BuildRequires:  pkgconfig(gnome-desktop-3.0)
+BuildRequires:  pkgconfig(goa-1.0)
+BuildRequires:  pkgconfig(gtk+-3.0) >= %{gtk3_version}
+
+Requires:       geocode-glib
+Requires:       gtk3
 
 %description
 gnome-contacts is a standalone contacts manager for GNOME desktop.
@@ -49,6 +72,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gnome-shell/search-providers/org.gnome.Contacts.search-provider.ini
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
