@@ -22,7 +22,7 @@ BuildRequires: dconf-devel
 BuildRequires: libuuid-devel
 BuildRequires: nautilus-devel
 BuildRequires: gnome-shell
-BuildRequires: appdata-tools
+BuildRequires: appstream-glib
 BuildRequires: vala-devel
 
 %description
