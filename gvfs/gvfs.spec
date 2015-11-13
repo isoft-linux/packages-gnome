@@ -17,7 +17,7 @@ BuildRequires: openssh
 BuildRequires: libbluray-devel
 BuildRequires: libcdio-devel
 BuildRequires: libcdio-paranoia-devel
-BuildRequires: libgudev1-devel
+BuildRequires: libgudev-devel
 BuildRequires: libsoup-devel >= 2.34.0
 BuildRequires: pkgconfig(avahi-client) pkgconfig(avahi-glib)
 BuildRequires: libsecret-devel
