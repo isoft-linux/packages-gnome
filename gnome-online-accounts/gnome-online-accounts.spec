@@ -1,21 +1,26 @@
-Name:		gnome-online-accounts
-Version:	3.18.1
-Release:	2
-Summary:	Gnome online accounts library
+Name: gnome-online-accounts
+Version: 3.18.2.1
+Release: 2	
+Summary: Gnome online accounts library
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
-Patch0:     gnome-online-accounts-remove-webkit.patch
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
 
-BuildRequires: telepathy-glib-devel	
-BuildRequires: libaccounts-glib-devel
-BuildRequires:  json-glib-devel
-BuildRequires:  libsecret-devel >= 0.7
-BuildRequires:  libsoup-devel >= 2.41
-BuildRequires:  rest-devel
-
-#Requires:	
+BuildRequires:	gcr-devel
+BuildRequires:	glib2-devel >= 2.35
+BuildRequires:	gtk3-devel >= 3.5.1
+BuildRequires:	gobject-introspection-devel
+BuildRequires:	gtk-doc
+BuildRequires:	intltool
+BuildRequires:	krb5-devel
+BuildRequires:	webkitgtk4-devel
+BuildRequires:	json-glib-devel
+BuildRequires:	libsecret-devel >= 0.7
+BuildRequires:	libsoup-devel >= 2.41
+BuildRequires:	rest-devel
+BuildRequires:	telepathy-glib-devel
+BuildRequires:	libxml2-devel
 
 %description
 Gnome online accounts library
@@ -30,10 +35,8 @@ developing applications that use %{name}.
 
 
 %prep
-%setup -q
 
 %build
-#autoreconf -ivf 
 %configure \
   --disable-static \
   --enable-exchange \
@@ -88,6 +91,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/Goa-1.0.gir
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2.1-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
