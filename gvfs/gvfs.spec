@@ -3,22 +3,35 @@
 %define libcdio_paranoia_ver 10.2+0.90+1 
 Summary: Backends for the gio framework in GLib
 Name: gvfs
-Version: 1.26.1
-Release: 3 
+Version: 1.26.2
+Release: 2
 License: LGPLv2+
 URL: http://www.gtk.org
 Source0: http://download.gnome.org/sources/gvfs/1.26/gvfs-%{version}.tar.xz
 
+BuildRequires: pkgconfig
+BuildRequires: glib2-devel
+BuildRequires: dbus-glib-devel
+BuildRequires: gcr-devel
+BuildRequires: openssh 
 BuildRequires: libbluray-devel
 BuildRequires: libcdio-devel
 BuildRequires: libcdio-paranoia-devel
-
-BuildRequires: pkgconfig
-BuildRequires: glib2-devel >= 2.21.2
-BuildRequires: dbus-glib-devel
-BuildRequires: libsoup-devel >= 2.25.2
+BuildRequires: libgudev1-devel
+BuildRequires: libsoup-devel >= 2.34.0
+BuildRequires: pkgconfig(avahi-client) pkgconfig(avahi-glib)
+BuildRequires: libsecret-devel
 BuildRequires: intltool
 BuildRequires: gettext-devel
+BuildRequires: libudisks2-devel
+BuildRequires: libbluray-devel
+BuildRequires: systemd-devel >= 44
+BuildRequires: libxslt-devel
+BuildRequires: gtk3-devel
+BuildRequires: docbook-style-xsl
+
+BuildRequires: automake autoconf libtool
+
 BuildRequires: libsmbclient-devel
 BuildRequires: libarchive-devel
 BuildRequires: libexif-devel
@@ -123,6 +136,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ &> /dev/null ||:
 %{_includedir}/gvfs-client/*
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 1.26.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.26.1-3
 - Rebuild for 4.0 release
 
