@@ -1,12 +1,23 @@
-Name:	    gnome-calculator	
-Version:    3.18.1
-Release:	2
-Summary:    A desktop calculator	
+Name: gnome-calculator	
+Version: 3.18.2
+Release: 2
+Summary: A desktop calculator	
 
-License:	GPL
-URL:		http://www.gnome.org
-Source0:	%{name}-%{version}.tar.xz
-BuildRequires: gtksourceview-devel
+License: GPL
+URL: http://www.gnome.org
+Source0: %{name}-%{version}.tar.xz
+
+BuildRequires: pkgconfig(glib-2.0)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(gtksourceview-3.0)
+BuildRequires: pkgconfig(libxml-2.0)
+BuildRequires: desktop-file-utils
+BuildRequires: gettext
+BuildRequires: intltool
+BuildRequires: itstool
+BuildRequires: mpfr-devel
+BuildRequires: appstream-glib 
+
 %description
 gnome-calculator is a powerful graphical calculator with financial,
 logical and scientific modes. It uses a multiple precision package
@@ -39,7 +50,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %files -f gnome-calculator.lang
 %{_bindir}/gcalccmd
 %{_bindir}/gnome-calculator
-%{_datadir}/appdata/gnome-calculator.appdata.xml
+%{_datadir}/appdata/*.appdata.xml
 %{_datadir}/applications/gnome-calculator.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.calculator.gschema.xml
 
@@ -53,6 +64,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/gnome-calculator.1.gz
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
