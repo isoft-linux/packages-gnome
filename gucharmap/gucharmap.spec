@@ -1,11 +1,20 @@
 Name: gucharmap	
-Version: 3.18.1
+Version: 3.18.2
 Release: 2
 Summary: Unicode character picker and font browser	
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
+
+BuildRequires:  appstream-glib 
+BuildRequires:  glib2-devel
+BuildRequires:  gtk3-devel
+BuildRequires:  gobject-introspection-devel
+BuildRequires:  gettext
+BuildRequires:  intltool
+BuildRequires:  itstool
+BuildRequires:  desktop-file-utils
 
 %description
 This program allows you to browse through all the available Unicode
@@ -62,6 +71,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/Gucharmap-2.90.gir
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
