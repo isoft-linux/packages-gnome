@@ -1,14 +1,12 @@
 Name:          mutter
-Version:       3.18.1
-Release:       2 
+Version:       3.18.2
+Release:       2
 Summary:       Window and compositing manager based on Clutter
 
 License:       GPLv2+
 #VCS:          git:git://git.gnome.org/mutter
 URL:           http://www.gnome.org
 Source0:       http://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
-
-Patch1: 0001-Fix-stacking-of-the-guard-window.patch
 
 BuildRequires: clutter-devel >= 1.13.5
 BuildRequires: pango-devel
@@ -65,6 +63,7 @@ utilities for testing Metacity/Mutter themes.
 
 %prep
 %setup -q
+
 %build
 %configure --disable-static --enable-compile-warnings=no
 
@@ -127,6 +126,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %exclude %{_datadir}/gtk-doc
 
 %changelog
+* Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
