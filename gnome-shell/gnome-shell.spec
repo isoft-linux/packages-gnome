@@ -1,5 +1,5 @@
 Name:		gnome-shell
-Version:	3.18.2
+Version:	3.20.0
 Release:	2
 Summary:	Window management and application launching for GNOME
 
@@ -171,6 +171,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/st
 
 %changelog
+* Mon Apr 11 2016 sulit <sulitsrc@gmail.com> - 3.20.0-2
+- update to release 3.20.0
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 
