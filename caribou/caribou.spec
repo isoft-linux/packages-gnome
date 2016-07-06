@@ -1,5 +1,5 @@
 Name:		caribou
-Version:	0.4.19
+Version:	0.4.20
 Release:	2
 Summary:    A simplified in-place on-screen keyboard
 
@@ -69,6 +69,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/caribou-1.0.vapi
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.4.20-2
+- Updated
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.4.19-2
 - Rebuild for 4.0 release
 
