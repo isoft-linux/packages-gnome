@@ -1,6 +1,6 @@
 Name:	    empathy	
-Version:    3.12.11
-Release:	2
+Version:    3.12.12
+Release:	1
 Summary:    Instant Messaging Client for GNOME	
 
 License:	GPL
@@ -70,6 +70,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.12.12-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.12.11-2
 - Rebuild for 4.0 release
 
