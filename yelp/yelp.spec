@@ -1,6 +1,6 @@
 Name:		yelp
-Version:	3.18.1
-Release:	2
+Version:	3.21.3
+Release:	1
 Summary:    Help browser for the GNOME desktop	
    
 License:	GPL
@@ -77,7 +77,7 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %files -n libyelp
 %{_libdir}/libyelp.so.*
 %dir %{_libdir}/yelp
-%{_libdir}/yelp/libyelpcommon.so
+#%{_libdir}/yelp/libyelpcommon.so
 %{_libdir}/yelp/web-extensions/libyelpwebextension.so
 
 %{_datadir}/yelp-xsl/*
@@ -91,6 +91,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libyelp/*
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-2
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
