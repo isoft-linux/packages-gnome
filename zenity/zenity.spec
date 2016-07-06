@@ -1,5 +1,5 @@
 Name:          zenity
-Version:       3.18.1.1
+Version:       3.20.0
 Release:       2 
 Summary:       Display dialog boxes from shell scripts
 License:       LGPLv2+
@@ -43,6 +43,9 @@ rm $RPM_BUILD_ROOT%{_bindir}/gdialog
 
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-2
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.1.1-2
 - Update
 
