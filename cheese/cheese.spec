@@ -1,15 +1,13 @@
 Name:           cheese
-Epoch:          2
-Version:        3.18.0
-Release:        2%{?dist}
+#Epoch:          2
+Version:        3.21.3
+Release:        3%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Cheese
 #VCS: git:git://git.gnome.org/cheese
 Source0:        https://download.gnome.org/sources/%{name}/3.18/%{name}-%{version}.tar.xz
-# Upstream fix for desktop file validation.
-Patch0:         cheese-3.18.0-fix-desktop-translation.patch
 
 BuildRequires:  chrpath
 BuildRequires:  desktop-file-utils
@@ -75,7 +73,6 @@ for writing applications that require a webcam display widget.
 
 %prep
 %setup -q
-%patch0 -p1
 
 
 %build
@@ -130,8 +127,8 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %doc AUTHORS README
 %{_bindir}/cheese
 %{_datadir}/applications/org.gnome.Cheese.desktop
-%{_datadir}/icons/hicolor/*/apps/cheese.png
-%{_datadir}/icons/hicolor/symbolic/apps/cheese-symbolic.svg
+%{_datadir}/icons/hicolor/*/apps/org.gnome.Cheese.png
+%{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Cheese-symbolic.svg
 %{_datadir}/appdata/org.gnome.Cheese.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Cheese.service
 %{_mandir}/man1/cheese.1*
@@ -159,6 +156,10 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-3
+- Update , Just change icon Name from cheese.png to org.gnome.Chess.png in spec
+  file and del patch
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 2:3.18.0-2
 - Rebuild for 4.0 release
 
