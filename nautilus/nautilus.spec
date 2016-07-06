@@ -1,6 +1,6 @@
 Name: nautilus
 Version: 3.18.1
-Release: 2
+Release: 3
 Summary: Gnome File Manager
 
 License: GPL
@@ -33,7 +33,8 @@ This package contains the development files for %{name} extension.
     --disable-update-mimedb \
     --disable-schemas-compile \
     --disable-xmp \
-    --disable-tracker
+    --disable-tracker \
+    --disable-selinux
      
 make %{?_smp_mflags}
 
@@ -85,6 +86,9 @@ update-desktop-database ||:
 %{_datadir}/gtk-doc/html/libnautilus-extension/*
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.18.1-4
+- disable selinux option
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 

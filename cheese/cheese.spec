@@ -1,7 +1,7 @@
 Name:           cheese
-#Epoch:          2
+Epoch:          3
 Version:        3.21.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
 License:        GPLv2+
@@ -156,6 +156,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3:3.21.3-4
+- change Epochd from 2 to 3
+
 * Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-3
 - Update , Just change icon Name from cheese.png to org.gnome.Chess.png in spec
   file and del patch
