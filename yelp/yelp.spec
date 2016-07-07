@@ -7,9 +7,12 @@ License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires: yelp-xsl-devel
+BuildRequires: pkgconfig(libexslt)
+BuildRequires: pkgconfig(sqlite3)
+BuildRequires: pkgconfig(xslt)
 #for autogen.sh
 BuildRequires: gnome-common
-BuildRequires: webkitgtk4-devel
+#BuildRequires: webkitgtk4-devel
 
 Requires: libyelp = %{version}-%{release}
 

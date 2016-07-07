@@ -6,14 +6,14 @@ Summary:    A simplified in-place on-screen keyboard
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
-#Patch0:     caribou_ignore_intltool_check.patch
-Patch0:     caribou_ignore_intltool_check.patch
 
 BuildRequires:	pygobject3-devel libgee-devel, libxklavier-devel, 
+BuildRequires:  libxslt-devel
 BuildRequires:  pkgconfig(xtst)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtk+-2.0)
 BuildRequires:  pkgconfig(clutter-1.0)
+BuildRequires:  intltool
 Requires:	pygobject3
 
 %description
@@ -27,7 +27,6 @@ Requires: %{name} = %{version}-%{release}
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure --disable-static
@@ -76,7 +75,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/caribou-1.0.vapi
 
 %changelog
-* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.4.20-2
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.4.20-1
 - Updated
 
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.4.19-2
