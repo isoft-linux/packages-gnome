@@ -1,6 +1,6 @@
 Name: baobab	
-Version: 3.18.1
-Release: 2
+Version: 3.20.1
+Release: 1
 Summary: A graphical directory tree analyzer	
 
 License: GPL
@@ -14,7 +14,8 @@ BuildRequires: gdk-pixbuf2-devel
 BuildRequires: glib2-devel
 BuildRequires: gtk3-devel
 BuildRequires: pango-devel
-
+BuildRequires: intltool
+BuildRequires: itstool
 %description
 Baobab is able to scan either specific directories or the whole filesystem, in
 order to give the user a graphical tree representation including each
@@ -71,6 +72,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/baobab.1.gz
 
 %changelog
+* Thu Jul 07 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
