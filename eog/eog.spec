@@ -1,12 +1,16 @@
 Name: eog	
-Version: 3.18.0
-Release: 2
+Version: 3.20.3
+Release: 1
 Summary: Eye of GNOME image viewer	
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
 BuildRequires: gnome-desktop3-devel
+BuildRequires: intltool
+BuildRequires: itstool
+BuildRequires: libjpeg-turbo-devel
+BuildRequires: libpeas-devel
 
 %description
 The Eye of GNOME image viewer (eog) is the official image viewer for the
@@ -77,6 +81,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/eog
 
 %changelog
+* Thu Jul 07 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.3-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
