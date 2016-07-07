@@ -9,6 +9,18 @@ Source0:	%{name}-%{version}.tar.xz
 BuildRequires: telepathy-glib-devel, telepathy-farstream-devel, telepathy-logger-devel
 BuildRequires: telepathy-mission-control-devel
 BuildRequires: folks-devel webkitgtk-devel 
+BuildRequires: intltool
+BuildRequires: pkgconfig(gnutls)
+BuildRequires: pkgconfig(libcanberra-gtk3)
+BuildRequires: pkgconfig(libnotify)
+BuildRequires: pkgconfig(libpulse)
+BuildRequires: pkgconfig(libpulse-mainloop-glib)
+BuildRequires: gsettings-desktop-schemas-devel
+BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(clutter-gtk-1.0)
+BuildRequires: pkgconfig(clutter-gst-2.0)
+BuildRequires: pkgconfig(cogl-1.0)
+BuildRequires: itstool
 
 %description
 Empathy is powerful multi-protocol instant messaging client which
@@ -70,7 +82,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
-* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.12.12-2
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.12.12-1
 - Update
 
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.12.11-2
