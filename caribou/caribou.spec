@@ -6,6 +6,7 @@ Summary:    A simplified in-place on-screen keyboard
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+#Patch0:     caribou_ignore_intltool_check.patch
 Patch0:     caribou_ignore_intltool_check.patch
 
 BuildRequires:	pygobject3-devel libgee-devel, libxklavier-devel, 
