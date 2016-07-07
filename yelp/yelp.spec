@@ -9,7 +9,14 @@ Source0:	%{name}-%{version}.tar.xz
 BuildRequires: yelp-xsl-devel
 BuildRequires: pkgconfig(libexslt)
 BuildRequires: pkgconfig(sqlite3)
-BuildRequires: pkgconfig(xslt)
+BuildRequires: pkgconfig(libxslt)
+BuildRequires: pkgconfig(gio-2.0)
+BuildRequires: pkgconfig(gtk+-unix-print-3.0)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(webkit2gtk-4.0)
+BuildRequires: intltool
+BuildRequires: libgcrypt-devel
+BuildRequires: libgpg-error-devel
 #for autogen.sh
 BuildRequires: gnome-common
 #BuildRequires: webkitgtk4-devel
@@ -94,7 +101,7 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libyelp/*
 
 %changelog
-* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-2
+* Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
 - Update
 
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
