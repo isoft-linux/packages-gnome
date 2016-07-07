@@ -5,8 +5,8 @@
 %define theme_version 2.17.1
 
 Name: evince
-Version: 3.18.2
-Release: 2
+Version: 3.21.3
+Release: 1
 Summary: Document viewer
 
 License: GPLv2+ and GFDL
@@ -148,6 +148,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/glib-2.0/schemas/org.gnome.Evince.gschema.xml
 %{_libdir}/mozilla/plugins/libevbrowserplugin.so
 %{_datadir}/appdata/*.xml
+%{_libdir}/systemd/user/evince.service
 
 %files nautilus-extension
 %{_libdir}/nautilus/extensions-3.0/libevince-properties-page.so
@@ -170,6 +171,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/girepository-1.0/*.typelib
 
 %changelog
+* Thu Jul 07 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

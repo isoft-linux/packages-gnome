@@ -1,13 +1,24 @@
 Name:	    epiphany	
-Version:    3.18.0
-Release:	2
+Version:    3.21.3
+Release:	1
 Summary:    Web browser for GNOME	
 
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 
-BuildRequires: webkitgtk4-devel
+#BuildRequires: webkitgtk4-devel
+BuildRequires: itstool
+BuildRequires: pkgconfig(webkit2gtk-4.0)
+BuildRequires: pkgconfig(libxslt)
+BuildRequires: pkgconfig(libsecret-1)
+BuildRequires: pkgconfig(gnome-desktop-3.0)
+BuildRequires: gsettings-desktop-schemas-devel
+BuildRequires: pkgconfig(libnotify)
+BuildRequires: pkgconfig(sqlite3)
+BuildRequires: pkgconfig(gcr-3)
+BuildRequires: pkgconfig(avahi-gobject)
+BuildRequires: pkgconfig(avahi-client)
 
 %description
 Epiphany is the web browser for the GNOME desktop. Its goal is to be
@@ -52,6 +63,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Thu Jul 07 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
