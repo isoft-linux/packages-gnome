@@ -1,0 +1,14 @@
+diff -Nur caribou-0.4.20/configure.ac caribou-0.4.20n/configure.ac
+--- caribou-0.4.20/configure.ac	2016-02-16 05:15:23.000000000 +0800
++++ caribou-0.4.20n/configure.ac	2016-07-07 10:19:05.358627780 +0800
+@@ -123,8 +123,8 @@
+ dnl == GSettings ==
+ GLIB_GSETTINGS
+ 
+-dnl == intltool check ==
+-IT_PROG_INTLTOOL([0.35.0])
++#dnl == intltool check ==
++#IT_PROG_INTLTOOL([0.35.0])
+ 
+ dnl == GObject introspection ==
+ GOBJECT_INTROSPECTION_REQUIRE([0.10.7])

@@ -1,13 +1,18 @@
 Name:		caribou
 Version:	0.4.20
-Release:	2
+Release:	1
 Summary:    A simplified in-place on-screen keyboard
 
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+Patch0:     caribou_ignore_intltool_check.patch
 
-BuildRequires:	pygobject3-devel libgee-devel, libxklavier-devel 
+BuildRequires:	pygobject3-devel libgee-devel, libxklavier-devel, 
+BuildRequires:  pkgconfig(xtst)
+BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pkgconfig(clutter-1.0)
 Requires:	pygobject3
 
 %description
@@ -21,6 +26,7 @@ Requires: %{name} = %{version}-%{release}
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure --disable-static
