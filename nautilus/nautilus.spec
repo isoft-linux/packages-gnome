@@ -6,6 +6,8 @@ Summary: Gnome File Manager
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
+BuildRequires: intltool
+BuildRequires: pkgconfig(libxml-2.0)
 BuildRequires: libexif-devel  >= 0.6.20
 BuildRequires: libnotify-devel
 BuildRequires: tracker-devel
@@ -59,7 +61,6 @@ update-desktop-database ||:
 %{_sysconfdir}/xdg/autostart/nautilus-autostart.desktop
 %{_bindir}/nautilus
 %{_bindir}/nautilus-autorun-software
-%{_libdir}/girepository-1.0/Nautilus-3.0.typelib
 %{_libdir}/libnautilus-extension.so.*
 %dir %{_libdir}/nautilus
 %{_libdir}/nautilus/*
@@ -79,7 +80,6 @@ update-desktop-database ||:
 %{_includedir}/nautilus/*
 %{_libdir}/libnautilus-extension.so
 %{_libdir}/pkgconfig/libnautilus-extension.pc
-%{_datadir}/gir-1.0/Nautilus-3.0.gir
 %dir %{_datadir}/gtk-doc/html/libnautilus-extension
 %{_datadir}/gtk-doc/html/libnautilus-extension/*
 
