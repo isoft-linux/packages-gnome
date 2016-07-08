@@ -1,6 +1,6 @@
 Name: nautilus
-Version: 3.18.1
-Release: 3
+Version: 3.20.1
+Release: 1
 Summary: Gnome File Manager
 
 License: GPL
@@ -63,8 +63,6 @@ update-desktop-database ||:
 %{_libdir}/libnautilus-extension.so.*
 %dir %{_libdir}/nautilus
 %{_libdir}/nautilus/*
-%{_libexecdir}/nautilus-convert-metadata
-%{_datadir}/GConf/gsettings/nautilus.convert
 %{_datadir}/appdata/*
 %{_datadir}/applications/nautilus-autorun-software.desktop
 %{_datadir}/applications/nautilus-classic.desktop
@@ -86,6 +84,9 @@ update-desktop-database ||:
 %{_datadir}/gtk-doc/html/libnautilus-extension/*
 
 %changelog
+* Fri Jul 08 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Wed Jul 06 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.18.1-4
 - disable selinux option
 
