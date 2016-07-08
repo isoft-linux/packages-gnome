@@ -1,6 +1,6 @@
 Name:	    folks	
-Version:    0.11.1
-Release:	2
+Version:    0.11.2
+Release:	1
 Summary:	Folks is a library that aggregates people from multiple sources
 
 License:	GPL
@@ -8,6 +8,10 @@ URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires: telepathy-glib-devel
 BuildRequires: evolution-data-server-devel
+BuildRequires: pkgconfig(gee-0.8)
+BuildRequires: vala-tools
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: intltool
 
 %description
 Folks is a library that aggregates people from multiple sources
@@ -22,7 +26,7 @@ Requires: %{name} = %{version}-%{release}
 %setup -q
 
 %build
-%configure --disable-fatal-warnings
+%configure --disable-fatal-warnings --enable-vapigen
 make %{?_smp_mflags}
 
 %install
@@ -40,7 +44,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 %files -f folks.lang
 %{_bindir}/folks-import
-%{_bindir}/folks-inspect
 %{_libdir}/libfolks.so.*
 %{_libdir}/libfolks-eds.so.*
 %{_libdir}/libfolks-telepathy.so.*
@@ -80,6 +83,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/folks-dummy.vapi
 
 %changelog
+* Fri Jul 08 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.11.2-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.11.1-2
 - Rebuild for 4.0 release
 
