@@ -1,8 +1,8 @@
 %define _python_bytecompile_errors_terminate_build 0
 
 Name: gedit 
-Version: 3.18.1
-Release: 3
+Version: 3.20.2
+Release: 1
 Summary: Text editor for the GNOME desktop
 
 License: GPL
@@ -58,7 +58,7 @@ Requires: %{name} = %{version}-%{release}
 %build
 export CC=cc
 export CXX=c++
-%configure --disable-static
+%configure --disable-static --disable-spell
 make %{?_smp_mflags}
 
 %install
@@ -86,8 +86,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/applications/*.desktop
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
 %dir %{_datadir}/gedit
-%dir %{_datadir}/gedit/logo
-%{_datadir}/gedit/logo/*
 %dir %{_datadir}/gedit/plugins
 %{_datadir}/gedit/plugins/*
 %{_datadir}/glib-2.0/schemas/*.xml
@@ -99,11 +97,12 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_includedir}/gedit-*
 %{_libdir}/pkgconfig/gedit.pc
 %{_datadir}/gedit/gir-1.0/Gedit-3.0.gir
-%{_datadir}/vala/vapi/gedit.deps
-%{_datadir}/vala/vapi/gedit.vapi
 %{_datadir}/gtk-doc/html/gedit
 
 %changelog
+* Fri Jul 08 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.2-1
+- Update
+
 * Fri Nov 06 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-3
 - Update to 3.18.1
 
