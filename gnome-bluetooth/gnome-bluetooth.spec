@@ -1,6 +1,6 @@
 Name: gnome-bluetooth
-Version: 3.18.1
-Release: 2
+Version: 3.18.3
+Release: 1
 Summary: Gnome bluetooth Utilities and Libraries
 
 License: GPL
@@ -79,6 +79,9 @@ update-desktop-database -q ||:
 %{_datadir}/gtk-doc/html/gnome-bluetooth/*
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.18.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Update
 
