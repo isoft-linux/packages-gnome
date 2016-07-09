@@ -1,6 +1,6 @@
 Name:           libgxps
-Version:        0.2.3.2
-Release:        2 
+Version:        0.2.4
+Release:        1 
 Summary:        GObject based library for handling and rendering XPS documents
 
 License:        LGPLv2+
@@ -79,6 +79,9 @@ chrpath --delete $RPM_BUILD_ROOT%{_bindir}/xpsto*
 
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.2.4-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.3.2-2
 - Rebuild for 4.0 release
 
