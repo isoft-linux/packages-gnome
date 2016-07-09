@@ -1,8 +1,8 @@
 %global json_glib_version 0.16.2
 
 Name:           geocode-glib
-Version:        3.18.0
-Release:        2
+Version:        3.20.1
+Release:        1
 Summary:        Geocoding helper library
 
 License:        LGPLv2+
@@ -68,6 +68,9 @@ find $RPM_BUILD_ROOT -name '*.la' -delete
 
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
