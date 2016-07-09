@@ -1,3 +1,6 @@
+%global gtk3_version 3.19.8
+%global gsettings_desktop_schemas_version 3.19.3
+%global clutter_version 1.25.6
 Name:          mutter
 Version:       3.21.2
 Release:       1
@@ -7,14 +10,16 @@ License:       GPLv2+
 #VCS:          git:git://git.gnome.org/mutter
 URL:           http://www.gnome.org
 Source0:       http://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
+Patch0:        mutter_fix_logic-op_error.patch
 
-BuildRequires: clutter-devel >= 1.13.5
+
+BuildRequires: clutter-devel  >= %{clutter_version}
 BuildRequires: pango-devel
 BuildRequires: startup-notification-devel
 BuildRequires: gnome-desktop3-devel
-BuildRequires: gtk3-devel >= 3.9.11
+BuildRequires: gtk3-devel  >= %{gtk3_version}
 BuildRequires: pkgconfig
-BuildRequires: gobject-introspection-devel
+BuildRequires: gobject-introspection-devel 
 BuildRequires: libSM-devel
 BuildRequires: libX11-devel
 BuildRequires: libXdamage-devel
@@ -23,19 +28,26 @@ BuildRequires: libXrandr-devel
 BuildRequires: libXrender-devel
 BuildRequires: libXcursor-devel
 BuildRequires: libXcomposite-devel
-BuildRequires: libxkbfile-devel
-BuildRequires: libxkbcommon-devel
+BuildRequires: libxcb-devel
 BuildRequires: libxkbcommon-x11-devel
-#otherwise mutter will hang
-BuildRequires: libXi >= 1.7.4
+BuildRequires: libxkbfile-devel
+BuildRequires: pam-devel
 BuildRequires: upower-devel
+BuildRequires: xkeyboard-config-devel
 BuildRequires: zenity
 BuildRequires: desktop-file-utils
 # Bootstrap requirements
-BuildRequires: gtk-doc intltool
+BuildRequires: gtk-doc gnome-common intltool
 BuildRequires: libcanberra-devel
-BuildRequires: gsettings-desktop-schemas-devel
-
+BuildRequires: gsettings-desktop-schemas-devel >= %{gsettings_desktop_schemas_version}
+BuildRequires: automake, autoconf, libtool
+BuildRequires: pkgconfig(gudev-1.0)
+BuildRequires: pkgconfig(clutter-egl-1.0)
+BuildRequires: pkgconfig(libdrm)
+BuildRequires: pkgconfig(gbm)
+BuildRequires: pkgconfig(clutter-wayland-1.0)
+BuildRequires: pkgconfig(clutter-wayland-compositor-1.0)
+BuildRequires: pkgconfig(wayland-server)
 
 # Make sure this can't be installed with an old gnome-shell build because of
 # an ABI change.
@@ -67,9 +79,12 @@ utilities for testing Metacity/Mutter themes.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%configure --disable-static --enable-compile-warnings=no
+autoreconf -f -i
+(if ! test -x configure; then NOCONFIGURE=1 ./autogen.sh; fi; 
+%configure --disable-static --enable-compile-warnings=no )
 
 SHOULD_HAVE_DEFINED="HAVE_SM HAVE_RANDR HAVE_STARTUP_NOTIFICATION"
 
@@ -84,7 +99,8 @@ for I in $SHOULD_HAVE_DEFINED; do
   fi
 done
 
-make %{?_smp_mflags} V=1
+#make %{?_smp_mflags} V=1
+make V=1
 
 %install
 %make_install
@@ -94,8 +110,7 @@ rm -rf %{buildroot}/%{_libdir}/*.la
 
 %find_lang %{name}
 
-# Mutter contains a .desktop file so we just need to validate it
-desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
+# Mutter contains a .desktop file so we just need to validate it desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
 
 %post -p /sbin/ldconfig
 
