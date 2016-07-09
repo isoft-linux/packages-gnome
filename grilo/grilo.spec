@@ -11,6 +11,8 @@ BuildRequires: totem-pl-parser-devel
 BuildRequires: pkgconfig(libsoup-2.4)
 BuildRequires: pkgconfig(gobject-introspection-1.0)
 BuildRequires: vala-devel
+BuildRequires: vala
+BuildRequires: vala-tools
 BuildRequires: intltool
 
 %description
@@ -35,8 +37,8 @@ export CXX=c++
     --enable-vala \
     --enable-introspection \
     --enable-compile-warnings=no
-make %{?_smp_mflags}
-
+#make %{?_smp_mflags}
+make
 
 %install
 make install DESTDIR=%{buildroot} 

@@ -1,6 +1,6 @@
 Name:           gom
-Version:        0.3.1
-Release:        3%{?dist}
+Version:        0.3.2
+Release:        1%{?dist}
 Summary:        GObject to SQLite object mapper library
 
 License:        LGPLv2+
@@ -57,6 +57,9 @@ find $RPM_BUILD_ROOT -name '*.la' -delete
 %doc %{_datadir}/gtk-doc/
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.3.2-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.3.1-3
 - Rebuild for 4.0 release
 
