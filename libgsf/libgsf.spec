@@ -1,7 +1,7 @@
 Summary: GNOME Structured File library
 Name: libgsf
-Version: 1.14.34
-Release: 2
+Version: 1.14.38
+Release: 1
 License: LGPLv2
 Source: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/1.14/%{name}-%{version}.tar.xz
 URL: http://www.gnome.org/projects/libgsf/
@@ -73,6 +73,9 @@ chrpath --delete %{buildroot}%{_bindir}/gsf*
 %{_mandir}/man1/gsf-vba-dump.1.gz
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 1.14.38-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1.14.34-2
 - Rebuild for 4.0 release
 
