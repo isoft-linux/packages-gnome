@@ -1,6 +1,6 @@
 Name:           libgweather
-Version:        3.18.1
-Release:        2
+Version:        3.20.1
+Release:        1
 Summary:        A library for weather information
 
 License:        GPLv2+
@@ -86,6 +86,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 
