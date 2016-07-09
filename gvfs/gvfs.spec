@@ -3,8 +3,8 @@
 %define libcdio_paranoia_ver 10.2+0.90+1 
 Summary: Backends for the gio framework in GLib
 Name: gvfs
-Version: 1.26.2
-Release: 2
+Version: 1.29.3
+Release: 1
 License: LGPLv2+
 URL: http://www.gtk.org
 Source0: http://download.gnome.org/sources/gvfs/1.26/gvfs-%{version}.tar.xz
@@ -137,6 +137,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ &> /dev/null ||:
 %{_includedir}/gvfs-client/*
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 1.29.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 1.26.2-2
 - Update
 
