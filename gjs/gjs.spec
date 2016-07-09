@@ -1,6 +1,6 @@
 Name: gjs	
-Version: 1.44.0
-Release: 2 
+Version: 1.45.3
+Release: 1 
 Summary: JavaScript bindings based on gobject-introspection	
 
 License: GPL
@@ -59,6 +59,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 1.45.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 1.44.0-2
 - Update
 
