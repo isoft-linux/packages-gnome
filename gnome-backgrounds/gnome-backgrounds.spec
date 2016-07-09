@@ -1,11 +1,12 @@
 Name:		gnome-backgrounds
-Version:	3.18.0
-Release:	2
+Version:	3.20
+Release:	1
 Summary:	Backgrounds picture for gnome
 
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+BuildRequires: intltool
 BuildArch: noarch
 
 %description
@@ -33,6 +34,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
