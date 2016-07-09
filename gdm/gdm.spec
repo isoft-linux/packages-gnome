@@ -10,9 +10,9 @@
 
 Summary: The GNOME Display Manager
 Name: gdm
-Version: 3.18.0
-Release: 2
-Epoch: 1
+Version: 3.21.3
+Release: 1
+Epoch: 2
 License: GPLv2+
 URL: http://download.gnome.org/sources/gdm
 #VCS: git:git://git.gnome.org/gdm
@@ -50,6 +50,7 @@ BuildRequires: pkgconfig(libsystemd-daemon)
 BuildRequires: pkgconfig(ply-boot-client)
 BuildRequires: systemd
 BuildRequires: dconf
+BuildRequires: pkgconfig(libcanberra-gtk3)
 
 Requires(pre):    /usr/sbin/useradd
 Requires(post):   systemd
@@ -258,6 +259,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_libdir}/pkgconfig/gdm.pc
 
 %changelog
+* Sat Jul 09 2016 zhouyang <yang.zhou@i-soft.com.cn> - 1:3.21.3-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 1:3.18.0-2
 - Rebuild for 4.0 release
 
