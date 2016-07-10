@@ -1,6 +1,6 @@
 Name: gnome-disk-utility	
-Version: 3.18.2
-Release: 2 
+Version: 3.21.3
+Release: 1 
 Summary: Disks application for dealing with storage devices	
 
 License: GPL
@@ -94,6 +94,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

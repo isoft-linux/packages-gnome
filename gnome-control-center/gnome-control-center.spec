@@ -1,6 +1,6 @@
 Name: gnome-control-center
-Version: 3.18.2
-Release: 2
+Version: 3.20.1
+Release: 1
 Summary: The GNOME Control Center	
 
 License: GPL
@@ -19,7 +19,7 @@ BuildRequires: pkgconfig(gnome-desktop-3.0)
 BuildRequires: pkgconfig(gnome-settings-daemon) 
 BuildRequires: pkgconfig(goa-1.0)
 BuildRequires: pkgconfig(goa-backend-1.0)
-BuildRequires: pkgconfig(grilo-0.2)
+BuildRequires: pkgconfig(grilo-0.3)
 BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gudev-1.0)
 BuildRequires: pkgconfig(ibus-1.0)
@@ -122,6 +122,9 @@ update-desktop-database -q> /dev/null ||:
 %{_datadir}/sounds/gnome/default/alerts/sonar.ogg
 
 %changelog
+* Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 
