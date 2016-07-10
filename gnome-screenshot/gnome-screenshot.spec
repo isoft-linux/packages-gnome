@@ -1,11 +1,17 @@
 Name: gnome-screenshot	
-Version: 3.18.0
-Release: 2
+Version: 3.20.0
+Release: 1
 Summary: A screenshot utility for GNOME	
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
+BuildRequires: intltool
+BuildRequires: pkgconfig(gio-2.0)
+BuildRequires: pkgconfig(xext)
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(libcanberra-gtk3)
 
 %description
 The GNOME Screenshot is an utility used for taking screenshots of the entire screen, a window or an user- defined area of the screen, with optional beautifying border effects.
@@ -42,6 +48,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
