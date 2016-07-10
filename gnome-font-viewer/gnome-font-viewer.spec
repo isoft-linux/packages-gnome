@@ -1,11 +1,18 @@
 Name:	    gnome-font-viewer	
-Version:    3.16.2
-Release: 3
+Version:    3.20.2
+Release:    1
 Summary:    Utility for previewing fonts for GNOME	
 
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+BuildRequires: intltool
+BuildRequires: pkgconfig(gio-2.0)
+BuildRequires: pkgconfig(fontconfig)
+BuildRequires: pkgconfig(freetype2)
+BuildRequires: pkgconfig(harfbuzz)
+BuildRequires: pkgconfig(gnome-desktop-3.0)
+BuildRequires: pkgconfig(gtk+-3.0)
 
 %description
 Use gnome-font-viewer, the Font Viewer, to preview fonts and display
@@ -45,6 +52,9 @@ update-desktop-database -q> /dev/null ||:
 
 
 %changelog
+* Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.2-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.16.2-3
 - Rebuild for 4.0 release
 
