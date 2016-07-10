@@ -5,8 +5,8 @@
 
 Summary: GNOME session manager
 Name: gnome-session
-Version: 3.18.1.2
-Release: 3 
+Version: 3.21.3
+Release: 1 
 URL: http://www.gnome.org
 Source0: http://download.gnome.org/sources/gnome-session/3.12/%{name}-%{version}.tar.xz
  
@@ -47,6 +47,7 @@ BuildRequires: upower-devel
 BuildRequires: gnome-common
 BuildRequires: systemd-devel
 BuildRequires: polkit-devel
+BuildRequires: pkgconfig(glesv2)
 
 # an artificial requires to make sure we get dconf, for now
 Requires: dconf
@@ -105,9 +106,10 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %doc %{_mandir}/man*/*
 %{_bindir}/*
 %{_libexecdir}/gnome-session-check-accelerated
-%{_libexecdir}/gnome-session-check-accelerated-helper
 %{_libexecdir}/gnome-session-failed
 %{_libexecdir}/gnome-session-binary
+%{_libexecdir}/gnome-session-check-accelerated-gl-helper
+%{_libexecdir}/gnome-session-check-accelerated-gles-helper
 %{_datadir}/gnome-session/
 %{_datadir}/icons/hicolor/*/apps/session-properties.png
 %{_datadir}/icons/hicolor/scalable/apps/session-properties.svg
@@ -119,6 +121,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_docdir}/gnome-session/dbus/gnome-session.html
 
 %changelog
+* Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1.2-3
 - Rebuild for 4.0 release
 
