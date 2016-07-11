@@ -6,6 +6,10 @@ Summary:    Dictionary application for GNOME
 License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
+BuildRequires: intltool
+BuildRequires: pkgconfig(gio-2.0)
+BuildRequires: itstool
+BuildRequires: pkgconfig(gtk+-3.0)
 %description
 gnome-dictionary lets you look up words in dictionary sources.
 
