@@ -43,6 +43,8 @@ BuildRequires:  libcanberra-devel
 BuildRequires:  libcanberra-gtk3-devel
 BuildRequires:  libcroco-devel
 BuildRequires:  python3
+BuildRequires:  grilo-devel
+BuildRequires:  gnome-control-center
 
 # for barriers
 BuildRequires:  libXfixes-devel
@@ -148,7 +150,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/GConf/gsettings/gnome-shell-overrides.convert
 %{_datadir}/applications/evolution-calendar.desktop
 %{_datadir}/applications/gnome-shell-extension-prefs.desktop
-%{_datadir}/applications/gnome-shell.desktop
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 %{_datadir}/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
@@ -161,9 +162,10 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gnome-shell/*
 %{_mandir}/man1/gnome-shell.1.gz
 %{_libexecdir}/gnome-shell-portal-helper
-%{_datadir}/applications/gnome-shell-wayland.desktop
 %{_datadir}/applications/org.gnome.Shell.PortalHelper.desktop
 %{_datadir}/dbus-1/services/org.gnome.Shell.PortalHelper.service
+%{_datadir}/applications/org.gnome.Shell.desktop
+
 
 #only docs
 %files devel 
