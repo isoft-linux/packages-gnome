@@ -1,6 +1,6 @@
 Name: gnome-system-monitor	
-Version: 3.18.2
-Release: 2
+Version: 3.21.3
+Release: 1
 Summary: Process and resource monitor	
 
 License: GPL
@@ -56,6 +56,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/polkit-1/actions/*
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

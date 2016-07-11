@@ -1,6 +1,6 @@
 Name: gnome-terminal	
-Version: 3.18.2
-Release: 2
+Version: 3.20.2
+Release: 1
 Summary: Terminal emulator for GNOME	
 
 License: GPL
@@ -72,6 +72,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.2-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

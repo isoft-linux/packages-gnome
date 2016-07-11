@@ -1,8 +1,8 @@
 %define glib2_version 2.42.0
 
 Name:           dconf-editor
-Version:        3.18.2
-Release:        2 
+Version:        3.21.1
+Release:        1 
 Summary:        Configuration editor for dconf 
 
 License:        LGPLv2+
@@ -76,6 +76,9 @@ fi
 #%{_datadir}/gir-1.0/dconf-0.3.gir
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.1-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

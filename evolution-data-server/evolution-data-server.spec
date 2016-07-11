@@ -14,8 +14,8 @@
 %define json_glib_version 1.0.4
 
 Name: evolution-data-server	
-Version: 3.18.2
-Release: 2
+Version: 3.21.3
+Release: 1
 Summary: Backend data server for Evolution 
 
 License: GPL
@@ -101,7 +101,7 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=%{buildroot}
 
-%find_lang evolution-data-server-3.18
+%find_lang evolution-data-server-3.22
 
 %post
 /sbin/ldconfig
@@ -111,7 +111,7 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 /sbin/ldconfig
 glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 
-%files -f evolution-data-server-3.18.lang
+%files -f evolution-data-server-3.22.lang
 %dir %{_libdir}/evolution-data-server
 %{_libdir}/evolution-data-server/*
 %{_libdir}/girepository-1.0/EBook-1.2.typelib
@@ -138,8 +138,16 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_datadir}/gir-1.0/EDataServer-1.2.gir
 #%{_datadir}/gtk-doc/html/*
 %{_datadir}/vala/vapi/*
+%{_libdir}/systemd/user/evolution-addressbook-factory.service
+%{_libdir}/systemd/user/evolution-calendar-factory.service
+%{_libdir}/systemd/user/evolution-source-registry.service
+%{_libdir}/systemd/user/evolution-user-prompter.service
+%{_datadir}/gir-1.0/Camel-1.2.gir
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

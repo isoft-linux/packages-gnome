@@ -1,6 +1,6 @@
 Name: gnome-shell-extensions	
-Version: 3.18.2
-Release: 2
+Version: 3.21.2
+Release: 1
 Summary: Extensions to Modify and extend GNOME Shell functionality and behavior	
 
 License: GPL
@@ -59,6 +59,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gnome-shell/extensions/*
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.2-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 

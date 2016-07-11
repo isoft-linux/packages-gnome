@@ -1,7 +1,7 @@
 Summary:        A GTK+ GUI builder.
 Name:           glade
-Version:        3.19.0
-Release:  4	
+Version:        3.20.0
+Release:        1	
 License:        GPL
 URL:            http://glade.gnome.org/
 Source:         glade-%{version}.tar.xz
@@ -110,6 +110,9 @@ update-desktop-database ||:
 
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.19.0-4
 - Rebuild for 4.0 release
 
