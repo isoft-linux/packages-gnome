@@ -50,16 +50,13 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/help/*/gnome-dictionary
 %{_datadir}/appdata/*.appdata.xml
 %{_mandir}/man1/gnome-dictionary.1.gz
-%{_libdir}/girepository-1.0/Gdict-1.0.typelib
 %{_datadir}/dbus-1/services/org.gnome.Dictionary.service
-
 
 %files devel
 %dir %{_includedir}/gdict-1.0
 %{_includedir}/gdict-1.0/*
 %{_libdir}/libgdict-1.0.so
 %{_libdir}/pkgconfig/gdict-1.0.pc
-%{_datadir}/gir-1.0/Gdict-1.0.gir
 %{_datadir}/gtk-doc/html/gdict
 
 %changelog

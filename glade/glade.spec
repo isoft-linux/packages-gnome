@@ -15,6 +15,11 @@ BuildRequires: pango-devel >= %{pango_version}
 BuildRequires: gtk2-devel >= %{gtk2_version}
 BuildRequires: gobject-introspection
 BuildRequires: gettext
+BuildRequires: intltool
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(libxml-2.0)
+BuildRequires: itstool
+BuildRequires: pkgconfig(libxslt)
 
 %description
 Glade is a free user interface builder for GTK+ and the GNOME GUI
