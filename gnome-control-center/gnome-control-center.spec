@@ -120,6 +120,8 @@ update-desktop-database -q> /dev/null ||:
 %{_datadir}/sounds/gnome/default/alerts/drip.ogg
 %{_datadir}/sounds/gnome/default/alerts/glass.ogg
 %{_datadir}/sounds/gnome/default/alerts/sonar.ogg
+%{_datadir}/appdata/gnome-control-center.appdata.xml
+
 
 %changelog
 * Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
