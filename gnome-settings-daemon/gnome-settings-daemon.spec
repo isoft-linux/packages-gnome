@@ -6,8 +6,8 @@
 %global geocode_glib_version 3.10.0
 
 Name:           gnome-settings-daemon
-Version:        3.18.2
-Release:        2
+Version:        3.20.1
+Release:        1
 Summary:        The daemon sharing settings from GNOME to GTK+/KDE applications
 
 License:        GPLv2+
@@ -23,7 +23,6 @@ BuildRequires:  libgnomekbd-devel
 BuildRequires:  libnotify-devel
 BuildRequires:  gettext intltool
 BuildRequires:  fontconfig-devel
-BuildRequires:  geoclue2 >= %{geoclue_version}
 BuildRequires:  geocode-glib-devel >= %{geocode_glib_version}
 BuildRequires:  libcanberra-devel
 BuildRequires:  polkit-devel
@@ -48,16 +47,9 @@ BuildRequires:  xorg-x11-xkbdata
 BuildRequires:  libwacom-devel >= 0.7
 BuildRequires:  xorg-x11-drv-wacom-devel
 BuildRequires:  libcanberra-gtk3-devel
-BuildRequires:  geoclue2-devel
-BuildRequires:  pkgconfig(libnm-glib) pkgconfig(libnm-util)
-
-Requires: colord
-Requires: geoclue2 >= %{geoclue_version}
-Requires: geocode-glib%{?_isa} >= %{geocode_glib_version}
-Requires: gnome-desktop3%{?_isa} >= %{gnome_desktop_version}
-Requires: gsettings-desktop-schemas%{?_isa} >= %{gsettings_desktop_schemas_version}
-Requires: gtk3%{?_isa} >= %{gtk3_version}
-Requires: libgweather%{?_isa} >= %{libgweather_version}
+BuildRequires:  pkgconfig(libnm-glib) 
+BuildRequires:  pkgconfig(libnm-util)
+BuildRequires:  pkgconfig(geoclue-2.0)
 
 Obsoletes: %{name}-updates < 3.13.1
 
@@ -67,7 +59,7 @@ handles global keybindings, as well as a number of desktop-wide settings.
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 
 %description    devel
 The %{name}-devel package contains libraries and header files for
@@ -81,10 +73,7 @@ developing applications that use %{name}.
 %build
 autoreconf -i -f
 %configure --disable-static \
-           --enable-profiling \
-           --disable-packagekit \
-           --enable-systemd \
-           --enable-ibus
+           --disable-wayland
 make %{?_smp_mflags}
 
 
@@ -220,8 +209,6 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %files devel
 %{_includedir}/gnome-settings-daemon-3.0
 %{_libdir}/pkgconfig/gnome-settings-daemon.pc
-%dir %{_datadir}/gnome-settings-daemon-3.0
-%{_datadir}/gnome-settings-daemon-3.0/input-device-example.sh
 %{_libexecdir}/gsd-list-wacom
 %{_libexecdir}/gsd-test-wacom
 %{_libexecdir}/gsd-test-wacom-osd
@@ -244,6 +231,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 %{_libexecdir}/gsd-test-xsettings
 
 %changelog
+* Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Fri Nov 13 2015 Cjacker <cjacker@foxmail.com> - 3.18.2-2
 - Update
 
