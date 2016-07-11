@@ -11,6 +11,8 @@ BuildRequires:  gedit-devel
 BuildRequires:  libgit2-glib-devel
 BuildRequires:  pkgconfig(vte-2.91)
 BuildRequires:  gucharmap-devel
+BuildRequires:  intltool
+BuildRequires:  itstool
 Requires:       vte3 >= 0.38.1 
 Requires:       gedit
 
