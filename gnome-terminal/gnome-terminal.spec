@@ -23,7 +23,6 @@ BuildRequires: libuuid-devel
 BuildRequires: nautilus-devel
 BuildRequires: appstream-glib
 BuildRequires: vala-devel
-BuildRequires: evolution-data-server
 BuildRequires: gnome-shell
 
 %description
@@ -63,12 +62,16 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
 #%{_libexecdir}/gnome-terminal-migration
 %{_libexecdir}/gnome-terminal-server
-%{_datadir}/appdata/gnome-terminal.appdata.xml
-%{_datadir}/applications/gnome-terminal.desktop
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/help/*/gnome-terminal
+%{_libdir}/systemd/user/gnome-terminal-server.service
+%{_datadir}/appdata/org.gnome.Terminal.Nautilus.appdata.xml
+%{_datadir}/appdata/org.gnome.Terminal.appdata.xml
+%{_datadir}/applications/org.gnome.Terminal.desktop
+
+
 
 
 
