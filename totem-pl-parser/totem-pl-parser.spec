@@ -7,6 +7,9 @@ License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires: gmime-devel
+BuildRequires: intltool
+BuildRequires: pkgconfig(libxml-2.0)
+BuildRequires: pkgconfig(libsoup-2.4)
 
 %description
 A library to parse and save playlists, as used in music and movie players
@@ -34,7 +37,6 @@ make install DESTDIR=%{buildroot}
 %postun -p /sbin/ldconfig
 
 %files -f totem-pl-parser.lang
-%{_libdir}/girepository-1.0/TotemPlParser-1.0.typelib
 %{_libdir}/libtotem-plparser-mini.so.*
 %{_libdir}/libtotem-plparser.so.*
 
@@ -44,7 +46,6 @@ make install DESTDIR=%{buildroot}
 %{_libdir}/libtotem-plparser.so
 %{_libdir}/pkgconfig/totem-plparser-mini.pc
 %{_libdir}/pkgconfig/totem-plparser.pc
-%{_datadir}/gir-1.0/TotemPlParser-1.0.gir
 %{_datadir}/gtk-doc/html/totem-pl-parser
 
 
