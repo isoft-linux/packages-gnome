@@ -1,6 +1,6 @@
 Name: rest
-Version: 0.7.93
-Release: 6
+Version: 0.8.0
+Release: 1
 Summary: A library for access to RESTful web services
 
 License: LGPLv2
@@ -30,6 +30,7 @@ this library is attempting to support.
 Summary: Development package for %{name}
 Requires: %{name} = %{version}-%{release}
 Requires: pkgconfig
+BuildRequires: vim
 
 %description devel
 Files for development with %{name}.
@@ -75,6 +76,9 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_datadir}/gir-1.0/RestExtras-0.7.gir
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.8.0-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.7.93-6
 - Rebuild for 4.0 release
 
