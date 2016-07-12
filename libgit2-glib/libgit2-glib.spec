@@ -12,6 +12,7 @@ BuildRequires:  libgit2-devel
 BuildRequires:  pygobject3-devel
 BuildRequires:  python3-devel
 BuildRequires:  python3-gobject
+BuildRequires:  pkgconfig(libssh2)
 # Depend on python3-gobject for the python3 gi overrides directory.
 # If we ever get a libgit2-glib consumer that does not depend on python3,
 # it would probably make sense to split it to a separate subpackage.
@@ -39,6 +40,7 @@ developing applications that use %{name}.
 make %{?_smp_mflags}
 
 
+
 %install
 %make_install
 # Remove unwanted la files
@@ -61,8 +63,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 %{_libdir}/libgit2-glib-1.0.so
 %{_libdir}/pkgconfig/libgit2-glib-1.0.pc
 %{_datadir}/gir-1.0/Ggit-1.0.gir
-%{_datadir}/vala/vapi/ggit-1.0.deps
-%{_datadir}/vala/vapi/ggit-1.0.vapi
 
 %doc %{_datadir}/gtk-doc/
 
