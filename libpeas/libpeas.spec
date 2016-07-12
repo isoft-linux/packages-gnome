@@ -1,6 +1,6 @@
 Name: libpeas
-Version: 1.16.0
-Release: 3
+Version: 1.18.0
+Release: 1
 Summary: Plug-ins implementation convenience library	
 
 License: GPL
@@ -11,6 +11,7 @@ BuildRequires: gtk3-devel
 BuildRequires: gobject-introspection-devel
 BuildRequires: python-devel
 BuildRequires: python3-devel
+BuildRequires: intltool
 
 %description
 libpeas is a convenience library making adding plug-ins support
@@ -54,10 +55,6 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %files -f libpeas.lang
 %{_libdir}/girepository-1.0/Peas-1.0.typelib
 %{_libdir}/girepository-1.0/PeasGtk-1.0.typelib
-%dir %{_libdir}/libpeas-1.0
-%dir %{_libdir}/libpeas-1.0/loaders
-%{_libdir}/libpeas-1.0/loaders/libpythonloader.so
-%{_libdir}/libpeas-1.0/loaders/libpython3loader.so
 #%{_libdir}/libpeas-1.0/loaders/libseedloader.so
 %{_libdir}/libpeas-1.0.so.*
 %{_libdir}/libpeas-gtk-1.0.so.*
@@ -80,6 +77,9 @@ gtk3-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gtk-doc/html/libpeas/*
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 1.18.0-1
+- Update
+
 * Fri Nov 06 2015 Cjacker <cjacker@foxmail.com> - 1.16.0-3
 - Rebuild with python3.5
 

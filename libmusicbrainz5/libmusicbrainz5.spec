@@ -1,13 +1,16 @@
 Summary: Library for accessing MusicBrainz servers
 Name: libmusicbrainz5
-Version: 5.0.1
-Release: 11 
+Version: 5.1.0
+Release: 1
 License: LGPLv2
 URL: http://www.musicbrainz.org/
 Source0: libmusicbrainz-%{version}.tar.gz
 BuildRequires: cmake
 BuildRequires: doxygen
 BuildRequires: neon-devel
+BuildRequires: pkgconfig(libxml-2.0)
+BuildRequires: pkgconfig(openssl)
+BuildRequires: pkgconfig(neon)
 Obsoletes: libmusicbrainz4 < 4.0.3-5
 
 %description
@@ -63,6 +66,9 @@ rm -f docs/installdox
 
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 5.1.0-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 5.0.1-11
 - Rebuild for 4.0 release
 
