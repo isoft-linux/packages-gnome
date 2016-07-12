@@ -1,7 +1,7 @@
 Summary: Window Navigator Construction Kit
 Name: libwnck3
-Version: 3.14.0
-Release: 2
+Version: 3.20.1
+Release: 1
 URL: http://download.gnome.org/sources/libwnck/
 Source0: http://download.gnome.org/sources/libwnck/3.4/libwnck-%{version}.tar.xz
 License: LGPLv2+
@@ -67,6 +67,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %doc %{_datadir}/gtk-doc
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.14.0-2
 - Rebuild for 4.0 release
 

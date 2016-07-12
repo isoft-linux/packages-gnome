@@ -7,7 +7,6 @@ URL: http://www.musicbrainz.org/
 Source0: libmusicbrainz-%{version}.tar.gz
 BuildRequires: cmake
 BuildRequires: doxygen
-BuildRequires: neon-devel
 BuildRequires: pkgconfig(libxml-2.0)
 BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(neon)
