@@ -1,6 +1,6 @@
 Name:	    libgdata	
-Version:	0.17.3
-Release:	2
+Version:	0.17.5
+Release:	1
 Summary:	libgdata is a GLib-based library for accessing online service APIs
 
 License:	GPL
@@ -58,6 +58,9 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 %{_datadir}/vala/vapi/libgdata.vapi
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.17.5-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.17.3-2
 - Rebuild for 4.0 release
 
