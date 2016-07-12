@@ -5,8 +5,8 @@
 %global goa_version 3.17.91
 
 Name:		grilo-plugins
-Version:	0.2.16
-Release:	2%{?dist}
+Version:	0.3.2
+Release:	0
 Summary:	Plugins for the Grilo framework
 
 License:	LGPLv2+
@@ -108,7 +108,6 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/*
 %doc %{_datadir}/help/C/examples/example-tmdb.c
 %{_datadir}/grilo-plugins/
 %{_libdir}/grilo-%{release_version}/*.so*
-%{_libdir}/grilo-%{release_version}/*.xml
 
 %changelog
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.2.16-2
