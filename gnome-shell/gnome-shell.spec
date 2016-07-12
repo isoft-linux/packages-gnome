@@ -1,6 +1,6 @@
 Name:		gnome-shell
 Version:	3.21.2
-Release:	1
+Release:	2
 Summary:	Window management and application launching for GNOME
 
 License:	GPL
@@ -173,6 +173,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/st
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.2-2
+- Update
+
 * Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.2-1
 - Update
 

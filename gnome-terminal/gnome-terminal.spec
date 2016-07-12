@@ -21,9 +21,10 @@ BuildRequires: itstool
 BuildRequires: dconf-devel
 BuildRequires: libuuid-devel
 BuildRequires: nautilus-devel
-BuildRequires: gnome-shell
 BuildRequires: appstream-glib
 BuildRequires: vala-devel
+BuildRequires: evolution-data-server
+BuildRequires: gnome-shell
 
 %description
 gnome-terminal is a terminal emulator for GNOME. It features the ability to use
