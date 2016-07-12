@@ -1,17 +1,11 @@
 Name: totem 
-Version: 3.18.1
-Release: 2
+Version: 3.20.1
+Release: 1
 Summary: Movie player for GNOME 
 
 License: GPL
 URL: http://www.gnome.org
 Source0: %{name}-%{version}.tar.xz
-Requires: grilo-plugins
-Requires: iso-codes
-Requires: gstreamer-plugins-base
-Requires: gstreamer-plugins-good
-Requires: gstreamer-plugins-bad
-Requires: gstreamer-plugins-ugly
 
 BuildRequires: totem-pl-parser-devel
 BuildRequires: gstreamer-devel 
@@ -19,6 +13,23 @@ BuildRequires: clutter-devel
 BuildRequires: clutter-gst3
 BuildRequires: nautilus-devel
 BuildRequires: grilo-devel libpeas-devel
+BuildRequires: intltool
+BuildRequires: itstool
+BuildRequires: pkgconfig(gstreamer-pbutils-1.0)
+BuildRequires: pkgconfig(clutter-gst-3.0)
+BuildRequires: pkgconfig(clutter-gtk-1.0)
+BuildRequires: gsettings-desktop-schemas
+BuildRequires: gsettings-desktop-schemas-devel
+BuildRequires: pkgconfig(pygobject-3.0)
+BuildRequires: pkgconfig(gnome-desktop-3.0)
+
+Requires: grilo-plugins
+Requires: iso-codes
+Requires: gstreamer-plugins-base
+BuildRequires: gstreamer-plugins-good
+Requires: gstreamer-plugins-bad
+Requires: gstreamer-plugins-ugly
+
 
 %description
 Totem package contains the official movie player of the GNOME Desktop based on GStreamer. It features a playlist, a full-screen mode, seek and volume controls, as well as keyboard navigation. This is useful for playing any GStreamer supported file, DVD, VCD or digital CD.
@@ -35,8 +46,8 @@ Requires: %{name} = %{version}-%{release}
 
 %build
 %configure --disable-static --enable-compile-warnings=no --enable-cxx-warnings=no
-make %{?_smp_mflags}
-
+make
+#make %{?_smp_mflags} 
 
 %install
 make install DESTDIR=%{buildroot}
@@ -90,7 +101,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/totem/*
 %{_mandir}/man1/totem-video-thumbnailer.1.gz
 %{_mandir}/man1/totem.1.gz
-
+%{_mandir}/man1/totem-audio-preview.1.gz
 
 %files devel
 %{_includedir}/totem
@@ -100,6 +111,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gtk-doc/html/totem
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.1-2
 - Rebuild for 4.0 release
 

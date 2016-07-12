@@ -1,6 +1,6 @@
 Name:		rhythmbox
-Version:	3.2
-Release: 	3	
+Version:	3.3.1
+Release: 	1	
 Summary:    Gnome music player	
 
 License:	GPL
@@ -11,6 +11,13 @@ BuildRequires:  gstreamer-devel
 BuildRequires:  libtdb-devel
 BuildRequires:  libgpod-devel
 BuildRequires:  libmx-devel
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:  intltool
+BuildRequires:  pkgconfig(libsoup-2.4)
+BuildRequires:  pkgconfig(libpeas-1.0)
+BuildRequires:  pkgconfig(libpeas-gtk-1.0)
+BuildRequires:  totem-devel
+
 
 Requires:	gstreamer, libtdb
 
@@ -107,6 +114,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.3.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.2-3
 - Rebuild for 4.0 release
 
