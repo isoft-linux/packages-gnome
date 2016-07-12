@@ -1,6 +1,6 @@
 Name:	    totem-pl-parser	
-Version:    3.10.5
-Release:	2
+Version:    3.10.6
+Release:	1
 Summary:    Totem Playlist Parser library	
 
 License:	GPL
@@ -49,6 +49,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.10.6-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.10.5-2
 - Rebuild for 4.0 release
 
