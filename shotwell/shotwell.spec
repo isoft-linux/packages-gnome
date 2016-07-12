@@ -1,6 +1,6 @@
 Name:           shotwell
-Version:        0.22.0
-Release:        4 
+Version:        0.23.2
+Release:        1 
 Summary:        A photo organizer for the GNOME desktop
 
 # LGPLv2+ for the code
@@ -110,6 +110,9 @@ gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.23.2-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 0.22.0-4
 - Rebuild for 4.0 release
 

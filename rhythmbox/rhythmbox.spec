@@ -17,6 +17,18 @@ BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libpeas-1.0)
 BuildRequires:  pkgconfig(libpeas-gtk-1.0)
 BuildRequires:  totem-devel
+BuildRequires:  pkgconfig(gudev-1.0)
+BuildRequires:  pkgconfig(libmtp)
+BuildRequires:  pkgconfig(libsecret-1)
+BuildRequires:  pkgconfig(gstreamer-audio-1.0)
+BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
+BuildRequires:  pkgconfig(gstreamer-pbutils-1.0)
+BuildRequires:  pkgconfig(libnotify)
+BuildRequires:  itstool
+BuildRequires:  pkgconfig(python3)
+BuildRequires:  pkgconfig(pygobject-3.0)
+BuildRequires:  pkgconfig(clutter-gst-2.0)
+BuildRequires:  pkgconfig(clutter-gtk-1.0)
 
 
 Requires:	gstreamer, libtdb
@@ -51,7 +63,6 @@ export CXX=clang++
     --enable-browser-plugin \
     --disable-daap \
     --enable-visualizer \
-    --enable-grilo \
     --with-gudev \
     --with-ipod \
     --with-mtp \
