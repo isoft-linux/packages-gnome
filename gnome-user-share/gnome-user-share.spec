@@ -1,6 +1,6 @@
 Name:	    gnome-user-share	
-Version:    3.18.0
-Release:	2
+Version:    3.18.1
+Release:	1
 Summary:    Gnome user file sharing	
 
 License:	GPL
@@ -63,6 +63,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gnome-user-share
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.18.1-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 
