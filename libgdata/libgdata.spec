@@ -13,6 +13,7 @@ BuildRequires: json-glib-devel
 BuildRequires: gcr-devel
 BuildRequires: uhttpmock-devel
 BuildRequires: gnome-online-accounts-devel 
+BuildRequires: intltool
 %description
 libgdata is a GLib-based library for accessing online service APIs.
 
@@ -42,7 +43,6 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 %postun -p /sbin/ldconfig
 
 %files -f gdata.lang
-%{_libdir}/girepository-1.0/GData-0.0.typelib
 %{_libdir}/libgdata.so.*
 
 
@@ -51,11 +51,8 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/*.a
 %{_includedir}/libgdata/*
 %{_libdir}/libgdata.so
 %{_libdir}/pkgconfig/libgdata.pc
-%{_datadir}/gir-1.0/GData-0.0.gir
 %dir %{_datadir}/gtk-doc/html/gdata
 %{_datadir}/gtk-doc/html/gdata/*
-%{_datadir}/vala/vapi/libgdata.deps
-%{_datadir}/vala/vapi/libgdata.vapi
 
 %changelog
 * Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.17.5-1
