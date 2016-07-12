@@ -7,6 +7,10 @@ License:	GPL
 URL:		http://www.gnome.org
 Source0:	%{name}-%{version}.tar.xz
 BuildRequires: nautilus-devel
+BuildRequires: itstool
+BuildRequires: intltool
+BuildRequires: pkgconfig(libcanberra-gtk3)
+BuildRequires: pkgconfig(libnotify)
 BuildRequires: gnome-bluetooth-devel
 
 %description
