@@ -1,17 +1,15 @@
 Name:           unique
-Version:        1.1.6
-Release:        1%{?dist}
+Version:        3.0.2
+Release:        2
 Summary:        Single instance support for applications
 
 Group:          System Environment/Libraries
 License:        LGPLv2+
 URL:            http://www.gnome.org/~ebassi/source/
-Source0:        http://download.gnome.org/sources/libunique/1.1/libunique-%{version}.tar.bz2
+Source0:        http://download.gnome.org/sources/libunique/1.1/libunique-%{version}.tar.xz
 
 # Fix build -- upstream dead (replaced with GtkApplication)
-Patch0:    fix-unused-but-set-variable.patch
 Patch1:    fix-disable-deprecated.patch
-Patch2:    libunique-1.1.6-format-security.patch
 
 BuildRequires:  dbus-glib-devel
 BuildRequires:  gnome-doc-utils >= 0.3.2
@@ -19,6 +17,7 @@ BuildRequires:  libtool
 BuildRequires:  glib2-devel >= 2.12.0
 BuildRequires:  gtk2-devel >= 2.11.0
 BuildRequires:  gtk-doc >= 1.11
+BuildRequires:  pkgconfig(gtk+-3.0)
 
 %description
 Unique is a library for writing single instance applications, that is
@@ -37,9 +36,7 @@ Headers and libraries for Unique.
 
 %prep
 %setup -q -n libunique-%{?version}
-%patch0 -p1 -b .unused-but-set-variable
 %patch1 -p1 -b .disable-deprecated
-%patch2 -p1 -b .format-security
 
 %build
 %configure --enable-gtk-doc --disable-static --enable-introspection=no --enable-maintainer-flags=no
@@ -59,10 +56,18 @@ find $RPM_BUILD_ROOT -type f -name "*.la" -delete
 
 %files devel
 %doc %{_datadir}/gtk-doc
-%{_includedir}/unique-1.0/
 %{_libdir}/pkgconfig/*
 %{_libdir}/lib*.so
+%{_includedir}/unique-3.0/unique/unique.h
+%{_includedir}/unique-3.0/unique/uniqueapp.h
+%{_includedir}/unique-3.0/unique/uniquebackend.h
+%{_includedir}/unique-3.0/unique/uniqueenumtypes.h
+%{_includedir}/unique-3.0/unique/uniquemessage.h
+%{_includedir}/unique-3.0/unique/uniqueversion.h
 
 %changelog
+* Wed Jul 13 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.0.2-2
+- Update
+
 * Fri May 06 2016 Leslie Zhai <xiang.zhai@i-soft.com.cn> - 1.1.6-1
 - 1.1.6

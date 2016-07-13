@@ -1,6 +1,6 @@
 Name:	    sushi	
-Version:    3.18.0 
-Release:	2
+Version:    3.20.0 
+Release:	1
 Summary:    A quick previewer for Nautilus	
 
 License:	GPL
@@ -10,6 +10,8 @@ Source0:	%{name}-%{version}.tar.xz
 BuildRequires: libmusicbrainz5-devel
 BuildRequires: webkitgtk4-devel 
 BuildRequires: libevince-devel
+BuildRequires:  intltool
+BuildRequires: pkgconfig(gobject-introspection-1.0)
 
 %description
 Sushi is a quick previewer for Nautilus, the GNOME desktop file manager.
@@ -48,6 +50,9 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/sushi/*
 
 %changelog
+* Tue Jul 12 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-1
+- Update
+
 * Thu Oct 29 2015 Cjacker <cjacker@foxmail.com> - 3.18.0-2
 - Rebuild for 4.0 release
 

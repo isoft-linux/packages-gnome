@@ -7,7 +7,7 @@ Summary:        A photo organizer for the GNOME desktop
 # CC-BY-SA for some of the icons
 License:        LGPLv2+ and CC-BY-SA
 URL:            http://www.yorba.org/shotwell/
-Source0:        https://download.gnome.org/sources/shotwell/0.22/shotwell-0.22.0.tar.xz
+Source0:        https://download.gnome.org/sources/shotwell/0.22/shotwell-0.23.2.tar.xz
 
 BuildRequires:  vala-devel >= 0.20.1
 BuildRequires:  desktop-file-utils
