@@ -15,7 +15,7 @@
 
 Name: evolution-data-server	
 Version: 3.21.3
-Release: 1
+Release: 2
 Summary: Backend data server for Evolution 
 
 License: GPL
@@ -145,6 +145,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
 %{_datadir}/gir-1.0/Camel-1.2.gir
 
 %changelog
+* Thu Jul 14 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-2
+- Update
+
 * Mon Jul 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
 - Update
 
