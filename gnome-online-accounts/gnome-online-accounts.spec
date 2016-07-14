@@ -21,6 +21,7 @@ BuildRequires:	libsoup-devel >= 2.41
 BuildRequires:	rest-devel
 BuildRequires:	telepathy-glib-devel
 BuildRequires:	libxml2-devel
+BuildRequires:  pkgconfig
 
 %description
 Gnome online accounts library

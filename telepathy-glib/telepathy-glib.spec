@@ -6,13 +6,14 @@
 
 Name:           telepathy-glib
 Version:        0.99.11
-Release:        1
+Release:        2
 Summary:        GLib bindings for Telepathy
 
 License:        LGPLv2+
 URL:            http://telepathy.freedesktop.org/wiki/FrontPage
 Source0:        http://telepathy.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
 
+BuildRequires:  pkgconfig
 BuildRequires:  gtk-doc >= 1.17
 BuildRequires:  dbus-devel >= %{dbus_ver}
 BuildRequires:	dbus-glib-devel >= %{dbus_glib_ver}
@@ -439,6 +440,9 @@ make check ||:
 
 
 %changelog
+* Thu Jul 14 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.99.11-2
+- Update
+
 * Wed Jul 13 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.99.11-1
 - Update
 
