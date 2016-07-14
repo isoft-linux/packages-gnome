@@ -6,7 +6,7 @@
 
 Name:           telepathy-glib
 Version:        0.99.11
-Release:        2
+Release:        3
 Summary:        GLib bindings for Telepathy
 
 License:        LGPLv2+
@@ -440,6 +440,9 @@ make check ||:
 
 
 %changelog
+* Thu Jul 14 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.99.11-3
+- Update
+
 * Thu Jul 14 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.99.11-2
 - Update
 
