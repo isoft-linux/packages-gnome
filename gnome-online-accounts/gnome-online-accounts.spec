@@ -1,6 +1,6 @@
 Name: gnome-online-accounts
 Version: 3.21.3
-Release: 1	
+Release: 2	
 Summary: Gnome online accounts library
 
 License: GPL
@@ -92,6 +92,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/gir-1.0/Goa-1.0.gir
 
 %changelog
+* Thu Jul 14 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-2
+- Update
+
 * Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.21.3-1
 - Update
 
