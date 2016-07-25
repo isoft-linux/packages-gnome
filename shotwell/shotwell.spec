@@ -35,6 +35,7 @@ BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(webkitgtk-3.0)
+BuildRequires:  pkgconfig(webkit2gtk-4.0)
 
 # Needed by the publishing plugins
 BuildRequires:  pkgconfig(rest-0.7)
@@ -107,6 +108,9 @@ gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor &>/dev/null || :
 %{_datadir}/GConf/gsettings/shotwell.convert
 %{_datadir}/glib-2.0/schemas/*.xml
 %{_datadir}/icons/hicolor/*/apps/shotwell.*
+%{_libdir}/libshotwell-plugin-common.so
+%{_datadir}/icons/hicolor/symbolic/apps/shotwell-symbolic.svg
+
 
 
 %changelog
