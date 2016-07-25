@@ -55,7 +55,7 @@ rm -f docs/installdox
 
 %files
 %doc AUTHORS.txt COPYING.txt NEWS.txt README.md
-%{_libdir}/libmusicbrainz5.so.0*
+%{_libdir}/libmusicbrainz5.so.1*
 
 %files devel
 %doc docs/*
