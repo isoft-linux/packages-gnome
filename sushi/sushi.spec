@@ -12,6 +12,16 @@ BuildRequires: webkitgtk4-devel
 BuildRequires: libevince-devel
 BuildRequires:  intltool
 BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: pkgconfig(gjs-1.0)
+BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(clutter-x11-1.0)
+BuildRequires: pkgconfig(clutter-gtk-1.0)
+BuildRequires: pkgconfig(clutter-gst-3.0)
+BuildRequires: pkgconfig(gstreamer-1.0)
+BuildRequires: pkgconfig(gstreamer-pbutils-1.0)
+BuildRequires: pkgconfig(gstreamer-tag-1.0)
+BuildRequires: pkgconfig(gtksourceview-3.0)
+
 
 %description
 Sushi is a quick previewer for Nautilus, the GNOME desktop file manager.
