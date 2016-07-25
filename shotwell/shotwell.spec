@@ -63,7 +63,8 @@ making it easy to experiment and correct errors.
   --disable-schemas-compile \
   --disable-icon-update
 
-make %{?_smp_mflags}
+#make %{?_smp_mflags}
+make
 
 
 %install
