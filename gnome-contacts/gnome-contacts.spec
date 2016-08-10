@@ -1,6 +1,6 @@
 Name: gnome-contacts	
 Version: 3.20.0
-Release: 1
+Release: 3
 Summary: Contacts manager for GNOME	
 
 License: GPL
@@ -74,6 +74,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_mandir}/man1/gnome-contacts.1.gz
 
 %changelog
+* Wed Aug 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-3
+- Update
+
 * Sun Jul 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3.20.0-1
 - Update
 
