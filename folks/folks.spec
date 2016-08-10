@@ -1,6 +1,6 @@
 Name:	    folks	
 Version:    0.11.2
-Release:	1
+Release:	3
 Summary:	Folks is a library that aggregates people from multiple sources
 
 License:	GPL
@@ -83,6 +83,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/ >/dev/null 2>&1 ||:
 %{_datadir}/vala/vapi/folks-dummy.vapi
 
 %changelog
+* Wed Aug 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.11.2-3
+- Update
+
 * Fri Jul 08 2016 zhouyang <yang.zhou@i-soft.com.cn> - 0.11.2-1
 - Update
 
