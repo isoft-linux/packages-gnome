@@ -1,7 +1,7 @@
 Name:           cheese
 Epoch:          3
 Version:        3.21.3
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        Application for taking pictures and movies from a webcam
 
 License:        GPLv2+
@@ -156,6 +156,9 @@ glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 
 %changelog
+* Thu Aug 11 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3:3.21.3-8
+- Update
+
 * Wed Aug 10 2016 zhouyang <yang.zhou@i-soft.com.cn> - 3:3.21.3-7
 - Update
 
