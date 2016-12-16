@@ -9,7 +9,7 @@
 
 Name:           tracker
 Version:        1.6.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Desktop-neutral search tool and indexer
 
 License:        GPLv2+
@@ -290,6 +290,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Fri Dec 16 2016 sulit - 1.6.0-4
+- rebuild
+
 * Mon Nov 02 2015 Cjacker <cjacker@foxmail.com> - 1.6.0-3
 - Rebuild with icu 56.1
 
