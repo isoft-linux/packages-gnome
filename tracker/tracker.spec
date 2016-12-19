@@ -68,6 +68,7 @@ BuildRequires:  pkgconfig(totem-plparser)
 BuildRequires:  pkgconfig(upower-glib)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(vorbisfile)
+BuildRequires:  vim
 
 
 %description
